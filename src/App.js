@@ -7,6 +7,8 @@ function App() {
       <h1>
         Social Media Application
       </h1>
+      <h2>Zuckerberg 2.0</h2>
+      
     </>
   );
 }
