@@ -1,0 +1,11 @@
+.LF-container{
+    position: absolute;
+    right: 100px;
+    top: 160px;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(254, 163, 82);
+    /* border: 5px solid rgb(254, 163, 82); */
+    border-radius: 25px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.756);
+}
