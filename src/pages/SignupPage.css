@@ -1,0 +1,67 @@
+.SP-container{
+    
+    background-color: rgba(0, 0, 0, 0.853);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+}
+.SP-box{
+    width: 900px;
+    height: 600px;
+    background-color: white;
+    margin: 80px auto;
+    display: flex;
+    border-radius: 20px;
+}
+.SP-box-col1{
+    flex-basis: 40%;
+    background-color: rgb(254, 163, 82);
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.SP-box-col2{
+    flex-basis: 60%;
+    background-color: white;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+}
+.SP-box-h1{
+    text-align: center;
+    font-style: italic;
+}
+.SP-input{
+    width: 79%;
+    height: 40px;
+    margin: 20px 50px 0;
+    border: 2px solid rgb(254, 163, 82);
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.SP-input:focus{
+    outline: none;
+    border: 3px solid rgb(254, 163, 82);
+}
+.SP-modal-btn{
+    height: 40px;
+    width: 200px;
+    margin: 30px 170px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(254, 163, 82);
+}
+.SP-close{
+    width: 20px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
