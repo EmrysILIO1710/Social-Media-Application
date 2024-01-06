@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import './LandingForm.css';
 import eye1 from '../pictures/visible.png';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import eye2 from '../pictures/hide.png';
+import SignupPage from "../pages/SignupPage";
 
 const LandingForm = () => {
     const [id, setId] = useState("");
     const [pass, setPass] = useState("");
     const [icon, setIcon] = useState(eye1);
     const [val, setVal] = useState("password");
+    const [check, setCheck] = useState(false);
     const navigate = useNavigate();
 
     const changeId = (e)=> {
@@ -43,9 +45,12 @@ const LandingForm = () => {
             setVal("password");
         }
     }
-    
+    const signup = ()=>{
+        setCheck(true);
+    }
 
     return(
+        <>
         <div className="LF-container">
             <form onSubmit={submitForm}>
                 <input type="text" placeholder="user id or email" className="LF-input" value={id} onChange={changeId} />
@@ -55,9 +60,13 @@ const LandingForm = () => {
                 <br />
                 <button className="LF-login">Log in</button>
                 <br />
-                <h3 className="LF-h3">Don't have an account? <Link to='/signup' target="blank" className="LF-signup">Sign Up.</Link></h3>
+                <h3 className="LF-h3">Don't have an account? <span className="LF-signup" onClick={signup}>Sign Up.</span></h3>
             </form>
         </div>
+        {
+            check && <SignupPage />
+        }
+        </>
     );
 };
 
