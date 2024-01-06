@@ -9,7 +9,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <LandingPage />
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/signup' element={<SignupPage />} />
