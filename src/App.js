@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <h1>arka</h1>
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/signup' element={<SignupPage />} />
