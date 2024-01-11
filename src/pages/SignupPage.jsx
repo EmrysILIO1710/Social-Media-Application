@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './SignupPage.css';
 import cross from '../pictures/close.png';
+import friend from '../pictures/friends.jpg';
 
 const SignupPage = (props)=> {
     const [user, setUser] = useState("");
@@ -58,7 +59,12 @@ const SignupPage = (props)=> {
         <div className="SP-container" onClick={props.onClose}>
             <div className="SP-box" onClick={e => e.stopPropagation()}>
                 <div className="SP-box-col1">
-
+                    <img src={friend} className="SP-img" alt="" />
+                    <div className="SP-col1-container">
+                        <h1>Connect <br />.</h1>
+                        <h1>Share <br />.</h1>
+                        <h1>Grow</h1>
+                    </div>
                 </div>
                 <div className="SP-box-col2">
                     <br />
