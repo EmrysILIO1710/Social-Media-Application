@@ -1,0 +1,14 @@
+*{
+margin: 0;
+padding: 0;
+
+}
+.LP-content{
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    margin: 100px 50px;
+    margin-left: 190px;
+    padding-top: 140px;
+    
+}
