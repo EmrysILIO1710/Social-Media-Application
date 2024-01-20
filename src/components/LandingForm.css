@@ -4,7 +4,7 @@
     top: 160px;
     height: 400px;
     width: 400px;
-    background-color: rgba(240, 248, 255, 0);
+    background-color: rgba(255, 255, 255, 0.481);
     /* background-color: rgb(254, 163, 82); */
     /* border: 5px solid rgb(254, 163, 82); */
     border-radius: 25px;
@@ -49,7 +49,7 @@
     transition: 0.3s;
 }
 .LF-h3{
-    margin: 10px 55px;
+    margin: 10px 40px;
 }
 .LF-signup{
     font-weight: bold;
