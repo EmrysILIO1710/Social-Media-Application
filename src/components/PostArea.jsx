@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './PostArea.css';
 import Posts from "./Posts";
 import dp1 from '../pictures/sampleprof.jpg';
@@ -7,8 +7,16 @@ import dp2 from '../pictures/sampleprof2.jpg';
 import post2 from '../pictures/samplepost2.jpg';
 import dp3 from '../pictures/sampleprof3.jpg';
 import post3 from '../pictures/samplepost3.jpg';
+// import bg from '../pictures/background.jpg';
+import BackgroundButton from "./BackgroundButton";
 
 const PostArea = () => {
+    const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
+
+    const handleDataFromBackgroundButton = (data) => {
+        setDataFromBackgroundButton(data);
+    }
+
     let arrPosts = [
         {
             id: 1,
@@ -38,7 +46,8 @@ const PostArea = () => {
 
     return(
         <>
-            <div className="PA-container">
+            <div className="PA-container" style={{backgroundImage: `url(${dataFromBackgroundButton})`}}>
+                <BackgroundButton sendDataToPostArea={handleDataFromBackgroundButton} />
                 {
                     arrPosts.map((item) => (
                         <Posts 
