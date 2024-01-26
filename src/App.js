@@ -5,16 +5,18 @@ import './App.css';
 import LandingPage from './pages/LandingPage';
 import SignupPage from './pages/SignupPage';
 import Posts from './components/Posts';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <h1>arka</h1>
+      
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/posts' element={<Posts />} />
+          <Route path='/navbar' element={<Navbar />} />
         </Routes>
       </BrowserRouter>
     </>
