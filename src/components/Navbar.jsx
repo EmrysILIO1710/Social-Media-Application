@@ -11,7 +11,7 @@ const Navbar = () => {
     <>  
       <div className="navbar-rect">
         <div className="navbar-logo">
-          <h1><span style={{color: "rgb(254,163,82)"}}>adda</span>Gram</h1>
+          <h1 style={{textShadow: "2px 2px 20px grey"}}><span style={{color: "rgb(254,163,82)"}}>adda</span>Gram</h1>
         </div>
         <div className="navbar-search">
           <form >
