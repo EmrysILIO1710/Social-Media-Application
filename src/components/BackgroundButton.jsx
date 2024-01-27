@@ -10,7 +10,7 @@ import bg6 from '../pictures/background6.jpg';
 
 const BackgroundButton = ({ sendDataToPostArea }) => {
     const [dispbox, setDispbox] = useState("none");
-    const [bgimg, setBgimg] = useState(bg1);
+    const [bgimg, setBgimg] = useState();
 
     const bgArr = [
         {

@@ -2,7 +2,8 @@
   width: 100vw;
   height: 8vh;
   display: flex;
-  background-color: rgba(243, 238, 238, 0.149);
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 30px;
 
 }
 .navbar-logo{
