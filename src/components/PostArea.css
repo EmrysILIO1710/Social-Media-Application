@@ -1,0 +1,12 @@
+.PA-container{
+    width: 100%;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    /* background: url("../pictures/background.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}

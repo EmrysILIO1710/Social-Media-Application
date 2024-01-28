@@ -1,0 +1,21 @@
+.Trial-rectangle{
+    width: 100vw;
+    height: 10vh;
+    background-color: aqua;
+    display: flex;
+}
+.Trial-adda{
+    height: 100%;
+    background-color: rgb(146, 97, 97);
+    flex: 1;
+}
+.Trial-search{
+    height: 100%;
+    flex: 1;
+    background-color: rgb(246, 0, 0);
+}
+.Trial-icons{
+    height: 100%;
+    flex: 1;
+    background-color: rgb(48, 161, 25);
+}

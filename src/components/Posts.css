@@ -1,36 +1,151 @@
 .Post-container{
     width: 700px;
-    height: 800px;
-    background-color: rgba(127, 255, 212, 0.529);
+    height: auto;
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
     overflow: hidden;
+    margin-left: 27%;
+    margin-bottom: 30px;
 }
 .Post-header{
     width: 100%;
     height: 10%;
-    background-color: rgba(250, 235, 215, 0.507);
+    background-color: rgba(212, 212, 212, 0);
     padding-top: 7px;
+    padding-bottom: 7px;
+    display: flex;
 }
 .Post-body{
     width: 100%;
-    height: 60%;
-    background-color: rgba(0, 255, 255, 0.427);
+    height: auto;
+    background-color: rgba(0, 255, 255, 0);
 }
 .Post-caption{
-    width: 100%;
-    height: 22%;
-    background-color: rgba(0, 0, 255, 0.404);
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 255, 0);
+    margin: 10px 25px;
 }
 .Post-btns{
     width: 100%;
     height: 8%;
-    background-color: rgba(137, 43, 226, 0.43);
+    background-color: rgba(137, 43, 226, 0);
+    display: flex;
+    position: relative;
 }
 .Post-DP{
     border-radius: 100%;
     width: 70px;
     height: 70px;
-    background-color: black;
-    margin-left: 10px;
+    background-color: rgba(0, 0, 0, 0.556);
+    margin-left: 25px;
     /* margin-top: 5px; */
+    overflow: hidden;
+}
+.Post-name{
+    margin-left: 20px;
+    padding-top: 5px;
+}
+.Post-like-btn{
+    flex: 1;
+    font-size: 20px;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    height: 50px;
+    /* cursor: pointer; */
+}
+
+.Post-share-btn{
+    flex: 1;
+    font-size: 20px;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    height: 50px;
+    color: gray;
+}
+
+.Post-comment-btn{
+    flex: 1;    
+    font-size: 20px;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    height: 50px;
+    color: rgb(128, 128, 128);
+}
+.Post-share{
+    position: absolute;
+    width: auto;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 70px;
+    left: 40%;
+}
+.Post-share-items{
+    height: 100%;
+    width: auto;
+    background-color: rgb(254, 163, 82);
+    border-radius: 10px;
+    display: flex;
+}
+.Post-svg{
+    background-color: rgba(128, 128, 128, 0); 
+    margin-left: 17%;   
+}
+.Post-share-img{
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    margin: 15px 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.Post-img{
+    width: 100%;
+    max-height: 90vh;
+}
+.Post-dp-img{
+    height: 100%;
+}
+.Post-line{
+    width: 90%;
+    border-color: rgb(187, 187, 187);
+    margin: auto;
+}
+.Post-comment{
+    margin: 10px 25px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid rgb(187, 187, 187);
+    height: 40px;
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+.Post-comment:focus{
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    outline: none;
+}
+.Post-comment-done-btn{
+    height: 30px;
+    width: 8%;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgba(240, 248, 255, 0);
+    /* font-weight: bold; */
+}
+.Post-comment-done-btn:hover{
+    cursor: pointer;
+    background-color: rgb(254, 163, 82);
+}
+.Post-comment-section2{
+    margin: 10px 25px;
+    font-size: 15px;
+}
+.Post-delete-comm{
+    width: 25px;
+    vertical-align: middle;
+    cursor: pointer;
 }
