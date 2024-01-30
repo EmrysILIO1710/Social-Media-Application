@@ -11,6 +11,8 @@ import Trial from './components/Trial';
 import PostArea from './components/PostArea';
 import Username from './components/Username';
 
+import EditProfBtn from './components/EditProfBtn';
+import EditProfpage from './pages/EditProfPage';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path='/postarea' element={<PostArea />} />
           <Route path='/username' element={<Username />} />
           
+          <Route path='/editprofbtn' element={<EditProfBtn />} />
+          <Route path='/editprofpage' element={<EditProfpage />} />
         </Routes>
       </BrowserRouter>
     </>

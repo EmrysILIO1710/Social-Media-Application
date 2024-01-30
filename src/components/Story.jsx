@@ -28,10 +28,6 @@ const Story = () => {
                     <img src={story} alt="" className='Story-picture' />
                     <img src={likes} alt="" className='like-picture'/>
                     
-
-                
-                    
-
                 </div>
 
             </div>
