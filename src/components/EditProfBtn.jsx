@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import './EditProfBtn.css';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-const EditProfBtn = () => {
-    const navigate = useNavigate();
+const EditProfBtn = ({ SDTProfilePageFEPB }) => {
+    // const navigate = useNavigate();
+    const [val, setVal] = useState(0);
 
     const editprofile = (e) => {
         e.preventDefault();
-        navigate("/editprofpage");
+        setVal(1);
+        SDTProfilePageFEPB(val)
+        // navigate("/editprofpage");
     }
     return (
         <>
