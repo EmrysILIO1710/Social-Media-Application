@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './Story.css';
 import close from "../pictures/close.png";
@@ -16,34 +15,18 @@ const Story = () => {
     return(
         <>
             <div className="Story-container" onClick={showStory}>
-                
-            
 
             </div>
+
             <div className='Story-content-box' style={{display: disp}}>
                 <img src={close} alt="" className='Story-close' onClick={hideStory}/>
-            
-
                 <div className='Story-picture-box' >
                     <img src={story} alt="" className='Story-picture' />
-                    <img src={likes} alt="" className='like-picture'/>
-                    
-
-                
-                    
-
-                </div>
-
+                    <img src={likes} alt="" className=''/>
+                 </div>
             </div>
-            
-            
         </>
     );
 };
+
 export default Story;
-    
-    
-
-
-
-

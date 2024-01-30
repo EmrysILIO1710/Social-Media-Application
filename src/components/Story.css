@@ -13,27 +13,21 @@
     position: absolute;
     top: 0;
     margin-left: 5vw;
-
 }
 .Story-picture-box{
     height: 96%;
     width: 35%;
     background-color: blanchedalmond;
     margin: 1% auto;
-    
-  
 }
 .Story-close{
-    height: 6%;
+    height: 4%;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 20px;
+    top: 20px;
     cursor: pointer;
-
-    
 }
 .Story-picture{
-    height: 90%;
+    margin-top: auto;
     width: 100%;
 }
-
