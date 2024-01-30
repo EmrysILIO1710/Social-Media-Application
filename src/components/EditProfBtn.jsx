@@ -7,7 +7,7 @@ const EditProfBtn = () => {
 
     const editprofile = (e) => {
         e.preventDefault();
-        navigate();
+        navigate("/editprofpage");
     }
     return (
         <>
