@@ -3,13 +3,14 @@ import './EditProfPage.css';
 import dpimg from '../pictures/sampleprof3.jpg';
 import coverimg from '../pictures/background3.jpg';
 
-const EditProfpage = () => {
+const EditProfpage = ({ SDTProfilePageFEPP }) => {
     const [dpshadow, setDpshadow] = useState("none");
     const [covershadow, setCovershadow] = useState("none");
     const [dp, setDp] = useState(dpimg);
     const [cover, setCover] = useState(coverimg);
     const [user, setUser] = useState("");
     const [about, setAbout] = useState("");
+    const [epp, setEpp] = useState("block");
 
     const showDp = () => {
         setDpshadow("block");
@@ -37,10 +38,12 @@ const EditProfpage = () => {
     }
     const submitForm = (e) => {
         e.preventDefault();
+        // SDTProfilePageFEPP(dp, cover, user, about);
+        setEpp("none")
     }
 
     return(
-        <>  
+        <div className="EPP" style={{display: epp}}>  
             <div className="EPP-container">
                 <form onSubmit={submitForm}>
                     <h1 className="EPP-h2">Edit Profile</h1>
@@ -70,7 +73,7 @@ const EditProfpage = () => {
                     <button type="submit" className="EPP-submit">Update Details</button>
                 </form>
             </div>
-        </>
+        </div>
     );
 }
 

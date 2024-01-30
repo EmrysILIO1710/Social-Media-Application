@@ -1,8 +1,14 @@
+.EPP{
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.622);
+    padding: 2% 0;
+}
 .EPP-container{
     width: 60vw;
     height: auto;
     background-color: rgb(254, 163, 82);
-    margin: 2% auto;
+    margin: 0 auto;
     border-radius: 20px;
     padding: 10px;
 }
