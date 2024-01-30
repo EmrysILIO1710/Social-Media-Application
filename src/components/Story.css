@@ -1,0 +1,39 @@
+.Story-container{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    border-radius: 100%;
+    border: 5px solid rgb(254, 163, 82);
+    cursor: pointer;
+}
+.Story-content-box{
+    height: 100vh;
+    width: 90vw;
+    background-color: rgba(0, 0, 0, 0.788);
+    position: absolute;
+    top: 0;
+    margin-left: 5vw;
+
+}
+.Story-picture-box{
+    height: 96%;
+    width: 35%;
+    background-color: blanchedalmond;
+    margin: 1% auto;
+    
+  
+}
+.Story-close{
+    height: 6%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+
+    
+}
+.Story-picture{
+    height: 90%;
+    width: 100%;
+}
+
