@@ -9,6 +9,8 @@ import Story from './components/Story';
 import Navbar from './components/Navbar';
 import Trial from './components/Trial';
 import PostArea from './components/PostArea';
+import EditProfBtn from './components/EditProfBtn';
+import EditProfpage from './pages/EditProfPage';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path='/navbar' element={<Navbar />} />
           <Route path='/trial' element={<Trial />} />
           <Route path='/postarea' element={<PostArea />} />
+          <Route path='/editprofbtn' element={<EditProfBtn />} />
+          <Route path='/editprofpage' element={<EditProfpage />} />
         </Routes>
       </BrowserRouter>
     </>
