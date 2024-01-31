@@ -15,6 +15,7 @@ import About from './components/About';
 
 import EditProfBtn from './components/EditProfBtn';
 import EditProfpage from './pages/EditProfPage';
+import Userimage from './components/Userimage';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           
           <Route path='/editprofbtn' element={<EditProfBtn />} />
           <Route path='/editprofpage' element={<EditProfpage />} />
+          <Route path='/userimage' element={<Userimage />} />
         </Routes>
       </BrowserRouter>
     </>
