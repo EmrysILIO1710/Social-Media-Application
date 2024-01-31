@@ -9,6 +9,8 @@ import Story from './components/Story';
 import Navbar from './components/Navbar';
 import Trial from './components/Trial';
 import PostArea from './components/PostArea';
+import Username from './components/Username';
+
 import EditProfBtn from './components/EditProfBtn';
 import EditProfpage from './pages/EditProfPage';
 
@@ -25,6 +27,8 @@ function App() {
           <Route path='/navbar' element={<Navbar />} />
           <Route path='/trial' element={<Trial />} />
           <Route path='/postarea' element={<PostArea />} />
+          <Route path='/username' element={<Username />} />
+          
           <Route path='/editprofbtn' element={<EditProfBtn />} />
           <Route path='/editprofpage' element={<EditProfpage />} />
         </Routes>
