@@ -8,6 +8,7 @@ import Posts from './components/Posts';
 import Navbar from './components/Navbar';
 import Trial from './components/Trial';
 import PostArea from './components/PostArea';
+import Profcov from './components/Profcov';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/navbar' element={<Navbar />} />
           <Route path='/trial' element={<Trial />} />
           <Route path='/postarea' element={<PostArea />} />
+          <Route path='/profcov' element={<Profcov />} />
         </Routes>
       </BrowserRouter>
     </>
