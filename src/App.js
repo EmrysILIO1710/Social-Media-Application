@@ -9,6 +9,7 @@ import Story from './components/Story';
 import Navbar from './components/Navbar';
 import Trial from './components/Trial';
 import PostArea from './components/PostArea';
+import Profcov from './components/Profcov';
 import Username from './components/Username';
 import About from './components/About';
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/navbar' element={<Navbar />} />
           <Route path='/trial' element={<Trial />} />
           <Route path='/postarea' element={<PostArea />} />
+          <Route path='/profcov' element={<Profcov />} />
           <Route path='/username' element={<Username />} />
           <Route path='/about' element={<About />} />
           
