@@ -16,20 +16,32 @@ const StoryArea = () => {
     // const [border, setBorder] = useState("5px solid rgb(254, 163, 82)");
     // const [show, setShow] = useState("none");
     const [val, setVal] = useState(0);
-
+    const [scrolll, setScrolll] = useState(0);
+    // const [scrollr, setScrollr] = useState(0);
     const ref = useRef();
     const isOverflow = useIsOverflow(ref);
-    const box = ref.current?.querySelector('.SA-content');
 
-    // console.log(isOverflow);
+
+    console.log(isOverflow);
     // console.log(show);
 
     
 
     const next = () => {
-        const scroll = box.scrollLeft;
-        console.log(box);
-        box.scrollLeft = scroll + 200;
+        const scroll = ref.current.scrollLeft;
+        console.log(scroll);
+        ref.current.scrollLeft = scroll + 200;
+        console.log(ref.current.scrollLeft);
+        setScrolll(ref.current.scrollLeft);
+        // setScrollr(ref.current.scrollRight);
+    }
+    const prev = () => {
+        const scroll = ref.current.scrollLeft;
+        console.log(scroll);
+        ref.current.scrollLeft = scroll - 200;
+        console.log(ref.current.scrollLeft);
+        setScrolll(ref.current.scrollLeft);
+        // setScrollr(ref.current.scrollRight);
     }
     const Callback = (data) => {
         setVal(data);
@@ -61,10 +73,13 @@ const StoryArea = () => {
     ];
 
     return(
-        <>
+        <div className="SA">
+            {
+                (scrolll !== 0) ? <button className="SA-left" onClick={prev}>{`<`}</button> : null
+            }
+            
             <div className="SA-container" ref={ref}>
                 <div className="SA-content">
-                    <button className="SA-left">{`<`}</button>
                     {
                         arrStory.map((item) => (
                             <>
@@ -87,12 +102,12 @@ const StoryArea = () => {
                             </>
                         ))
                     }
-                    
-                    {
-                        (isOverflow) ? <button className="SA-right" onClick={next} >{`>`}</button> : null
-                    }
                 </div>
+                
             </div>
+            {
+                (isOverflow) ? <button className="SA-right" onClick={next} >{`>`}</button> : null
+            }
             {
                 (val !== 0) ? <StoryContent
                     content = {arrStory[val - 1].pic}
@@ -100,7 +115,7 @@ const StoryArea = () => {
                 /> : null
             }
             
-        </>
+        </div>
     );
 };
 

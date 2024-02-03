@@ -1,18 +1,28 @@
-.SA-container{
+.SA{
+    width: fit-content;
+    /* background-color: aqua; */
     position: relative;
+}
+.SA-container{
+    
     width: 800px;
     height: auto;
-    background-color: aquamarine;
+    background-color: rgba(116, 255, 209, 0);
     /* display: flex;
     flex-wrap: nowrap;
     padding: 10px 0; */
-    overflow: hidden;
+    overflow: scroll;
 }
 .SA-content{
+    width: fit-content;
     display: flex;
     flex-wrap: nowrap;
     padding: 10px 0;
+    /* background-color: rgba(238, 0, 0, 0.44); */
 }
+.SA-container::-webkit-scrollbar {
+    display: none; /* Hide scroll bar */
+  }
 .SA-left, .SA-right{
     position: absolute;
     width: 40px;
