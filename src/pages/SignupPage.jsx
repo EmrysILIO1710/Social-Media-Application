@@ -13,7 +13,7 @@ const SignupPage = (props)=> {
     if(!props.show)
     {
         return null
-    }
+    } 
 
     const changeUser = (e)=> {
         setUser(e.target.value);
