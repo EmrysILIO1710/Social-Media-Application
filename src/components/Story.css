@@ -1,39 +1,125 @@
+.Story-box{
+    width: 110px;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0 10px;
+}
 .Story-container{
     height: 100px;
     width: 100px;
     background-color: aqua;
     border-radius: 100%;
-    border: 5px solid rgb(254, 163, 82);
+    /* border: 5px solid rgb(254, 163, 82); */
     cursor: pointer;
+    overflow: hidden;
 }
 .Story-content-box{
     height: 100vh;
     width: 90vw;
-    background-color: rgba(0, 0, 0, 0.788);
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.77);
+    position: fixed;
     top: 0;
     margin-left: 5vw;
-
 }
 .Story-picture-box{
     height: 96%;
     width: 35%;
-    background-color: blanchedalmond;
+    background-color: rgba(255, 235, 205, 0);
     margin: 1% auto;
-    
-  
+    overflow: hidden;
+    position: relative;
 }
 .Story-close{
-    height: 6%;
+    height: 4%;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 20px;
+    top: 20px;
     cursor: pointer;
-
-    
 }
 .Story-picture{
-    height: 90%;
-    width: 100%;
+    margin-top: auto;
+    height: 100%;
 }
-
+.Story-btns{
+    width: 100%;
+    height: 60px;
+    background-color: rgba(240, 255, 255, 0);
+    margin-top: -80px;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+}
+.Story-like{
+    height: 90%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.Story-share{
+    height: 80%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.Story-form{
+    flex: 1;
+    margin-left: 10px;
+    height: 80%;
+    /* background-color: rgba(255, 255, 255, 0.299); */
+}
+.Story-comment{
+    border-radius: 50px;
+    border: none;
+    width: 95%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.299);
+    padding: 0 10px;
+    font-size: 15px;
+}
+.Story-comment:focus{
+    outline: none;
+    border: none;
+}
+.Story-comment-done-btn{
+    height: 30px;
+    width: 20%;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgba(240, 248, 255, 0);
+    margin-left: -90px;
+    /* font-weight: bold; */
+}
+.Story-comment-done-btn:hover{
+    cursor: pointer;
+    background-color: rgb(254, 163, 82);
+}
+.Story-share-box{
+    position: absolute;
+    width: auto;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 90px;
+    right: 10px;
+}
+.Story-share-items{
+    height: 100%;
+    width: auto;
+    background-color: rgb(254, 163, 82);
+    border-radius: 10px;
+    display: flex;
+}
+.Story-svg{
+    background-color: rgba(128, 128, 128, 0); 
+    margin-left: 90%;   
+}
+.Story-share-img{
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    margin: 15px 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.Story-dp{
+    height: 100%;
+}

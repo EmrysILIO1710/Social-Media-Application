@@ -16,8 +16,16 @@ import About from './components/About';
 import EditProfBtn from './components/EditProfBtn';
 import EditProfpage from './pages/EditProfPage';
 import Userimage from './components/Userimage';
+import { useEffect } from 'react';
+import StoryArea from './components/StoryArea';
+import StoryContent from './components/StoryContent';
 
 function App() {
+
+  useEffect(() => {
+    document.title = 'addaGram';
+  }, []);
+
   return (
     <>
       <BrowserRouter>
@@ -33,10 +41,11 @@ function App() {
           <Route path='/profcov' element={<Profcov />} />
           <Route path='/username' element={<Username />} />
           <Route path='/about' element={<About />} />
-          
           <Route path='/editprofbtn' element={<EditProfBtn />} />
           <Route path='/editprofpage' element={<EditProfpage />} />
           <Route path='/userimage' element={<Userimage />} />
+          <Route path='/storyarea' element={<StoryArea />} />
+          <Route path='/storyc' element={<StoryContent />} />
         </Routes>
       </BrowserRouter>
     </>

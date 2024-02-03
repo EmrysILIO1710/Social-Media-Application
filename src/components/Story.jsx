@@ -1,45 +1,28 @@
-
 import React, { useState } from 'react';
 import './Story.css';
-import close from "../pictures/close.png";
-import story from "../pictures/story.jpg";
-import likes from "../pictures/likes.png";
+// import story from "../pictures/story.jpg";
 
-const Story = () => {
-    const [disp, setDisp]=useState("none");
-    const showStory=()=>{
-        setDisp("block");
+// import prof from '../pictures/sampleprof2.jpg';
+
+const Story = (props) => {
+    const [circle, setCircle] = useState("5px solid rgb(254, 163, 82)");
+
+    const changeBorder = () => {
+        setCircle("5px solid grey")
     }
-    const hideStory=()=>{
-        setDisp("none");
-    }
+    
     return(
         <>
-            <div className="Story-container" onClick={showStory}>
-                
-            
-
-            </div>
-            <div className='Story-content-box' style={{display: disp}}>
-                <img src={close} alt="" className='Story-close' onClick={hideStory}/>
-            
-
-                <div className='Story-picture-box' >
-                    <img src={story} alt="" className='Story-picture' />
-                    <img src={likes} alt="" className='like-picture'/>
-                    
+            <div className='Story-box' onClick={props.onClick} >
+                <div className="Story-container" style={{border: circle}} onClick={changeBorder}>
+                    <img src={props.profilepic} alt="" className='Story-dp' />
                 </div>
-
+                <h3 style={{textAlign: "center"}}>{props.user}</h3>
             </div>
-            
+
             
         </>
     );
 };
+
 export default Story;
-    
-    
-
-
-
-

@@ -1,0 +1,54 @@
+.SA{
+    width: fit-content;
+    /* background-color: aqua; */
+    position: relative;
+}
+.SA-container{
+    
+    width: 800px;
+    height: auto;
+    background-color: rgba(116, 255, 209, 0);
+    /* display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0; */
+    overflow: scroll;
+}
+.SA-content{
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+    /* background-color: rgba(238, 0, 0, 0.44); */
+}
+.SA-container::-webkit-scrollbar {
+    display: none; /* Hide scroll bar */
+  }
+.SA-left, .SA-right{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.444);
+}
+.SA-right{
+    right: 20px;
+    top: 60px;
+}
+.SA-left{
+    left: 20px;
+    top: 60px;
+}
+.SA-left:hover, .SA-right:hover{
+    cursor: pointer;
+    background-color: rgb(254, 162, 82);
+}
+.SA-story{
+    height: 100vh;
+    width: 90vw;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0;
+    margin-left: 5vw;
+    /* display: none; */
+}
