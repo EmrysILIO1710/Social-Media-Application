@@ -12,6 +12,7 @@
     flex-wrap: nowrap;
     padding: 10px 0; */
     overflow: scroll;
+    scroll-behavior: smooth;
 }
 .SA-content{
     width: fit-content;

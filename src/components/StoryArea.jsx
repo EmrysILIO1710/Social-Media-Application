@@ -29,26 +29,68 @@ const StoryArea = () => {
 
     const next = () => {
         const scroll = ref.current.scrollLeft;
-        console.log(scroll);
+        // console.log(scroll);
         ref.current.scrollLeft = scroll + 200;
-        console.log(ref.current.scrollLeft);
-        setScrolll(ref.current.scrollLeft);
+        // console.log(ref.current.scrollLeft);
+        setScrolll(ref.current.scrollLeft + 200);
         // setScrollr(ref.current.scrollRight);
     }
     const prev = () => {
         const scroll = ref.current.scrollLeft;
-        console.log(scroll);
+        // console.log(scroll);
         ref.current.scrollLeft = scroll - 200;
-        console.log(ref.current.scrollLeft);
-        setScrolll(ref.current.scrollLeft);
+        // console.log(ref.current.scrollLeft);
+        setScrolll(ref.current.scrollLeft - 200);
         // setScrollr(ref.current.scrollRight);
     }
-    const Callback = (data) => {
-        setVal(data);
+    const Callback = () => {
+        setVal(0);
     }
     
 
     const arrStory = [
+        {
+            id: 1,
+            name: "arda02ran",
+            pp: dp1,
+            pic: post1,
+            visual: "none"
+        },
+        {
+            id: 2,
+            name: "_.eve._",
+            pp: dp2,
+            pic: post3,
+            visual: "none"
+        },
+        {
+            id: 3,
+            name: "sama_hell",
+            pp: dp3,
+            pic: post2,
+            visual: "none"
+        },
+        {
+            id: 1,
+            name: "arda02ran",
+            pp: dp1,
+            pic: post1,
+            visual: "none"
+        },
+        {
+            id: 2,
+            name: "_.eve._",
+            pp: dp2,
+            pic: post3,
+            visual: "none"
+        },
+        {
+            id: 3,
+            name: "sama_hell",
+            pp: dp3,
+            pic: post2,
+            visual: "none"
+        },
         {
             id: 1,
             name: "arda02ran",
@@ -75,7 +117,7 @@ const StoryArea = () => {
     return(
         <div className="SA">
             {
-                (scrolll !== 0) ? <button className="SA-left" onClick={prev}>{`<`}</button> : null
+                (scrolll > 0) ? <button className="SA-left" onClick={prev}>{`<`}</button> : null
             }
             
             <div className="SA-container" ref={ref}>
