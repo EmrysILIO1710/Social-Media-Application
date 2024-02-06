@@ -2,6 +2,8 @@
     width: fit-content;
     /* background-color: aqua; */
     position: relative;
+    margin-bottom: 25px;
+    /* z-index: 1; */
 }
 .SA-container{
     
@@ -18,7 +20,7 @@
     width: fit-content;
     display: flex;
     flex-wrap: nowrap;
-    padding: 10px 0;
+    padding: 20px 0 0;
     /* background-color: rgba(238, 0, 0, 0.44); */
 }
 .SA-container::-webkit-scrollbar {

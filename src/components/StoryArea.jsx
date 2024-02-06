@@ -1,4 +1,4 @@
-import React, {  useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import './StoryArea.css';
 import dp1 from '../pictures/sampleprof.jpg';
 import post1 from '../pictures/samplepost.jpg';
@@ -9,7 +9,6 @@ import post3 from '../pictures/samplepost3.jpg';
 import Story from "./Story";
 import { useIsOverflow } from './useIsOverflow';
 import StoryContent from "./StoryContent";
-
 
 const StoryArea = () => {
     // const [overflow, setOverflow] = useState(0);
@@ -49,48 +48,6 @@ const StoryArea = () => {
     
 
     const arrStory = [
-        {
-            id: 1,
-            name: "arda02ran",
-            pp: dp1,
-            pic: post1,
-            visual: "none"
-        },
-        {
-            id: 2,
-            name: "_.eve._",
-            pp: dp2,
-            pic: post3,
-            visual: "none"
-        },
-        {
-            id: 3,
-            name: "sama_hell",
-            pp: dp3,
-            pic: post2,
-            visual: "none"
-        },
-        {
-            id: 1,
-            name: "arda02ran",
-            pp: dp1,
-            pic: post1,
-            visual: "none"
-        },
-        {
-            id: 2,
-            name: "_.eve._",
-            pp: dp2,
-            pic: post3,
-            visual: "none"
-        },
-        {
-            id: 3,
-            name: "sama_hell",
-            pp: dp3,
-            pic: post2,
-            visual: "none"
-        },
         {
             id: 1,
             name: "arda02ran",

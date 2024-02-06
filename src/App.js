@@ -19,6 +19,7 @@ import Userimage from './components/Userimage';
 import { useEffect } from 'react';
 import StoryArea from './components/StoryArea';
 import StoryContent from './components/StoryContent';
+import FeedPage from './pages/FeedPage';
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      
+        {/* <Navbar /> */}
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/signup' element={<SignupPage />} />
@@ -46,6 +47,7 @@ function App() {
           <Route path='/userimage' element={<Userimage />} />
           <Route path='/storyarea' element={<StoryArea />} />
           <Route path='/storyc' element={<StoryContent />} />
+          <Route path='/feed' element={<FeedPage />} />
         </Routes>
       </BrowserRouter>
     </>
