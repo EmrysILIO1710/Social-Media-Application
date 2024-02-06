@@ -11,6 +11,7 @@ import Trial from './components/Trial';
 import PostArea from './components/PostArea';
 import Username from './components/Username';
 import About from './components/About';
+import Followerfollowing from './components/Followerfollowing';
 
 import EditProfBtn from './components/EditProfBtn';
 import EditProfpage from './pages/EditProfPage';
@@ -30,6 +31,7 @@ function App() {
           <Route path='/postarea' element={<PostArea />} />
           <Route path='/username' element={<Username />} />
           <Route path='/about' element={<About />} />
+          <Route path='/followerfollowing' element={<Followerfollowing />}/>
           
           <Route path='/editprofbtn' element={<EditProfBtn />} />
           <Route path='/editprofpage' element={<EditProfpage />} />
