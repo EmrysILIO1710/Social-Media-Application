@@ -3,7 +3,7 @@ import './Posts.css';
 import like from '../pictures/like.png';
 import share from '../pictures/share.png';
 import comment from '../pictures/comment.png';
-import comment2 from '../pictures/comment1.png';
+import comment2 from '../pictures/comment1.png'; 
 import like2 from '../pictures/like2.png';
 import wapp from '../pictures/whatsapp.png';
 import facebook from '../pictures/facebook-logo.png';
