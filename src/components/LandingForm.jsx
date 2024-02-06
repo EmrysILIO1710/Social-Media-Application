@@ -31,7 +31,7 @@ const LandingForm = () => {
             e.preventDefault();
             setId("");
             setPass("");
-            navigate("/signup");
+            navigate("/feed");
         }
     }
     const display = ()=> {

@@ -1,0 +1,15 @@
+.FP-container{
+    width: auto;
+    height: auto;
+    background-color: rgb(252, 237, 218);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.FP-story{
+    padding-top: 10vh;
+    width: fit-content;
+    height: auto;
+    /* background-color: aqua; */
+    margin: 0 auto;
+}

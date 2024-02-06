@@ -8,7 +8,7 @@ import bg4 from '../pictures/background4.jpg';
 import bg5 from '../pictures/background5.jpg';
 import bg6 from '../pictures/background6.jpg';
 
-const BackgroundButton = ({ sendDataToPostArea }) => {
+const BackgroundButton = ({ sendDataToFeedPage }) => {
     const [dispbox, setDispbox] = useState("none");
     const [bgimg, setBgimg] = useState();
 
@@ -49,7 +49,7 @@ const BackgroundButton = ({ sendDataToPostArea }) => {
     }
     const changeBg = (b) => {
         setBgimg(b);
-        sendDataToPostArea(bgimg);
+        sendDataToFeedPage(bgimg);
     }
 
     return(

@@ -1,18 +1,20 @@
 .BB-box{
     height: 50px;
     width: 50px;
-    position: absolute;
+    position: fixed;
     left: 80px;
-    top: 30px;
+    top: 100px;
     border-radius: 100px;
     background-color: rgba(0, 0, 0, 0.222);
     box-shadow: 4px 4px 20px black;
+    z-index: 2;
 }
 .BB-icon{
     width: 110%;
     cursor: pointer;
 }
 .BB-container{
+    position: fixed;
     width: 500px;
     height: 400px;
     /* background-color: aquamarine; */
