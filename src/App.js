@@ -16,23 +16,30 @@ import About from './components/About';
 import EditProfBtn from './components/EditProfBtn';
 import EditProfpage from './pages/EditProfPage';
 import Userimage from './components/Userimage';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import StoryArea from './components/StoryArea';
 import StoryContent from './components/StoryContent';
 import FeedPage from './pages/FeedPage';
 
 function App() {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     document.title = 'addaGram';
   }, []);
 
+  const CB = (data) => {
+    setShow(data);
+  }
   return (
     <>
       <BrowserRouter>
+        {
+          show && <Navbar />
+        }
         {/* <Navbar /> */}
         <Routes>
-          <Route path='/' element={<LandingPage />} />
+          <Route path='/' element={<LandingPage handleCB = {CB} />} />
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/posts' element={<Posts />} />
           <Route path='/story' element={<Story />}/>
@@ -47,7 +54,7 @@ function App() {
           <Route path='/userimage' element={<Userimage />} />
           <Route path='/storyarea' element={<StoryArea />} />
           <Route path='/storyc' element={<StoryContent />} />
-          <Route path='/feed' element={<FeedPage />} />
+          <Route path='/feed' element={<FeedPage handleCB = {CB} />} />
         </Routes>
       </BrowserRouter>
     </>
