@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './LandingPage.css';
 import LandingForm from "../components/LandingForm";
 
+const LandingPage = (props) => {
+    useEffect(() => {
+        props.handleCB(false);
+    }, )
 
-const LandingPage = () => {
     return(
         <>
             <div className="LP-cover">

@@ -6,6 +6,7 @@
     overflow: hidden;
     margin-left: 27%;
     margin-bottom: 30px;
+    box-shadow: 2px 2px 12px black;
 }
 .Post-header{
     width: 100%;

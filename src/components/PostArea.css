@@ -1,7 +1,7 @@
 .PA-container{
     width: 100%;
     height: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     /* background: url("../pictures/background.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;

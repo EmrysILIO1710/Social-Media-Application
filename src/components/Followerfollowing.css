@@ -1,5 +1,33 @@
-.followerfollowing-backdrop{
+.FF-backdrop{
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color:rgba(0, 0, 0, 0.44);
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+.FF-box{
+    height: 80vh;
+    width: 80vw;
+    background-color: rgb(227, 227, 227);
+    margin: 0vh auto;
+    display: flex;
+    
+    /* padding-top: 1rem;
+    padding-left: 1rem;
+     */
+}
+.FF-area1{
+    /* height: 70vh; */
+    background-color: blue;
+    width: 30vw;
+    padding-top: 1rem;
+    flex: 1;
+}
+.FF-area2{
+    /* height: 85vh; */
+    width:30vw ;
+    background-color: blueviolet;
+    flex: 1;
+    
+    
 }
