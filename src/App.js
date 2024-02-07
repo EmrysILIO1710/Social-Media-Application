@@ -21,6 +21,7 @@ import { useEffect, useState } from 'react';
 import StoryArea from './components/StoryArea';
 import StoryContent from './components/StoryContent';
 import FeedPage from './pages/FeedPage';
+import Follow from './components/Follow';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -56,6 +57,7 @@ function App() {
           <Route path='/storyarea' element={<StoryArea />} />
           <Route path='/storyc' element={<StoryContent />} />
           <Route path='/feed' element={<FeedPage handleCB = {CB} />} />
+          <Route path='/follow' element={<Follow />} />
         </Routes>
       </BrowserRouter>
     </>
