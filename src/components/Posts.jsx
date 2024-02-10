@@ -10,6 +10,8 @@ import facebook from '../pictures/facebook-logo.png';
 import link from '../pictures/link.png';
 import insta from '../pictures/instagram.png';
 import message from '../pictures/message.png';
+import save from '../pictures/save.png';
+import save2 from '../pictures/save2.png';
 // import image from '../pictures/samplepost.jpg';
 // import dp from '../pictures/sampleprof.jpg';
 import deletecomm from '../pictures/deletecomm.png';
@@ -22,6 +24,7 @@ const Posts = (props)=> {
     const [id, setId] = useState(1);
     const [dispcomm, setDispcomm] = useState("none");
     const [commicon, setCommicon] = useState(comment);
+    const [keep, setKeep] = useState(save);
 
     const changeLike = () => {
         if(likeicon === like2){
@@ -77,6 +80,14 @@ const Posts = (props)=> {
             setCommicon(comment);
         }
     }
+    const changeSave = () => {
+        if(keep === save){
+            setKeep(save2);
+        }
+        else{
+            setKeep(save);
+        }
+    }
 
     return(
         <>
@@ -89,6 +100,7 @@ const Posts = (props)=> {
                         <h2 style={{fontSize: '25px'}}>{props.name}</h2>
                         <h5>{props.location}</h5>
                     </div>
+                    <img src={keep} alt="" className="Post-save" onClick={changeSave} />
                 </div>
                 <div className="Post-body">
                     <img src={props.picture} alt="" className="Post-img" />
