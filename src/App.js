@@ -22,6 +22,7 @@ import StoryArea from './components/StoryArea';
 import StoryContent from './components/StoryContent';
 import FeedPage from './pages/FeedPage';
 import MediaSection from './components/MediaSection';
+import Follow from './components/Follow';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -58,6 +59,7 @@ function App() {
           <Route path='/storyc' element={<StoryContent />} />
           <Route path='/feed' element={<FeedPage handleCB = {CB} />} />
           <Route path='/media' element={<MediaSection />} />
+          <Route path='/follow' element={<Follow />} />
         </Routes>
       </BrowserRouter>
     </>
