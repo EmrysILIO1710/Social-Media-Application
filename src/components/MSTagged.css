@@ -1,0 +1,15 @@
+.MST-container{
+    width: 100%;
+    height: auto;
+    /* background-color: rgba(0, 255, 255, 0.671); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.MST-null{
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    color: gray;
+    /* background-color: aqua; */
+}
