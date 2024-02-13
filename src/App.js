@@ -62,6 +62,7 @@ function App() {
           <Route path='/follow' element={<Follow />} />
         </Routes>
       </BrowserRouter>
+      <h1>Hii it's SAM</h1>
     </>
   );
 }
