@@ -91,7 +91,6 @@ const StoryArea = () => {
                                     onClick = {() => {
                                         setVal(item.id); 
                                     }}
-                                    
                                 /> 
                                 {/* <div className="SA-story"> */}
                                       

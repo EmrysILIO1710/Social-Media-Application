@@ -7,7 +7,7 @@ import facebook from "../pictures/facebook-logo.png";
 import link from "../pictures/link.png";
 import insta from "../pictures/instagram.png";
 import message from "../pictures/message.png";
-import close from "../pictures/close.png";
+import Close from '../pictures/cross.png'
 // import pic from '../pictures/story.jpg';
 
 const StoryContent = (props) => {
@@ -62,7 +62,7 @@ const StoryContent = (props) => {
   return (
     <>
       <div className="Story-content-box" style={{ display: "block" }}>
-        <img src={close} alt="" className="Story-close" onClick={hideStory} />
+        <img src={Close} alt="" className="Story-close" onClick={hideStory} />
         <div className="Story-picture-box">
           <img src={props.content} alt="" className="Story-picture" />
           <div className="Story-btns">
