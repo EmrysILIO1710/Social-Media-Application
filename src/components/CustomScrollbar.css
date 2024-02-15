@@ -1,14 +1,15 @@
+
 body {
   --sb-track-color: #232E33;
   --sb-thumb-color: rgb(254, 163, 82);
   --sb-size: 10px;
 }
-
+/* Scrollbar width and color */
 body::-webkit-scrollbar {
   width: var(--sb-size);
   cursor: pointer;
 }
-
+/* Scrollbar Tracker and Thumb */
 body::-webkit-scrollbar-track {
   background: var(--sb-track-color);
   border-radius: 3px;
@@ -19,6 +20,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 3px;
 }
 
+/* Scrollbar width and color */
 @supports not selector(::-webkit-scrollbar) {
   body {
       scrollbar-color: var(--sb-thumb-color)
