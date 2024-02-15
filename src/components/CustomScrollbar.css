@@ -1,22 +1,27 @@
-/* CustomScrollbar.css */
-
-/* Define custom scrollbar styles */
-::-webkit-scrollbar {
-  width: 15px;
-  background-color: transparent;
+body {
+  --sb-track-color: #232E33;
+  --sb-thumb-color: rgb(254, 163, 82);
+  --sb-size: 10px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(254, 162, 82, 0.84); /* Color of the handle */
-  border-radius: 10px;
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+  cursor: pointer;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(254, 163, 82); /* Color of the handle when hovered */
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+      scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
 }
