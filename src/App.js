@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import './components/CustomScrollbar.css';
+
 // import LandingForm from './components/LandingForm';
 import LandingPage from './pages/LandingPage';
 import SignupPage from './pages/SignupPage';
@@ -23,6 +24,7 @@ import StoryContent from './components/StoryContent';
 import FeedPage from './pages/FeedPage';
 import MediaSection from './components/MediaSection';
 import Follow from './components/Follow';
+
 
 function App() {
   const [show, setShow] = useState(false);
@@ -62,6 +64,7 @@ function App() {
           <Route path='/follow' element={<Follow />} />
         </Routes>
       </BrowserRouter>
+      
     </>
   );
 }
