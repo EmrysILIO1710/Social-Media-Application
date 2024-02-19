@@ -26,6 +26,7 @@ import MediaSection from './components/MediaSection';
 import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
+import NotificationArea from './components/NotificationArea';
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
           <Route path='/follow' element={<Follow />} />
           <Route path='/followreq' element={<FollowRequest />} />
           <Route path='/notifications' element={<NotificationList/>}/>
+          <Route path='/notificationarea' element={<NotificationArea />} />
         </Routes>
       </BrowserRouter>
       
