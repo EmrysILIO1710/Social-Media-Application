@@ -1,0 +1,21 @@
+.NA-btn:focus{
+    outline: none;
+}
+.NA-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.NA-span{
+    text-align: center;
+    
+}
+/* .NA-box-div1{
+    background-color: aqua;
+    flex-basis: 50%;
+} */
+/* .NA-box-div2{
+    background-color: green;
+    flex: 1;
+    width: fit-content;
+}  */
