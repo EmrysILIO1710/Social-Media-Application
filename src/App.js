@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import './components/CustomScrollbar.css';
+
 // import LandingForm from './components/LandingForm';
 import LandingPage from './pages/LandingPage';
 import SignupPage from './pages/SignupPage';
@@ -23,6 +24,12 @@ import { useEffect, useState } from 'react';
 import StoryArea from './components/StoryArea';
 import StoryContent from './components/StoryContent';
 import FeedPage from './pages/FeedPage';
+import MediaSection from './components/MediaSection';
+import Follow from './components/Follow';
+import FollowRequest from './components/FollowRequest';
+import NotificationList from './components/NotificationList';
+import NotificationArea from './components/NotificationArea';
+
 
 function App() {
   const [show, setShow] = useState(false);
@@ -61,8 +68,14 @@ function App() {
           <Route path='/storyarea' element={<StoryArea />} />
           <Route path='/storyc' element={<StoryContent />} />
           <Route path='/feed' element={<FeedPage handleCB = {CB} />} />
+          <Route path='/media' element={<MediaSection />} />
+          <Route path='/follow' element={<Follow />} />
+          <Route path='/followreq' element={<FollowRequest />} />
+          <Route path='/notifications' element={<NotificationList/>}/>
+          <Route path='/notificationarea' element={<NotificationArea />} />
         </Routes>
       </BrowserRouter>
+      
     </>
   );
 }

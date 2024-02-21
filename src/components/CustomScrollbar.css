@@ -1,22 +1,78 @@
-/* CustomScrollbar.css */
-
-/* Define custom scrollbar styles */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 15px;
-  background-color: transparent;
+  width: 16px;
+  border: 5px solid rgb(254, 163, 82);
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #fea352;
+  border: 2px solid #eeeeee;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(254, 162, 82, 0.84); /* Color of the handle */
-  border-radius: 10px;
+  background-color: #f2f2f2;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(254, 163, 82); /* Color of the handle when hovered */
+/* Up button */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  display: block;
+  background-color: #bbbbbb;
+  height: 13px;
 }
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  background-color: #999999;
+}
+
+/* Down button */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  display: block;
+  background-color: #bbbbbb;
+  height: 13px;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+  background-color: #999999;
+}
+
+/* Up arrow */
+::-webkit-scrollbar-button:decrement::before {
+  content: '▲';
+  font-size: 14px; /* Increased font size for better visibility */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  margin: auto;
+  color: #ffffff; /* Arrow color */
+}
+
+/* Down arrow */
+::-webkit-scrollbar-button:increment::before {
+  content: '▼';
+  font-size: 14px; /* Increased font size for better visibility */
+  display: block;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  color: #ffffff; /* Arrow color */
+}
+
+/* Add hover effect */
+::-webkit-scrollbar-button::before:hover {
+  background-color: #555555; /* Hover background color */
+}
+
+/* Hide other buttons */
+/* Scrollbar Button */
+::-webkit-scrollbar-button {
+  background-image: url(../pictures/dotForScroll.png);
+  background-size: cover;
+}  

@@ -15,6 +15,15 @@
     padding-top: 7px;
     padding-bottom: 7px;
     display: flex;
+    position: relative;
+}
+.Post-save{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
 }
 .Post-body{
     width: 100%;
