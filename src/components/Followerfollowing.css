@@ -1,33 +1,15 @@
-.FF-backdrop{
-    height: 100%;
-    width: 100%;
-    background-color:rgba(0, 0, 0, 0.44);
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+.FF-BOX{
+    height: 70vh;
+    width: 60vh;
+    background-color: aqua;
+    margin-left: 33%;
+    margin-top: 10%;
 }
-.FF-box{
-    height: 80vh;
-    width: 80vw;
-    background-color: rgb(227, 227, 227);
-    margin: 0vh auto;
-    display: flex;
-    
-    /* padding-top: 1rem;
-    padding-left: 1rem;
-     */
+.FF-BOX1{
+    height: 10%;
+    width: 50%;
+    background-color: bisque;
+    margin-left: 50%;
+
 }
-.FF-area1{
-    /* height: 70vh; */
-    background-color: blue;
-    width: 30vw;
-    padding-top: 1rem;
-    flex: 1;
-}
-.FF-area2{
-    /* height: 85vh; */
-    width:30vw ;
-    background-color: blueviolet;
-    flex: 1;
-    
-    
-}
+

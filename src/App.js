@@ -14,6 +14,7 @@ import Profcov from './components/Profcov';
 import Username from './components/Username';
 import About from './components/About';
 import Followerfollowing from './components/Followerfollowing';
+import Followers from './components/Followers';
 
 import EditProfBtn from './components/EditProfBtn';
 import EditProfpage from './pages/EditProfPage';
@@ -52,6 +53,7 @@ function App() {
           <Route path='/username' element={<Username />} />
           <Route path='/about' element={<About />} />
           <Route path='/followerfollowing' element={<Followerfollowing />}/>
+          <Route path='/followers' element={<Followers />} />
           
           <Route path='/editprofbtn' element={<EditProfBtn />} />
           <Route path='/editprofpage' element={<EditProfpage />} />
