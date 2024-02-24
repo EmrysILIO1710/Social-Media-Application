@@ -29,7 +29,7 @@ export default function NotificationArea() {
       >
         <Popover.Panel className="absolute left-1/2 z-10 mt-4 flex w-screen max-w-max -translate-x-1/2 px-4 
           xl:-translate-x-1/4 
-          lg:-translate-x-1/4  
+          lg:-translate-x-1/4 
           md:-translate-x-1/2 
           sm:-translate-x-1/2 
         ">

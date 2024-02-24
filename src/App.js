@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import './components/CustomScrollbar.css';
+// import './components/CustomScrollbar.css';
 
 // import LandingForm from './components/LandingForm';
 import LandingPage from './pages/LandingPage';
@@ -27,6 +27,7 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
+import ProfilePage from './pages/ProfilePage';
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
           <Route path='/followreq' element={<FollowRequest />} />
           <Route path='/notifications' element={<NotificationList/>}/>
           <Route path='/notificationarea' element={<NotificationArea />} />
+          <Route path='/profilepage' element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
       
