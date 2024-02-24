@@ -1,76 +1,10 @@
-.navbar-rect{
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 8vh;
-  display: flex;
-  background-color: rgb(255, 255, 255);
-  margin-bottom: 30px;
-  box-shadow: 2px 2px 30px black;
+.Bg-Custome_color {
+  background-color: rgb(254, 163, 82);
 }
-.navbar-logo{
-  margin-left:3%;
-  font-size: 23px;
-  margin-top: -5px;
-  font-style: italic;
-
+.search-icon:hover {
+  color: var(--Bg-Custome_color);
 }
-.navbar-search{
-  
-  height: 100%;
-  margin-left: 15%;
-  display: flex;
-  cursor: pointer;
-  justify-content: space-between;
-
-}
-.navbar-searchbar{
-  height: 65%;
-  width: 450px;
-  padding-left:20px;
-  font-size: 15px;
-  margin-top: 12px;
-  border-radius: 20px;
-  background-color: rgb(221, 216, 216);
-  border: none;
-}
-.navbar-searchbar:focus{
-  outline: none;
-}
- 
-.navbar-searchicon{
-  width: 35px;
-  height: 35px;
-  margin-top: 12px;
-  margin-left: 4px;
-}
-.navbar-icons{
-margin-left: 13%;
-margin-right: 4%;
- display: flex;
- /* justify-content: space-around; */
- flex: 1;
- /* background-color: yellowgreen; */
-}
-.navbar-noti, .navbar-msg, .navbar-user{
-  width: 35px;
-  height: 35px;
-  /* margin-top: 15px; */
-  margin: 15px 25px;
-  /* margin-left: 4px; */
-  justify-content: space-between;
-  cursor: pointer;
-  border-radius: 50%;
-  /* flex-basis: 33%; */
-  /* background-color: aqua; */
-}
-.navbar-iconbox{
-  flex-basis: 33%;
-}
-.navbar-user{
-  /* width: 43px;
-  height: 43px; */
-  margin-top: 15px;
-  /* margin-left: 4px; */
+.Bottom-Shadow {
+  background-color: white;
+  box-shadow: 0px -5px 6px 4px rgba(0, 0, 0, 0.807);;
 }
