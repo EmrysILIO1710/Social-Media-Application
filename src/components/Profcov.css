@@ -1,9 +1,11 @@
 .PC-rect{
-    width:64vw;
-    height: 50vh;
+    /* width:64vw; */
+    /* height: 45vh; */
     border-radius: 10px;
     overflow: hidden;
+    background-color: yellow;
 }
 .PC-virat{
     width: 100%;
+    border-radius: 10px;
 }

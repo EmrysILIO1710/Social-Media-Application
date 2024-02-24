@@ -3,7 +3,7 @@ import './EditProfPage.css';
 import dpimg from '../pictures/sampleprof3.jpg';
 import coverimg from '../pictures/background3.jpg';
 
-const EditProfpage = ({ SDTProfilePageFEPP }) => {
+const EditProfpage = (props) => {
     const [dpshadow, setDpshadow] = useState("none");
     const [covershadow, setCovershadow] = useState("none");
     const [dp, setDp] = useState(dpimg);
@@ -39,7 +39,8 @@ const EditProfpage = ({ SDTProfilePageFEPP }) => {
     const submitForm = (e) => {
         e.preventDefault();
         // SDTProfilePageFEPP(dp, cover, user, about);
-        setEpp("none")
+        setEpp("none");
+        props.handleCB();
     }
 
     return(
