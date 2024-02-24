@@ -6,14 +6,19 @@ import { AiFillHome } from "react-icons/ai";
 import AddagramLogo from "../pictures/AddagramLogo.png";
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { BiSolidMessage } from "react-icons/bi";
-import { TbWorldUpload } from "react-icons/tb";
+// import { TbWorldUpload } from "react-icons/tb";
+import { MdGroups2 } from "react-icons/md";
 import "./Navbar.css";
 
 const navigation = [
-  { name: <AiFillHome size={24} />, href: "#", current: false },
-  { name: <BiSolidMoviePlay size={24} />, href: "#", current: false },
-  { name: <BiSolidMessage size={24} />, href: "#", current: false },
-  { name: <TbWorldUpload size={24} />, href: "#", current: false },
+  { name: <AiFillHome size={32} />, href: "#", current: false },
+  { name: <BiSolidMoviePlay size={32} />, href: "#", current: false },
+  { name: <MdGroups2 size={32} />, href: "#", current: false },
+];
+const mobileNavHamBurgurOption = [
+  { name: "Home", href: "#", current: false },
+  { name: "Reels", href: "#", current: false },
+  { name: "Group", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -22,12 +27,15 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="shadow-md">
+    <Disclosure
+      as="nav"
+      className="fixed w-full z-10 Bottom-Shadow bg-white-300"
+    >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-1 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-screen-xl px-1 md:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between ">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden ">
+              <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-orange-300 hover:bg-orange-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
@@ -42,12 +50,12 @@ export default function Navbar() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="h-10 w-auto cursor-pointer"
+                    className="h-6 w-auto sm:h-11 sm:w-auto cursor-pointer hidden md:block"
                     src={AddagramLogo}
                     alt="Your Company"
                   />
                 </div>
-                <div className="hidden sm:ml-6 sm:block my-20">
+                <div className="hidden sm:ml-6 md:block my-auto">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <a
@@ -64,6 +72,7 @@ export default function Navbar() {
                         {item.name}
                       </a>
                     ))}
+                    
                   </div>
                 </div>
               </div>
@@ -88,10 +97,18 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:text-white hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500"
+                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:text-white hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500 mx-2"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
+
+                <button
+                  type="button"
+                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:text-white hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500"
+                >
+                  <span className="sr-only">View notifications</span>
+                  <BiSolidMessage className="h-6 w-6" />
                 </button>
 
                 {/* Profile dropdown */}
@@ -162,9 +179,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden shadow-md">
+          <Disclosure.Panel className="md:hidden shadow-md">
             <div className="space-y-1 px-2 ">
-              {navigation.map((item) => (
+              {mobileNavHamBurgurOption.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
@@ -172,8 +189,8 @@ export default function Navbar() {
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 text-base font-medium hover:transition duration-500"
+                      : "text-orange-600 hover:bg-orange-400 hover:text-white",
+                    "block rounded-md px-3 text-base font-medium hover:transition duration-500 no-underline text-left w-full py-2"
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
