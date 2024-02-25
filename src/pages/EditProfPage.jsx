@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import './EditProfPage.css';
-import dpimg from '../pictures/sampleprof3.jpg';
+// import dpimg from '../pictures/sampleprof3.jpg';
 import coverimg from '../pictures/background3.jpg';
 
 const EditProfpage = (props) => {
     const [dpshadow, setDpshadow] = useState("none");
     const [covershadow, setCovershadow] = useState("none");
-    const [dp, setDp] = useState(dpimg);
+    const [dp, setDp] = useState("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80");
     const [cover, setCover] = useState(coverimg);
     const [user, setUser] = useState("");
     const [about, setAbout] = useState("");
