@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Profcov.css";
-import PC from "../pictures/Viratcover.jpg";
+import PC from "../pictures/background3.jpg";
 
-const Profcov = () => {
+const Profcov = (props) => {
+    const [cover, setCover] = useState(PC);
+    useEffect(() => {
+        if(props.cover !== ""){
+            setCover(props.cover);
+        }
+    }, [props.cover])
     return(
         <>
             <div className="PC-rect absolute left-1/2 w-screen h-56 max-w-auto -translate-x-1/2 
@@ -11,7 +17,7 @@ const Profcov = () => {
                 md:w-screen md:h-80
                 lg:w-screen lg:h-80
             ">
-                <img className = "PC-virat" src={PC} alt="" />
+                <img className = "PC-virat" src={cover} alt="" />
             </div>
         </>
     )
