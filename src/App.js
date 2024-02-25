@@ -27,7 +27,7 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
-
+import PostButton from './components/PostButton';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -69,6 +69,7 @@ function App() {
           <Route path='/notifications' element={<NotificationList/>}/>
           <Route path='/notificationarea' element={<NotificationArea />} />
         </Routes>
+        <PostButton/>
       </BrowserRouter>
       
     </>
