@@ -69,7 +69,7 @@ function App() {
           <Route path='/followreq' element={<FollowRequest />} />
           <Route path='/notifications' element={<NotificationList/>}/>
           <Route path='/notificationarea' element={<NotificationArea />} />
-          <Route path='/profilepage' element={<ProfilePage />} />
+          <Route path='/profilepage' element={<ProfilePage handleCB = {CB} />} />
         </Routes>
       </BrowserRouter>
       
