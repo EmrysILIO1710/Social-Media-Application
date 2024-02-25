@@ -32,6 +32,7 @@ import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const [show, setShow] = useState(false);
+  const [dp, setDp] = useState("")
 
   useEffect(() => {
     document.title = 'addaGram';
@@ -40,11 +41,15 @@ function App() {
   const CB = (data) => {
     setShow(data);
   }
+  const CB2 = (data, dataDp) => {
+    setShow(data);
+    setDp(dataDp);
+  }
   return (
     <>
       <BrowserRouter>
         {
-          show && <Navbar />
+          show && <Navbar dp={dp} />
         }
         {/* <Navbar /> */}
         <Routes>
@@ -69,7 +74,7 @@ function App() {
           <Route path='/followreq' element={<FollowRequest />} />
           <Route path='/notifications' element={<NotificationList/>}/>
           <Route path='/notificationarea' element={<NotificationArea />} />
-          <Route path='/profilepage' element={<ProfilePage handleCB = {CB} />} />
+          <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} />} />
         </Routes>
       </BrowserRouter>
       
