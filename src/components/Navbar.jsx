@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 // import { IoIosSearch } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import AddagramLogo from "../pictures/AddagramLogo.png";
@@ -10,6 +10,7 @@ import { BiSolidMessage } from "react-icons/bi";
 import { MdGroups2 } from "react-icons/md";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import NotificationArea from "./NotificationArea";
 
 const navigation = [
   { name: <AiFillHome size={32} />, href: "/feed", current: false },
@@ -98,15 +99,16 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:text-white hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500 mx-2"
+                  className="relative rounded-full bg-orange-300 p-2 text-black-400  hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500 mx-2"
                 >
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
+                  <NotificationArea />
                 </button>
 
                 <button
                   type="button"
-                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:text-white hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500"
+                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500"
                 >
                   <span className="sr-only">View notifications</span>
                   <BiSolidMessage className="h-6 w-6" />
