@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import './components/CustomScrollbar.css';
+// import './components/CustomScrollbar.css';
 
 // import LandingForm from './components/LandingForm';
 import LandingPage from './pages/LandingPage';
@@ -27,7 +27,12 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
+<<<<<<< HEAD
 import PostButton from './components/PostButton';
+=======
+import ProfilePage from './pages/ProfilePage';
+
+>>>>>>> f3bfd539fc6fc01386f312450b776693353ca523
 
 function App() {
   const [show, setShow] = useState(false);
@@ -68,6 +73,7 @@ function App() {
           <Route path='/followreq' element={<FollowRequest />} />
           <Route path='/notifications' element={<NotificationList/>}/>
           <Route path='/notificationarea' element={<NotificationArea />} />
+          <Route path='/profilepage' element={<ProfilePage handleCB = {CB} />} />
         </Routes>
         <PostButton/>
       </BrowserRouter>

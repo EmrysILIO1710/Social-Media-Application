@@ -9,16 +9,17 @@ import { BiSolidMessage } from "react-icons/bi";
 // import { TbWorldUpload } from "react-icons/tb";
 import { MdGroups2 } from "react-icons/md";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: <AiFillHome size={32} />, href: "#", current: false },
-  { name: <BiSolidMoviePlay size={32} />, href: "#", current: false },
-  { name: <MdGroups2 size={32} />, href: "#", current: false },
+  { name: <AiFillHome size={32} />, href: "/feed", current: false },
+  { name: <BiSolidMoviePlay size={32} />, href: "/", current: false },
+  { name: <MdGroups2 size={32} />, href: "/", current: false },
 ];
 const mobileNavHamBurgurOption = [
-  { name: "Home", href: "#", current: false },
-  { name: "Reels", href: "#", current: false },
-  { name: "Group", href: "#", current: false },
+  { name: "Home", href: "/feed", current: false },
+  { name: "Reels", href: "/", current: false },
+  { name: "Group", href: "/", current: false },
 ];
 
 function classNames(...classes) {
@@ -29,7 +30,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="fixed w-full z-10 Bottom-Shadow bg-white-300"
+      className="fixed top-0 w-full z-10 Bottom-Shadow bg-white-300"
     >
       {({ open }) => (
         <>
@@ -58,9 +59,9 @@ export default function Navbar() {
                 <div className="hidden sm:ml-6 md:block my-auto">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classNames(
                           item.current
                             ? "bg-orange-400 text-white"
@@ -70,7 +71,7 @@ export default function Navbar() {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                     
                   </div>
@@ -135,41 +136,41 @@ export default function Navbar() {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to="/profilepage"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 text-sm text-gray-700 no-underline"
                             )}
                           >
                             Your Profile
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to="/"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 text-sm text-gray-700 no-underline"
                             )}
                           >
                             Settings
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <Link
+                            to="/"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 text-sm text-gray-700 no-underline"
                             )}
                           >
                             Sign out
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                     </Menu.Items>
