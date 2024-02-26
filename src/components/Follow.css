@@ -1,25 +1,27 @@
 .Main-div{
-    width: 19vw;
-    height: 25vh;
+    /* width: 19vw;
+    height: 25vh; */
     display: flex;
-    background-color: burlywood;
+    /* background-color: burlywood; */
     cursor: pointer;
+    justify-content: space-between;
 }
 .Follower-button{
-    flex: 1;
+    flex-basis: 45%;
     /* background-color:burlywood ; */
     text-align: center;
     padding-top: 16%;
-   
-
+    color: rgb(254, 163, 82);
+    /* text-shadow: 2px 2px 10px rgb(126, 126, 126); */
 }
 .Following-button
 {
-    flex: 1;
+    flex-basis: 45%;
     /* background-color: bisque; */
     text-align: center;
     padding-top: 16%;
+    /* text-shadow: 4px 4px 10px rgba(254, 162, 82, 0.556); */
 }
-.Count{
+/* .Count{
     font-size: 50px;
-}
+} */

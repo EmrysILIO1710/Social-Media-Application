@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './FeedPage.css';
-// import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar"; 
 import StoryArea from "../components/StoryArea";
 import PostArea from "../components/PostArea";
 import BackgroundButton from "../components/BackgroundButton";

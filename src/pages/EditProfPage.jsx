@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import './EditProfPage.css';
-import dpimg from '../pictures/sampleprof3.jpg';
+import './EditProfPage.css'; 
+// import dpimg from '../pictures/sampleprof3.jpg';
 import coverimg from '../pictures/background3.jpg';
 
-const EditProfpage = ({ SDTProfilePageFEPP }) => {
+const EditProfpage = (props) => {
     const [dpshadow, setDpshadow] = useState("none");
     const [covershadow, setCovershadow] = useState("none");
-    const [dp, setDp] = useState(dpimg);
+    const [dp, setDp] = useState("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80");
     const [cover, setCover] = useState(coverimg);
-    const [user, setUser] = useState("");
-    const [about, setAbout] = useState("");
+    const [user, setUser] = useState("emrysILIO_17");
+    const [about, setAbout] = useState("An engineer. A full stack devoloper. From london. Wish me on 23 march. Troublemaker, go-getter. Ain't no thang like a chick'n wing mamacita... #foodlover #backend #fullstack");
     const [epp, setEpp] = useState("block");
 
     const showDp = () => {
@@ -39,7 +39,9 @@ const EditProfpage = ({ SDTProfilePageFEPP }) => {
     const submitForm = (e) => {
         e.preventDefault();
         // SDTProfilePageFEPP(dp, cover, user, about);
-        setEpp("none")
+        setEpp("none");
+
+        props.handleCB(dp, cover, user, about);
     }
 
     return(

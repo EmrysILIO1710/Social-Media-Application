@@ -121,10 +121,10 @@ const Posts = (props)=> {
                         <svg height="20" width="20" className="Post-svg">
                             <polygon points="0,0 10,20 20,0" style={{fill: "rgb(254, 163, 82)"}} />
                         </svg>                
-                    </div>
-                    <button className="Post-like-btn"> <img src={likeicon} alt="" style={{width: "40px", cursor: "pointer"}} onClick={changeLike} /></button>
-                    <button className="Post-share-btn"><img src={share} alt="" style={{width: "35px", cursor: "pointer"}} onClick={showShare} /></button>
-                    <button className="Post-comment-btn"><img src={commicon} alt="" style={{width: "35px", cursor: "pointer"}} onClick={showComm} /></button>
+                    </div> 
+                    <button className="Post-like-btn"> <img src={likeicon} alt="" style={{width: "40px", cursor: "pointer", margin: "0 auto"}} onClick={changeLike} /></button>
+                    <button className="Post-share-btn"><img src={share} alt="" style={{width: "35px", cursor: "pointer", margin: "0 auto"}} onClick={showShare} /></button>
+                    <button className="Post-comment-btn"><img src={commicon} alt="" style={{width: "35px", cursor: "pointer", margin: "0 auto"}} onClick={showComm} /></button>
                 </div>
                 <div className="Post-comment-section" style={{display: dispcomm}}>
                     {/* <hr className="Post-line"/> */}
