@@ -1,11 +1,66 @@
-import React from "react";
-import "./Followerfollowing.css";
+import * as React from "react";
+import PropTypes from "prop-types";
+import Button from "@mui/material/Button";
+
+import Dialog from "@mui/material/Dialog";
+
 import Centertabs from "./Centertabs";
-const Followerfollowing = () => {
+import Followers from "./Followers";
+import Following from "./Following";
+import Follow from "./Follow";
+
+const emails = ["username@gmail.com", "user02@gmail.com"];
+
+function SimpleDialog(props) {
+  const [val, setVal] = React.useState(1);
+  const changeTab = (data) => {
+    setVal(data);
+  };
+  const { onClose, selectedValue, open } = props;
+
+  const handleClose = () => {
+    onClose(selectedValue);
+  };
+
   return (
-    <div className="FF-BOX">
-      <Centertabs/>
+    <Dialog onClose={handleClose} open={open}>
+      <Centertabs handleCB={changeTab} />
+      {val === 1 && <Followers />}
+      {val === 2 && <Following />}
+    </Dialog>
+  );
+}
+
+SimpleDialog.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  selectedValue: PropTypes.string.isRequired,
+};
+
+export default function SimpleDialogDemo() {
+  const [open, setOpen] = React.useState(false);
+  const [selectedValue, setSelectedValue] = React.useState(emails[1]);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (value) => {
+    setOpen(false);
+    setSelectedValue(value);
+  };
+
+  return (
+    <div>
+      <Button  onClick={handleClickOpen}>
+        {/* Follower <br /> Following */}
+        <Follow />
+      </Button>
+      <SimpleDialog
+        selectedValue={selectedValue}
+        open={open}
+        onClose={handleClose}
+      />
     </div>
   );
-};
-export default Followerfollowing;
+}
