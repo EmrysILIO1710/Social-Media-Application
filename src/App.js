@@ -28,6 +28,7 @@ import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
 import ProfilePage from './pages/ProfilePage';
+import Messages from './components/Messages';
 
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
           <Route path='/notifications' element={<NotificationList/>}/>
           <Route path='/notificationarea' element={<NotificationArea />} />
           <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} />} />
+          <Route path='/messages' element={<Messages />} />
         </Routes>
       </BrowserRouter>
       
