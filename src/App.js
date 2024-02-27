@@ -27,12 +27,12 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import PostButton from './components/PostButton';
-=======
+// =======
 import ProfilePage from './pages/ProfilePage';
 
->>>>>>> f3bfd539fc6fc01386f312450b776693353ca523
+// >>>>>>> f3bfd539fc6fc01386f312450b776693353ca523
 
 function App() {
   const [show, setShow] = useState(false);
