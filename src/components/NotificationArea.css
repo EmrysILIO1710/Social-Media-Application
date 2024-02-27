@@ -2,13 +2,16 @@
     outline: none;
 }
 .NA-box{
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     justify-content: space-between;
+}
+.NA-scroll::-webkit-scrollbar {
+    display: none;
 }
 .NA-span{
     text-align: center;
-    
+    display: block;
 }
 /* .NA-box-div1{
     background-color: aqua;

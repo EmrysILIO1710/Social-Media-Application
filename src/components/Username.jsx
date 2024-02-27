@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Username.css';
     
-const Username = () => {
+const Username = (props) => {
+    const [user, setUser] = useState("emrysILIO_17");
+    useEffect(() => {
+        if(props.user !== ""){
+            setUser(props.user);
+        }
+    }, [props.user])
     return(
             <div className="username-box absolute left-1/2 top-1/2 w-max text-center -translate-x-1/2
                 sm:top-3/4 
@@ -20,7 +26,7 @@ const Username = () => {
                     md:text-xl
                     lg:text-xl
                     xl:text-xl xl:text-left
-                ">@emrysilio_17</p>
+                ">{user}</p>
             </div>
     );
 }

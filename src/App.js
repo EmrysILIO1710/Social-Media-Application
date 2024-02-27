@@ -14,6 +14,8 @@ import PostArea from './components/PostArea';
 import Profcov from './components/Profcov';
 import Username from './components/Username';
 import About from './components/About';
+import Followerfollowing from './components/Followerfollowing';
+import Followers from './components/Followers';
 
 import EditProfBtn from './components/EditProfBtn';
 import EditProfpage from './pages/EditProfPage';
@@ -36,6 +38,7 @@ import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const [show, setShow] = useState(false);
+  const [dp, setDp] = useState("")
 
   useEffect(() => {
     document.title = 'addaGram';
@@ -44,11 +47,15 @@ function App() {
   const CB = (data) => {
     setShow(data);
   }
+  const CB2 = (data, dataDp) => {
+    setShow(data);
+    setDp(dataDp);
+  }
   return (
     <>
       <BrowserRouter>
         {
-          show && <Navbar />
+          show && <Navbar dp={dp} />
         }
         {/* <Navbar /> */}
         <Routes>
@@ -62,6 +69,9 @@ function App() {
           <Route path='/profcov' element={<Profcov />} />
           <Route path='/username' element={<Username />} />
           <Route path='/about' element={<About />} />
+          <Route path='/followerfollowing' element={<Followerfollowing />}/>
+          <Route path='/followers' element={<Followers />} />
+          
           <Route path='/editprofbtn' element={<EditProfBtn />} />
           <Route path='/editprofpage' element={<EditProfpage />} />
           <Route path='/userimage' element={<Userimage />} />
@@ -73,7 +83,7 @@ function App() {
           <Route path='/followreq' element={<FollowRequest />} />
           <Route path='/notifications' element={<NotificationList/>}/>
           <Route path='/notificationarea' element={<NotificationArea />} />
-          <Route path='/profilepage' element={<ProfilePage handleCB = {CB} />} />
+          <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} />} />
         </Routes>
         <PostButton/>
       </BrowserRouter>

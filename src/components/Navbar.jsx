@@ -1,6 +1,6 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 // import { IoIosSearch } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import AddagramLogo from "../pictures/AddagramLogo.png";
@@ -10,6 +10,7 @@ import { BiSolidMessage } from "react-icons/bi";
 import { MdGroups2 } from "react-icons/md";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import NotificationArea from "./NotificationArea";
 
 const navigation = [
   { name: <AiFillHome size={32} />, href: "/feed", current: false },
@@ -26,7 +27,13 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const [dp, setDp] = useState("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80");
+  useEffect(() => {
+    if(props.dp !== ""){
+      setDp(props.dp);
+    }
+  }, [props.dp])
   return (
     <Disclosure
       as="nav"
@@ -98,15 +105,16 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:text-white hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500 mx-2"
+                  className="relative rounded-full bg-orange-300 p-2 text-black-400  hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500 mx-2"
                 >
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
+                  <NotificationArea />
                 </button>
 
                 <button
                   type="button"
-                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:text-white hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500"
+                  className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500"
                 >
                   <span className="sr-only">View notifications</span>
                   <BiSolidMessage className="h-6 w-6" />
@@ -119,7 +127,7 @@ export default function Navbar() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src={dp}
                         alt=""
                       />
                     </Menu.Button>

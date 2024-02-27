@@ -1,0 +1,3 @@
+.NL-scroll::-webkit-scrollbar {
+    display: none;
+}
