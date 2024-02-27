@@ -4,8 +4,9 @@
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     overflow: hidden;
-    margin-left: 27%;
-    margin-bottom: 30px;
+    /* margin-left: 27%; */
+    margin: 0 auto 30px;
+    /* margin-bottom: 30px; */
     box-shadow: 2px 2px 12px black;
 }
 .Post-header{
@@ -111,7 +112,8 @@
 }
 .Post-img{
     width: 100%;
-    max-height: 90vh;
+    height: auto;
+    max-height: 80vh;
 }
 .Post-dp-img{
     height: 100%;

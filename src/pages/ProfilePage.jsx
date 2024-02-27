@@ -10,6 +10,7 @@ import EditProfBtn from "../components/EditProfBtn";
 import About from "../components/About";
 import Follow from "../components/Follow";
 import MediaSection from "../components/MediaSection";
+import { useLocation } from "react-router-dom";
 
 export default function ProfilePage(props) {
   const [dp, setDp] = React.useState("");
@@ -17,9 +18,13 @@ export default function ProfilePage(props) {
   const [user, setUser] = React.useState("");
   const [about, setAbout] = React.useState("");
 
+  const location = useLocation();
   React.useEffect(() => {
     props.handleCB(true, dp);
-  });
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location, dp, props]);
   const changeDets = (dataDp, dataCover, dataUser, dataAbout) => {
     if (dataDp !== "") {
       setDp(dataDp);
