@@ -4,13 +4,18 @@ import './FeedPage.css';
 import StoryArea from "../components/StoryArea";
 import PostArea from "../components/PostArea";
 import BackgroundButton from "../components/BackgroundButton";
+import { useLocation } from "react-router-dom";
 
 const FeedPage = (props) => {
     const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
 
+    const location = useLocation();
     useEffect(() => {
         props.handleCB(true);
-    },);
+        if (!location.hash) {
+            window.scrollTo(0, 0);
+        }
+    }, [location, props]);
 
     const handleDataFromBackgroundButton = (data) => {
         setDataFromBackgroundButton(data);
