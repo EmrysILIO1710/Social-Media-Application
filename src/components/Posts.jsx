@@ -15,6 +15,7 @@ import save2 from '../pictures/save2.png';
 // import image from '../pictures/samplepost.jpg';
 // import dp from '../pictures/sampleprof.jpg';
 import deletecomm from '../pictures/deletecomm.png';
+import { Link } from "react-router-dom";
 
 const Posts = (props)=> {
     const [likeicon, setLikeicon] = useState(like2);
@@ -88,16 +89,28 @@ const Posts = (props)=> {
             setKeep(save);
         }
     }
-
+    // const data = {
+    //     dataName: props.name,
+    //     dataDp: props.dp
+    // }
     return(
         <>
             <div className="Post-container">
                 <div className="Post-header">
                     <div className="Post-DP">
-                        <img src={props.dp} alt="" className="Post-dp-img" />
+                        <Link to={'/userprofile'} state={{
+                                                    dataName: props.name, 
+                                                    dataDp: props.dp, 
+                                                    dataAbout: props.cc,
+                                                    dataPic: props.picture
+                                                }} style={{textDecoration: 'none', color: 'black'}} >
+                            <img src={props.dp} alt="" className="Post-dp-img" />
+                        </Link>
                     </div>
                     <div className="Post-name">
-                        <h2 style={{fontSize: '25px'}}>{props.name}</h2>
+                        <Link to={'/userprofile'} state={{dataName: props.name, dataDp: props.dp, dataAbout: props.cc}} style={{textDecoration: 'none', color: 'black'}} >
+                            <h2 style={{fontSize: '25px', cursor: 'pointer'}}>{props.name}</h2>
+                        </Link>
                         <h5>{props.location}</h5>
                     </div>
                     <img src={keep} alt="" className="Post-save" onClick={changeSave} />
