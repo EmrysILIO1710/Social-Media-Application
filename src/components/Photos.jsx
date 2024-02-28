@@ -91,7 +91,7 @@ export default function Photos(props) {
             component="img"
             height="200"
             image={props.pic}
-            alt="green iguana"
+            alt=""
           />
           <CardContent>
             {/* <Typography gutterBottom variant="h5" component="div">

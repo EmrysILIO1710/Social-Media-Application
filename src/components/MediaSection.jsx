@@ -5,7 +5,7 @@ import MSPhotos from "./MSPhotos";
 import MSTagged from "./MSTagged";
 import MSSaved from "./MSSaved";
 
-const MediaSection = () => {
+const MediaSection = (props) => {
     const [val, setVal] = useState(1);
     const changeTab = (data) => {
         setVal(data);
@@ -21,7 +21,7 @@ const MediaSection = () => {
                 <CenteredTabs handleCB={changeTab} />
                 <br />
                 {
-                    (val === 1) && <MSPhotos />
+                    (val === 1) && <MSPhotos dp={props.dp} name={props.name} about={props.about} pic={props.pic} />
                 }
                 {
                     (val === 2) && <MSTagged />

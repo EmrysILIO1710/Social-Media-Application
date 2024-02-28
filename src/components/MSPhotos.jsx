@@ -7,43 +7,36 @@ import Photos from "./Photos";
 // import post2 from '../pictures/samplepost2.jpg';
 // import dp3 from '../pictures/sampleprof3.jpg';
 // import post3 from '../pictures/samplepost3.jpg';
-const MSPhotos = () => {
+const MSPhotos = (props) => {
     // const [arrlen, setArrlen] = useState(0);
 
-    const photosArr = [
-        // {
-        //     id: 1,
-        //     name: "Arda Turan",
-        //     loc: "Beverly Hills",
-        //     caption: "Enjoying a beautiful time, flying across mountains and finally finding Kun Lun... \n\n#blessed #slayTheDragon #getFISTy",
-        //     profPic: dp1,
-        //     postImg: post1
-        // },
-        // {
-        //     id: 2,
-        //     name: "Evelyn ",
-        //     loc: "San Jose",
-        //     caption: "Staring into the unknown...well atleast trying to find Unknown......most preferably X and O.....hehe XO...get it? #gotchaCatch'emAll #journey #hailArceus",
-        //     profPic: dp2,
-        //     postImg: post3
-        // },
-        // {
-        //     id: 3,
-        //     name: "Samael The One",
-        //     loc: "Elysium",
-        //     caption: "A little light and sound show back home......Feeling bad for the guys back at the field #cerebusStay!",
-        //     profPic: dp3,
-        //     postImg: post2
-        // }
-    ]
+    // const [photosArr, setPhotosArr] = useState([]);
+
+    // useEffect(() => {
+    //     setPhotosArr([{
+    //         name: props.name,
+    //         dp: props.dp,
+    //         caption: props.about,
+    //         pic: props.pic,
+    //         loction: "Location"
+    //     }, ...photosArr])
+    // }, [props.name, props.dp, props.about, props.pic, photosArr])
+
+    const photosArr = [{
+        name: props.name,
+        dp: props.dp,
+        caption: props.about,
+        pic: props.pic,
+        loction: "Location"
+    }];
 
     return(
         <>
             <div className="MSP-container">
                 {
-                    (photosArr.length !== 0) ? photosArr.map((item) => (
+                    (photosArr.length !== 0) ? photosArr.map((item, key) => (
                         <Photos 
-                            key={item.id}
+                            key={key}
                             name={item.name}
                             dp={item.profPic}
                             pic={item.postImg}

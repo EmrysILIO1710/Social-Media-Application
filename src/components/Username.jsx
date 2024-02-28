@@ -3,11 +3,15 @@ import './Username.css';
     
 const Username = (props) => {
     const [user, setUser] = useState("emrysILIO_17");
+    const [name, setName] = useState("Spandan Bera");
     useEffect(() => {
         if(props.user !== ""){
             setUser(props.user);
         }
-    }, [props.user])
+        if(props.name !== ""){
+            setName(props.name);
+        }
+    }, [props.user, props.name])
     return(
             <div className="username-box absolute left-1/2 top-1/2 w-max text-center -translate-x-1/2
                 sm:top-3/4 
@@ -20,7 +24,7 @@ const Username = (props) => {
                     md:text-3xl
                     lg:text-3xl
                     xl:text-3xl
-                ">Spandan Bera</p>
+                ">{name}</p>
                 <p className="text-lg font-bold leading-none
                     sm:text-xl
                     md:text-xl

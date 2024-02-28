@@ -30,7 +30,7 @@ const Users = () => {
     //     setDataFromBackgroundButton(data);
     // }
     const getData = async () => {
-        const res = await fetch("https://dummyapi.io/data/v1/post?limit=50", {
+        const res = await fetch("https://dummyapi.io/data/v1/post?limit=10", {
           method: "GET",
           headers: {
             "app-id": "65dca2b0afdc1b13e468846b",
