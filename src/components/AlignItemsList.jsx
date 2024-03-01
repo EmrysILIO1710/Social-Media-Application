@@ -13,11 +13,11 @@ export default function AlignItemsList(props) {
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem alignItems="flex">
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="Remy Sharp" src={props.dp} />
           <div className='List-name'></div>
         </ListItemAvatar>
         <ListItemText
-          primary={props.textHeading}
+          primary={props.name}
           
         />
       </ListItem>
