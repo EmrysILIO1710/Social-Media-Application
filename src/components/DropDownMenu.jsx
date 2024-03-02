@@ -7,6 +7,7 @@ import { FaGlobe } from "react-icons/fa";
 import { TbFriendsOff } from "react-icons/tb";
 import { RiGitRepositoryPrivateLine } from "react-icons/ri";
 import { IoPersonOutline } from "react-icons/io5";
+import { RxButton } from 'react-icons/rx';
 
 
 function classNames(...classes) {
@@ -59,8 +60,7 @@ export default function Example() {
             {optionsData.map(({ option, icon: Icon }) => (
               <Menu.Item key={option}>
                 {({ active }) => (
-                  <a
-                    href="#"
+                  <button
                     onClick={() => handleOptionSelect(option)}
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -69,7 +69,7 @@ export default function Example() {
                   >
                     <Icon size={16} className='mr-2 my-1'/>
                     {option}
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
             ))}
