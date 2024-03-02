@@ -73,7 +73,7 @@ const Users = () => {
 
     return(
         <>
-            {console.log(data.data)}
+            {/* {console.log(data.data)} */}
             <div className="PA-container">
                 {/* <BackgroundButton sendDataToPostArea={handleDataFromBackgroundButton} /> */}
                 {
