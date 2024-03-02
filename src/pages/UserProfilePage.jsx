@@ -6,40 +6,43 @@ import Container from "@mui/material/Container";
 import Profcov from "../components/Profcov";
 import Userimage from "../components/Userimage";
 import Username from "../components/Username";
-import EditProfBtn from "../components/EditProfBtn";
+
 import About from "../components/About";
 // import Follow from "../components/Follow";
 import MediaSection from "../components/MediaSection";
 import { useLocation } from "react-router-dom";
+import FollowUnfollowButton from "../components/FollowUnfollowButton";
 import Followerfollowing from "../components/Followerfollowing";
 
-export default function ProfilePage(props) {
-  const [dp, setDp] = React.useState("");
-  const [cover, setCover] = React.useState("");
-  const [user, setUser] = React.useState("");
-  const [about, setAbout] = React.useState("");
+export default function UserProfilePage(props) {
+  
+//   const [dp, setDp] = React.useState("");
+//   const [cover, setCover] = React.useState("");
+//   const [user, setUser] = React.useState("");
+//   const [about, setAbout] = React.useState("");
 
   const location = useLocation();
+  const {dataName, dataDp, dataAbout, dataPic} = location.state;
   React.useEffect(() => {
-    props.handleCB(true, dp);
+    props.handleCB(true);
     if (!location.hash) {
       window.scrollTo(0, 0);
     }
-  }, [location, dp, props]);
-  const changeDets = (dataDp, dataCover, dataUser, dataAbout) => {
-    if (dataDp !== "") {
-      setDp(dataDp);
-    }
-    if (dataCover !== "") {
-      setCover(dataCover);
-    }
-    if (dataUser !== "") {
-      setUser(dataUser);
-    }
-    if (dataAbout !== "") {
-      setAbout(dataAbout);
-    }
-  };
+  }, [location, props]);
+//   const changeDets = (dataDp, dataCover, dataUser, dataAbout) => {
+//     if (dataDp !== "") {
+//       setDp(dataDp);
+//     }
+//     if (dataCover !== "") {
+//       setCover(dataCover);
+//     }
+//     if (dataUser !== "") {
+//       setUser(dataUser);
+//     }
+//     if (dataAbout !== "") {
+//       setAbout(dataAbout);
+//     }
+//   };
 
   return (
     <React.Fragment>
@@ -58,14 +61,14 @@ export default function ProfilePage(props) {
         <circle cx="100%" cy="100%" r="40%" fill="rgb(252, 237, 218)" />
       </svg>
       <Container maxWidth="lg" sx={{ marginTop: "1rem" }}>
-        <Profcov cover={cover} />
-        <Userimage dp={dp} />
-        <Username user={user} name={""} />
-        <EditProfBtn handleCB2={changeDets} />
-        <About about={about} />
+        <Profcov cover={""} />
+        <Userimage dp={dataDp} />
+        <Username name={dataName} />
+        <FollowUnfollowButton />
+        <About about={dataAbout} />
         {/* <Follow /> */}
         <Followerfollowing />
-        <MediaSection />
+        <MediaSection dp={dataDp} name={dataName} about={dataAbout} pic={dataPic} />
         {/* <Box sx={{  height: '100vh' }} /> */}
       </Container>
     </React.Fragment>
