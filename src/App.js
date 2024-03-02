@@ -35,6 +35,7 @@ import PostButton from './components/PostButton';
 import ProfilePage from './pages/ProfilePage';
 import UserProfilePage from './pages/UserProfilePage';
 import FollowUnfollowButton from './components/FollowUnfollowButton';
+import Example from './components/Example';
 
 // >>>>>>> f3bfd539fc6fc01386f312450b776693353ca523
 
@@ -87,6 +88,7 @@ function App() {
           <Route path='/notificationarea' element={<NotificationArea />} />
           <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} />} />
           <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} />} />
+          <Route path='/example' element={<Example />} />
         </Routes>
         <PostButton/>
       </BrowserRouter>
