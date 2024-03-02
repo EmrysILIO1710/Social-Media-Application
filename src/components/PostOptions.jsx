@@ -1,10 +1,12 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropDownMenu";
+import PhotoUploadPart from "./PhotoUploadPart";
+import InputBox from "./InputBox";
 
 const style = {
   position: "absolute",
@@ -71,9 +73,10 @@ function PostOptions({ onClose }) {
             </div>
           </div>
         </div>
-        <p id="child-modal-description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        </p>
+        {/* InputText part id="child-modal-description" */}
+        <InputBox/>
+        {/* PhotoUpload part */}
+        <PhotoUploadPart/>
       </Box>
     </Modal>
   );
