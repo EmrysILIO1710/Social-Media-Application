@@ -7,8 +7,6 @@ import { FaGlobe } from "react-icons/fa";
 import { TbFriendsOff } from "react-icons/tb";
 import { RiGitRepositoryPrivateLine } from "react-icons/ri";
 import { IoPersonOutline } from "react-icons/io5";
-import { RxButton } from 'react-icons/rx';
-
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -56,24 +54,22 @@ export default function Example() {
           style={{ width: `${optionWidth}rem` }} 
           className="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
-          <div className="py-1">
-            {optionsData.map(({ option, icon: Icon }) => (
-              <Menu.Item key={option}>
-                {({ active }) => (
-                  <button
-                    onClick={() => handleOptionSelect(option)}
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'px-4 py-2 text-sm no-underline flex'
-                    )}
-                  >
-                    <Icon size={16} className='mr-2 my-1'/>
-                    {option}
-                  </button>
-                )}
-              </Menu.Item>
-            ))}
-          </div>
+          {optionsData.map(({ option, icon: Icon }) => (
+            <Menu.Item key={option}>
+              {({ active }) => (
+                <button
+                  onClick={() => handleOptionSelect(option)}
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'w-full px-4 py-2 text-sm no-underline flex'
+                  )}
+                >
+                  <Icon size={16} className='mr-2 my-1'/>
+                  {option}
+                </button>
+              )}
+            </Menu.Item>
+          ))}
         </Menu.Items>
       </Transition>
     </Menu>
