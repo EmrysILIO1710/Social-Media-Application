@@ -38,7 +38,7 @@ const Users = () => {
   // let arrPosts = [
   //     {
   //         id: 1,
-  //         name: "Arda Turan",
+  //         name: "Bill",
   //         loc: "Beverly Hills",
   //         caption: "Enjoying a beautiful time, flying across mountains and finally finding Kun Lun... \n\n#blessed #slayTheDragon #getFISTy",
   //         profPic: dp1,
