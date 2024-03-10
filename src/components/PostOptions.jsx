@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import DropdownMenu from "./DropDownMenu";
 import PhotoUploadPart from "./PhotoUploadPart";
 import InputBox from "./InputBox";
+import TagAndLocation from "./TagAndLocation";
 
 const style = {
   position: "absolute",
@@ -16,7 +17,7 @@ const style = {
   width: "100%", // Set default width to 100% for smaller screens
   maxWidth: "400px", // Set maximum width for larger screens
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  // border: "2px solid #000",
   boxShadow: 24,
   pt: 2,
   px: 4,
@@ -44,7 +45,7 @@ function PostOptions({ onClose }) {
           Create post
         </h2>
         <div className="fixed top-0 right-0 mr-6 mt-3 cursor-pointer">
-          <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center transition duration-300 ease-in-out hover:bg-gray-300">
+          <div className="w-8 h-8 bg-orange-200 rounded-full flex items-center justify-center transition duration-300 ease-in-out hover:bg-orange-300">
             <button onClick={onClose}>
               <RxCross1 className="" />
             </button>
@@ -77,6 +78,8 @@ function PostOptions({ onClose }) {
         <InputBox/>
         {/* PhotoUpload part */}
         <PhotoUploadPart/>
+        {/* Tag and location and another.............. */}
+        <TagAndLocation/>
       </Box>
     </Modal>
   );

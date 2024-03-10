@@ -20,7 +20,7 @@ const PhotoUploadPart = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-300">
       <label className="block text-sm font-medium text-gray-700 mb-2">
         Upload a photo
       </label>
@@ -47,7 +47,7 @@ const PhotoUploadPart = () => {
             className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
           />
           <div className="text-center">
-            <HiPlusCircle className="mx-auto h-12 w-12 text-gray-400" />
+            <HiPlusCircle className="mx-auto h-12 w-12 text-orange-300" />
             <p className="mt-1 text-sm text-gray-600">
               Drag and drop or click to upload
             </p>
