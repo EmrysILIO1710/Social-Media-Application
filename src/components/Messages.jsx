@@ -89,7 +89,7 @@ const UsersMessages = () => {
               <ListItemIcon>
                 <ImageAvatars pic={item.picture} />
               </ListItemIcon>
-              <ListItemText primary={item.firstName + " " + item.lastName} secondary={"why are you not replying!?"} />
+              <ListItemText primary={item.firstName + " " + item.lastName} secondary={""} />
             </ListItemButton>
             <Divider />
           </ListItem>
