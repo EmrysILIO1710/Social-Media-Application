@@ -29,11 +29,15 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
+// <<<<<<< HEAD
+import PostButton from './components/PostButton';
+// =======
 import ProfilePage from './pages/ProfilePage';
 import UserProfilePage from './pages/UserProfilePage';
 import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
 
+// >>>>>>> f3bfd539fc6fc01386f312450b776693353ca523
 
 function App() {
   const [show, setShow] = useState(false);
@@ -86,6 +90,7 @@ function App() {
           <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} />} />
           <Route path='/example' element={<Example />} />
         </Routes>
+        <PostButton/>
       </BrowserRouter>
       
     </>
