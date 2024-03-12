@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { HiPlusCircle, HiX } from "react-icons/hi";
 
-const PhotoUploadPart = () => {
+const PhotoUploadPart = ({ onImageUpload }) => {
   const [image, setImage] = useState(null);
 
   const handleImageUpload = (event) => {
@@ -9,6 +9,7 @@ const PhotoUploadPart = () => {
     const reader = new FileReader();
     reader.onloadend = () => {
       setImage(reader.result);
+      onImageUpload(file); // Send data to parent
     };
     if (file) {
       reader.readAsDataURL(file);
@@ -17,6 +18,7 @@ const PhotoUploadPart = () => {
 
   const removeImage = () => {
     setImage(null);
+    onImageUpload(null); // Send null to parent
   };
 
   return (

@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import Emoji from "./Emoji";
 
-const InputBox = () => {
-  const [inputValue, setInputValue] = useState('');
+const InputBox = ({ onInputChange }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+    onInputChange(value); // Send data to parent
+  };
 
   const updateInputValue = (emoji) => {
-    setInputValue(inputValue + emoji);
+    const updatedValue = inputValue + emoji;
+    setInputValue(updatedValue);
+    onInputChange(updatedValue); // Send data to parent
   };
 
   return (
@@ -15,9 +23,9 @@ const InputBox = () => {
         className="w-full h-full p-2 bg-transparent outline-none"
         placeholder="Whats on your mind?"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={handleInputChange}
       />
-      <Emoji updateInputValue={updateInputValue}/>
+      <Emoji updateInputValue={updateInputValue} />
     </div>
   );
 };
