@@ -21,7 +21,7 @@ const StoryArea = () => {
     const isOverflow = useIsOverflow(ref);
 
 
-    console.log(isOverflow);
+    //console.log(isOverflow);
     // console.log(show);
 
     

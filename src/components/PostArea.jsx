@@ -13,8 +13,7 @@ import {
     useQuery,
   } from 'react-query';
 const queryClient = new QueryClient();
-// import bg from '../pictures/background.jpg';
-// import BackgroundButton from "./BackgroundButton";
+
 export default function PostArea() {
     return (
       <QueryClientProvider client={queryClient}>
@@ -24,11 +23,7 @@ export default function PostArea() {
   }
 
 const Users = () => {
-    // const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
-
-    // const handleDataFromBackgroundButton = (data) => {
-    //     setDataFromBackgroundButton(data);
-    // }
+    
     const getData = async () => {
         const res = await fetch("https://dummyapi.io/data/v1/post?limit=10", {
           method: "GET",
@@ -36,7 +31,6 @@ const Users = () => {
             "app-id": "65dca2b0afdc1b13e468846b",
           },
         });
-        // console.log(res);
         return res.json();
     };
     
@@ -73,9 +67,7 @@ const Users = () => {
 
     return(
         <>
-            {/* {console.log(data.data)} */}
             <div className="PA-container">
-                {/* <BackgroundButton sendDataToPostArea={handleDataFromBackgroundButton} /> */}
                 {
                     data.data.map((item, key) => (
                         <Posts 
@@ -93,4 +85,3 @@ const Users = () => {
     );
 }
 
-// export default PostArea;

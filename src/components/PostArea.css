@@ -1,12 +1,36 @@
-.PA-container{
+.PA-container {
     width: 100%;
     height: auto;
     background-color: rgba(0, 0, 0, 0);
-    /* background: url("../pictures/background.jpg"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
     padding-top: 10px;
     padding-bottom: 30px;
     overflow: hidden;
-}
+  }
+  
+  @media (min-width: 640px) {
+    .PA-container {
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .PA-container {
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .PA-container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .PA-container {
+      padding-top: 50px;
+      padding-bottom: 70px;
+    }
+  }

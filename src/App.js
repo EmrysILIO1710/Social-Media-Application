@@ -29,12 +29,16 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
+// <<<<<<< HEAD
+import PostButton from './components/PostButton';
+// =======
 import ProfilePage from './pages/ProfilePage';
 import UserProfilePage from './pages/UserProfilePage';
 import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
 import Settings from './components/Settings';
 
+// >>>>>>> f3bfd539fc6fc01386f312450b776693353ca523
 
 function App() {
   const [show, setShow] = useState(false);
@@ -88,6 +92,7 @@ function App() {
           <Route path='/example' element={<Example />} />
           <Route path='/settings' element={<Settings />}/>
         </Routes>
+        <PostButton/>
       </BrowserRouter>
       
     </>
