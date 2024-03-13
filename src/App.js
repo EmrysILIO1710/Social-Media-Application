@@ -33,6 +33,7 @@ import ProfilePage from './pages/ProfilePage';
 import UserProfilePage from './pages/UserProfilePage';
 import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
+import Settings from './components/Settings';
 
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
           <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} />} />
           <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} />} />
           <Route path='/example' element={<Example />} />
+          <Route path='/settings' element={<Settings />}/>
         </Routes>
       </BrowserRouter>
       
