@@ -90,7 +90,7 @@ function App() {
           <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} />} />
           <Route path='/example' element={<Example />} />
         </Routes>
-        <PostButton/>
+        {/* <PostButton/> */}
       </BrowserRouter>
       
     </>
