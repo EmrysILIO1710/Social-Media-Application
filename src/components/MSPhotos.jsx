@@ -38,10 +38,10 @@ const MSPhotos = (props) => {
                         <Photos 
                             key={key}
                             name={item.name}
-                            dp={item.profPic}
-                            pic={item.postImg}
+                            dp={item.dp}
+                            pic={item.pic}
                             caption={item.caption}
-                            location={item.loc}
+                            location={item.loction}
                         />
                     )) : <p className="MSP-null">You haven't posted anything yet...</p>
                 }

@@ -28,7 +28,9 @@ const style = {
 
 function PostOptions({ onClose, onUpload }) {
   const [inputValue, setInputValue] = useState("");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState("");
+  const [user, setUser] = useState("Blue Lagoon");
+  const dp = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
 
   const handleInputValueChange = (value) => {
     setInputValue(value);
@@ -36,11 +38,12 @@ function PostOptions({ onClose, onUpload }) {
 
   const handleImageUpload = (file) => {
     setImage(file);
+    console.log(file);
   };
 
   const handleUpload = () => {
     // Use inputValue and image for upload
-    onUpload(inputValue, image); // Pass data to parent
+    onUpload(user, dp, inputValue, image); // Pass data to parent
     onClose(); // Close modal after upload
   };
 
@@ -69,7 +72,8 @@ function PostOptions({ onClose, onUpload }) {
         <div className="flex py-1 max-w-[200px]">
           <img
             className="h-12 w-12 shrink-0 rounded-full object-cover"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            src={dp}
+            // src={image}
             alt=""
           ></img>
           <div className="flex items-center mx-3 my-0">
@@ -78,7 +82,7 @@ function PostOptions({ onClose, onUpload }) {
                 className="font-semibold text-black no-underline hover:text-blue-600"
                 to="/profilepage"
               >
-                Sabbir Ali
+                {user}
               </Link>
               <DropdownMenu />
             </div>
@@ -98,6 +102,7 @@ function PostOptions({ onClose, onUpload }) {
           </div>
         </div>
       </Box>
+      {/* <img src={image} alt="" /> */}
     </Modal>
   );
 }
