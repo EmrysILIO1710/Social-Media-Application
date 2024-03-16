@@ -92,7 +92,7 @@ function App() {
           <Route path='/example' element={<Example />} />
           <Route path='/settings' element={<Settings />}/>
         </Routes>
-        <PostButton/>
+        {/* <PostButton/> */}
       </BrowserRouter>
       
     </>
