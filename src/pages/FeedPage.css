@@ -61,6 +61,6 @@
   
   @media (min-width: 1280px) {
     .FP-story {
-      padding-top: 20vh;
+      /* padding-top: 20vh; */
     }
   }

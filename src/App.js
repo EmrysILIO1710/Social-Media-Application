@@ -30,7 +30,7 @@ import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
 // <<<<<<< HEAD
-import PostButton from './components/PostButton';
+// import PostButton from './components/PostButton';
 // =======
 import ProfilePage from './pages/ProfilePage';
 import UserProfilePage from './pages/UserProfilePage';
