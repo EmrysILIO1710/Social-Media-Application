@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './PostArea.css';
 import Posts from "./Posts";
 // import dp1 from '../pictures/sampleprof.jpg';
@@ -12,6 +12,7 @@ import {
     QueryClientProvider,
     useQuery,
   } from 'react-query';
+import PostButton from "./PostButton";
 const queryClient = new QueryClient();
 
 export default function PostArea() {
@@ -23,6 +24,11 @@ export default function PostArea() {
   }
 
 const Users = () => {
+  // const [username, setUsername] = useState("");
+  // const [dp, setDp] = useState("");
+  // const [caption, setCaption] = useState("");
+  // const [image, setImage] = useState();
+  const [postArr, setPostArr] = useState([]);
     
     const getData = async () => {
         const res = await fetch("https://dummyapi.io/data/v1/post?limit=10", {
@@ -37,6 +43,20 @@ const Users = () => {
     const { data, error, isLoading } = useQuery("randomData", getData);
     if (error) return <div>Request Failed</div>;
     if (isLoading) return <div></div>;
+
+    const handleUpload = (name, dp, cc, post) => {
+      // setUsername(name);
+      // setDp(dp);
+      // setCaption(cc);
+      // setImage(post);
+      setPostArr([{
+        pic: dp,
+        username: name,
+        image: post,
+        caption: cc
+      }, ...postArr]);
+      console.log(postArr[0]);
+    }
 
     // let arrPosts = [
     //     {
@@ -68,6 +88,18 @@ const Users = () => {
     return(
         <>
             <div className="PA-container">
+              {
+                (postArr.length !== 0) && postArr.map((item, key) => (
+                  <Posts 
+                    key = {key}
+                    dp = {item.pic}
+                    name = {item.username}
+                    location = {"location"}
+                    picture = {item.image}
+                    cc = {item.caption}
+                  />
+                ))
+              }
                 {
                     data.data.map((item, key) => (
                         <Posts 
@@ -80,6 +112,7 @@ const Users = () => {
                         />
                     ))
                 }
+                <PostButton addPost={handleUpload} />
             </div>
         </>
     );

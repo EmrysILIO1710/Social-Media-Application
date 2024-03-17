@@ -2,22 +2,26 @@ import React, { useState } from "react";
 import { HiPlusCircle, HiX } from "react-icons/hi";
 
 const PhotoUploadPart = ({ onImageUpload }) => {
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
+  const [img, setImg] = useState(null);
 
   const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setImage(reader.result);
-      onImageUpload(file); // Send data to parent
-    };
-    if (file) {
-      reader.readAsDataURL(file);
-    }
+    // const file = event.target.files[0];
+    // const reader = new FileReader();
+    // reader.onloadend = () => {
+    //   setImage(reader.result);
+    //   onImageUpload(file); // Send data to parent
+    // };
+    // if (file) {
+    //   reader.readAsDataURL(file);
+    // }
+    setImg(URL.createObjectURL(event.target.files[0]));
+    onImageUpload(URL.createObjectURL(event.target.files[0]));
   };
 
   const removeImage = () => {
-    setImage(null);
+    // setImage(null);
+    setImg(null);
     onImageUpload(null); // Send null to parent
   };
 
@@ -26,10 +30,10 @@ const PhotoUploadPart = ({ onImageUpload }) => {
       <label className="block text-sm font-medium text-gray-700 mb-2">
         Upload a photo
       </label>
-      {image ? (
+      {img ? (
         <div className="relative">
           <img
-            src={image}
+            src={img}
             alt="Uploaded"
             className="max-w-full h-auto rounded-lg shadow-md"
           />
