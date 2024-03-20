@@ -24,9 +24,9 @@ function SimpleDialog(props) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <Centertabs handleCB={changeTab} />
-      {val === 1 && <Followers />}
-      {val === 2 && <Following />}
+      <Centertabs handleCB={changeTab} mode={props.mode} />
+      {val === 1 && <Followers mode={props.mode} />}
+      {val === 2 && <Following mode={props.mode} />}
     </Dialog>
   );
 }
@@ -37,7 +37,7 @@ SimpleDialog.propTypes = {
   selectedValue: PropTypes.string.isRequired,
 };
 
-export default function Followerfollowing() {
+export default function Followerfollowing(props) {
   const [open, setOpen] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
@@ -60,6 +60,7 @@ export default function Followerfollowing() {
         selectedValue={selectedValue}
         open={open}
         onClose={handleClose}
+        mode={props.mode}
       />
     </div>
   );

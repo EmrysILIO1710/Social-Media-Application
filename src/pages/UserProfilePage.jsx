@@ -20,11 +20,27 @@ export default function UserProfilePage(props) {
 //   const [cover, setCover] = React.useState("");
 //   const [user, setUser] = React.useState("");
 //   const [about, setAbout] = React.useState("");
+  const [modebg, setModebg] = React.useState("white");
+  const [modebg2, setModebg2] = React.useState("rgb(252, 237, 218)");
+  const [modetext, setModetext] = React.useState("black");
+  // const [modeTrigger, setModeTrigger] = React.useState(0);
 
   const location = useLocation();
   const {dataName, dataDp, dataAbout, dataPic} = location.state;
   React.useEffect(() => {
     props.handleCB(true);
+    // setModeTrigger(1);
+    if (props.mode) {
+      //dark mode
+      setModebg("rgb(26, 24, 48) ");
+      setModetext("white");
+      setModebg2("rgb(15, 12, 39)");
+    } else {
+      //light mode
+      setModetext("black");
+      setModebg("white");
+      setModebg2("rgb(252, 237, 218)");
+    }
     if (!location.hash) {
       window.scrollTo(0, 0);
     }
@@ -55,12 +71,12 @@ export default function UserProfilePage(props) {
         lg:visible
         md:visible
         sm:visible
-      "
+      " style={{backgroundColor: modebg}}
       >
-        <circle cx="0%" cy="0%" r="60%" fill="rgb(252, 237, 218)" />
-        <circle cx="100%" cy="100%" r="40%" fill="rgb(252, 237, 218)" />
+        <circle cx="0%" cy="0%" r="60%" fill={modebg2} />
+        <circle cx="100%" cy="100%" r="40%" fill={modebg2} />
       </svg>
-      <Container maxWidth="lg" sx={{ marginTop: "1rem" }}>
+      <Container maxWidth="lg" sx={{ marginTop: "1rem", color: modetext }}>
         <Profcov cover={""} />
         <Userimage dp={dataDp} />
         <Username name={dataName} />

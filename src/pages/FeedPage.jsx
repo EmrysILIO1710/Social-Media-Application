@@ -8,9 +8,19 @@ import { useLocation } from "react-router-dom";
 
 const FeedPage = (props) => {
     const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
+    const [modebg, setModebg] = useState("rgb(255, 246, 234)");
 
     const location = useLocation();
     useEffect(() => {
+        if (props.mode) {
+            //dark mode
+            setModebg("rgb(26, 24, 48)");
+            // setModetext("white");
+        } else {
+            //light mode
+            // setModetext("black");
+            setModebg("rgb(255, 246, 234)");
+        }
         props.handleCB(true);
         if (!location.hash) {
             window.scrollTo(0, 0);
@@ -22,13 +32,14 @@ const FeedPage = (props) => {
     }
 
     return(
-        <div className="FP-container" style={{backgroundImage: `url(${dataFromBackgroundButton})`}}>
+        <div className="FP-container" style={{backgroundImage: `url(${dataFromBackgroundButton})`, backgroundColor: modebg}}>
             <BackgroundButton sendDataToFeedPage={handleDataFromBackgroundButton} />
             {/* <Navbar /> */}
             <div className="FP-story">
-                <StoryArea />
+                <StoryArea mode={props.mode} />
             </div>
-            <PostArea />
+            {/* {console.log(props.mode)} */}
+            <PostArea mode={props.mode} />
         </div>
     );
 }
