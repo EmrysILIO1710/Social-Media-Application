@@ -25,8 +25,19 @@ export default function Photos(props) {
   const [comm, setComm] = React.useState("");
   const [comments, setComments] = React.useState([]);
   const [id, setId] = React.useState(1);
+  const [modebg, setModebg] = React.useState("white");
+  const [modetext, setModetext] = React.useState("black");
   
   React.useEffect(() => {
+    if (props.mode) {
+      //dark mode
+      setModebg("rgb(15, 12, 39)");
+      setModetext("white");
+    } else {
+      //light mode
+      setModebg("white");
+      setModetext("black");
+    }
     const keyDownHandler = (event) => {
       //   console.log('User pressed: ', event.key);
 
@@ -41,7 +52,7 @@ export default function Photos(props) {
     return () => {
       document.removeEventListener("keydown", keyDownHandler);
     };
-  });
+  }, [props]);
 
   const showAll = () => {
     if (disp === "none") {
@@ -85,7 +96,7 @@ export default function Photos(props) {
 
   return (
     <>
-      <Card sx={{ maxWidth: "19.8vw", marginBottom: "0.5vh" }}>
+      <Card sx={{ maxWidth: "19.8vw", marginBottom: "1vh", backgroundColor: modebg, color: modetext }}>
         <CardActionArea onClick={showAll}>
           <CardMedia
             component="img"
@@ -97,7 +108,7 @@ export default function Photos(props) {
             {/* <Typography gutterBottom variant="h5" component="div">
             Lizard
           </Typography> */}
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2">
               {props.caption}
             </Typography>
           </CardContent>
@@ -113,7 +124,7 @@ export default function Photos(props) {
             setDisp("none");
           }}
         />
-        <div className="Photos-box">
+        <div className="Photos-box" style={{ backgroundColor: modebg }} >
           <div className="Photos-pic">
             <img src={props.pic} alt="" className="Photos-img" />
           </div>

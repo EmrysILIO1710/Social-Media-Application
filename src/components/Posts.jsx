@@ -134,6 +134,7 @@ const Posts = (props) => {
                 dataName: props.name,
                 dataDp: props.dp,
                 dataAbout: props.cc,
+                dataPic: props.picture
               }}
               style={{ textDecoration: "none", color: modetext }}
             >
