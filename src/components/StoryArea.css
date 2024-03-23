@@ -1,9 +1,9 @@
 .SA {
-    width: fit-content;
-    /* background-color: aqua; */
+    width: 100%; /* Updated to full width */
+    display: flex; /* Updated to flex */
+    justify-content: center; /* Center horizontally */
     position: relative;
     margin-bottom: 25px;
-    /* z-index: 1; */
 }
 
 .SA-container {
@@ -11,9 +11,6 @@
     max-width: 100%; /* Ensures responsiveness */
     height: auto;
     background-color: rgba(116, 255, 209, 0);
-    /* display: flex;
-    flex-wrap: nowrap;
-    padding: 10px 0; */
     overflow: scroll;
     scroll-behavior: smooth;
 }
@@ -23,7 +20,6 @@
     display: flex;
     flex-wrap: nowrap;
     padding: 20px 0 0;
-    /* background-color: rgba(238, 0, 0, 0.44); */
 }
 
 .SA-container::-webkit-scrollbar {
@@ -63,19 +59,4 @@
     position: fixed;
     top: 0;
     margin-left: 5vw;
-    /* display: none; */
-}
-
-/* Media Queries for Responsiveness */
-
-@media (max-width: 1024px) {
-    .SA-container {
-        width: 100%;
-        max-width: none;
-    }
-
-    .SA-story {
-        margin-left: 0;
-        width: 100%;
-    }
 }
