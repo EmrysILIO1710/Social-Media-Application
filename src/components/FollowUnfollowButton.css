@@ -1,0 +1,10 @@
+.FU-btn{
+    height: 40px;
+    width: 200px;
+    /* background-color: rgba(254, 162, 82, 0);
+    border: none; */
+    border-radius: 5px;
+    cursor: pointer;
+    /* font-weight: bold; */
+    font-size: 10px;
+}

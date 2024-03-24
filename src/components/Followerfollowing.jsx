@@ -1,6 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 
 import Dialog from "@mui/material/Dialog";
 
@@ -37,7 +37,7 @@ SimpleDialog.propTypes = {
   selectedValue: PropTypes.string.isRequired,
 };
 
-export default function SimpleDialogDemo() {
+export default function Followerfollowing() {
   const [open, setOpen] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
@@ -52,10 +52,10 @@ export default function SimpleDialogDemo() {
 
   return (
     <div>
-      <Button  onClick={handleClickOpen}>
-        {/* Follower <br /> Following */}
+      <button onClick={handleClickOpen}>
         <Follow />
-      </Button>
+      </button>
+      
       <SimpleDialog
         selectedValue={selectedValue}
         open={open}

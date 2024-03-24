@@ -17,7 +17,7 @@ import About from './components/About';
 import Followerfollowing from './components/Followerfollowing';
 import Followers from './components/Followers';
 
-import EditProfBtn from './components/EditProfBtn';
+// import EditProfBtn from './components/EditProfBtn';
 import EditProfpage from './pages/EditProfPage';
 import Userimage from './components/Userimage';
 import { useEffect, useState } from 'react';
@@ -29,9 +29,16 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
+// <<<<<<< HEAD
+import PostButton from './components/PostButton';
+// =======
 import ProfilePage from './pages/ProfilePage';
 import Messages from './components/Messages';
+import UserProfilePage from './pages/UserProfilePage';
+import FollowUnfollowButton from './components/FollowUnfollowButton';
+import Example from './components/Example';
 
+// >>>>>>> f3bfd539fc6fc01386f312450b776693353ca523
 
 function App() {
   const [show, setShow] = useState(false);
@@ -69,7 +76,7 @@ function App() {
           <Route path='/followerfollowing' element={<Followerfollowing />}/>
           <Route path='/followers' element={<Followers />} />
           
-          <Route path='/editprofbtn' element={<EditProfBtn />} />
+          <Route path='/fubtn' element={<FollowUnfollowButton />} />
           <Route path='/editprofpage' element={<EditProfpage />} />
           <Route path='/userimage' element={<Userimage />} />
           <Route path='/storyarea' element={<StoryArea />} />
@@ -82,7 +89,10 @@ function App() {
           <Route path='/notificationarea' element={<NotificationArea />} />
           <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} />} />
           <Route path='/messages' element={<Messages />} />
+          <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} />} />
+          <Route path='/example' element={<Example />} />
         </Routes>
+        <PostButton/>
       </BrowserRouter>
       
     </>
