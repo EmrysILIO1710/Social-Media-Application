@@ -83,7 +83,7 @@ export default function UserProfilePage(props) {
         <FollowUnfollowButton />
         <About about={dataAbout} />
         {/* <Follow /> */}
-        <Followerfollowing />
+        <Followerfollowing mode={props.mode} />
         <MediaSection dp={dataDp} name={dataName} about={dataAbout} pic={dataPic} mode={props.mode} />
         {/* <Box sx={{  height: '100vh' }} /> */}
       </Container>

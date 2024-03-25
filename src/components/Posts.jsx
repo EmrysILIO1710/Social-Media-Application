@@ -16,6 +16,7 @@ import save2 from "../pictures/save2.png";
 // import dp from '../pictures/sampleprof.jpg';
 import deletecomm from "../pictures/deletecomm.png";
 import { Link } from "react-router-dom";
+import TotalAvatars from "./TotalAvatars";
 
 const Posts = (props) => {
   const [likeicon, setLikeicon] = useState(like2);
@@ -152,7 +153,14 @@ const Posts = (props) => {
         <div className="Post-caption">
           <p>{props.cc}</p>
         </div>
+        
         <hr className="Post-line" />
+        {
+          (props.likes > 0) ? 
+            <div className="Post-caption flex text-gray-500 text-sm">
+              <p className="cursor-pointer mt-2">Liked by...&nbsp;&nbsp;</p><TotalAvatars count={props.likes} mode={props.mode} />
+            </div> : null
+        }
         <div className="Post-btns">
           <div className="Post-share" style={{ display: dispshare }}>
             <div className="Post-share-items">
@@ -169,14 +177,17 @@ const Posts = (props) => {
               />
             </svg>
           </div>
-          <button className="Post-like-btn">
-            {" "}
+          <button className="Post-like-btn flex items-center place-content-center">
+            
             <img
               src={likeicon}
               alt=""
-              style={{ width: "40px", cursor: "pointer", margin: "0 auto" }}
+              style={{ width: "40px", cursor: "pointer" }}
               onClick={changeLike}
             />
+            {
+              (props.likes > 0) ? <span>&nbsp;&nbsp;{props.likes}</span> : null
+            }
           </button>
           <button className="Post-share-btn">
             <img

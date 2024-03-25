@@ -103,6 +103,7 @@ const Users = (props) => {
                   />
                 ))
               }
+              {console.log(data.data)}
                 {
                     data.data.map((item, key) => (
                         <Posts 
@@ -113,6 +114,7 @@ const Users = (props) => {
                             picture = {item.image}
                             cc = {item.text}
                             mode={props.mode}
+                            likes={item.likes}
                         />
                     ))
                 }
