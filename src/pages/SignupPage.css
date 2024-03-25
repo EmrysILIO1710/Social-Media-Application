@@ -54,7 +54,7 @@
 .SP-modal-btn{
     height: 40px;
     width: 200px;
-    margin: 30px 170px;
+    margin: 30px 170px 20px;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
