@@ -177,7 +177,6 @@ export default function Example(props) {
                               style={{ width: "30px" }}
                             />
                             {/* <SendIcon onClick={openPicker}/> */}
-                            {console.log(picker)}
                           </span>
                           <span className="mx-2 mt-2 cursor-pointer">
                             {/* <SendIcon  /> */}

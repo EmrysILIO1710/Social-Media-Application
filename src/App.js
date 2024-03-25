@@ -35,6 +35,7 @@ import ProfilePage from './pages/ProfilePage';
 import UserProfilePage from './pages/UserProfilePage';
 import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
+import ConfirmAcc from './components/ConfirnAcc';
 
 function App() {
   const [show, setShow] = useState(false);
@@ -88,6 +89,8 @@ function App() {
           <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} mode={modeTrigger} />} />
           <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} mode={modeTrigger} />} />
           <Route path='/example' element={<Example />} />
+          <Route path='/confirm' element={<ConfirmAcc />} />
+
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>
