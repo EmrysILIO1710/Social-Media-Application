@@ -42,7 +42,6 @@ const MSPhotos = (props) => {
                             pic={item.pic}
                             caption={item.caption}
                             location={item.loction}
-                            mode={props.mode}
                         />
                     )) : <p className="MSP-null">You haven't posted anything yet...</p>
                 }

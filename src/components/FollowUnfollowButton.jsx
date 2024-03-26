@@ -43,7 +43,7 @@ const FollowUnfollowButton = (props) => {
                 "
                     style={{backgroundColor: bg, border: border}}
                 >
-                    <p className="text-lg text-bold my-auto text-black">{val}</p>
+                    <p className="text-lg text-bold my-auto">{val}</p>
                 </button>
             </form>
             

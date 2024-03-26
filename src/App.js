@@ -29,22 +29,22 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
+// <<<<<<< HEAD
 // import PostButton from './components/PostButton';
 // =======
 import ProfilePage from './pages/ProfilePage';
 import UserProfilePage from './pages/UserProfilePage';
 import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
-import ConfirmAcc from './components/ConfirnAcc';
+
+// >>>>>>> f3bfd539fc6fc01386f312450b776693353ca523
 
 function App() {
   const [show, setShow] = useState(false);
-  const [dp, setDp] = useState("");
-  const [modeTrigger, setModeTrigger] = useState(0);
+  const [dp, setDp] = useState("")
 
   useEffect(() => {
     document.title = 'addaGram';
-    setModeTrigger(0);
   }, []);
 
   const CB = (data) => {
@@ -58,14 +58,14 @@ function App() {
     <>
       <BrowserRouter>
         {
-          show && <Navbar dp={dp} mode={modeTrigger} />
+          show && <Navbar dp={dp} />
         }
         {/* <Navbar /> */}
         <Routes>
           <Route path='/' element={<LandingPage handleCB = {CB} />} />
           <Route path='/signup' element={<SignupPage />} />
           <Route path='/posts' element={<Posts />} />
-          <Route path='/story' element={<Story mode={modeTrigger} />}/>
+          <Route path='/story' element={<Story />}/>
           <Route path='/navbar' element={<Navbar />} />
           <Route path='/trial' element={<Trial />} />
           <Route path='/postarea' element={<PostArea />} />
@@ -80,17 +80,15 @@ function App() {
           <Route path='/userimage' element={<Userimage />} />
           <Route path='/storyarea' element={<StoryArea />} />
           <Route path='/storyc' element={<StoryContent />} />
-          <Route path='/feed' element={<FeedPage handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/feed' element={<FeedPage handleCB = {CB} />} />
           <Route path='/media' element={<MediaSection />} />
           <Route path='/follow' element={<Follow />} />
           <Route path='/followreq' element={<FollowRequest />} />
           <Route path='/notifications' element={<NotificationList/>}/>
           <Route path='/notificationarea' element={<NotificationArea />} />
-          <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} mode={modeTrigger} />} />
-          <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} />} />
+          <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} />} />
           <Route path='/example' element={<Example />} />
-          <Route path='/confirm' element={<ConfirmAcc />} />
-
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>

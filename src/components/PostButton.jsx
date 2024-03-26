@@ -3,7 +3,7 @@ import { IoAdd } from "react-icons/io5";
 import "../App.css";
 import PostOptions from "./PostOptions";
 
-const PostButton = ({ addPost, mode }) => {
+const PostButton = ({ addPost }) => {
   const [showChildModal, setShowChildModal] = useState(false);
   // const [username, setUsername] = useState("");
   // const [dp, setDp] = useState("");
@@ -35,7 +35,7 @@ const PostButton = ({ addPost, mode }) => {
       >
         <IoAdd size={32} />
       </button>
-      {showChildModal && <PostOptions onClose={handleCloseChildModal} onUpload={handleUpload} mode={mode} />}
+      {showChildModal && <PostOptions onClose={handleCloseChildModal} onUpload={handleUpload} />}
     </>
   );
 };

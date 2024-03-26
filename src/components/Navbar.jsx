@@ -4,7 +4,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 // import { IoIosSearch } from "react-icons/io";
 import { AiFillHome } from "react-icons/ai";
 import AddagramLogo from "../pictures/AddagramLogo.png";
-import AddagramLogo2 from '../pictures/logo2.png';
 import { BiSolidMoviePlay } from "react-icons/bi";
 // import { BiSolidMessage } from "react-icons/bi";
 // import { TbWorldUpload } from "react-icons/tb";
@@ -31,36 +30,15 @@ function classNames(...classes) {
 
 export default function Navbar(props) {
   const [dp, setDp] = useState("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80");
-  const [modebg, setModebg] = useState("white");
-  const [modetext, setModetext] = useState("black");
-  const [logo, setLogo] = useState(AddagramLogo);
-
-  // const [modeTrigger, setModeTrigger] = useState(0);
-
   useEffect(() => {
-    // setModeTrigger(1);
-    if(props.mode){
-      //dark mode
-      setModebg("rgb(15, 12, 39)"); 
-      setModetext("white");
-      setLogo(AddagramLogo2);
-    }
-    else{
-      //light mode
-      setModebg("white");
-      setModetext("black");
-      setLogo(AddagramLogo);
-    }
     if(props.dp !== ""){
       setDp(props.dp);
     }
-  }, [props.dp, props.mode]);
-
+  }, [props.dp])
   return (
     <Disclosure
       as="nav"
-      className="fixed top-0 w-full z-10 Bottom-Shadow"
-      style={{backgroundColor: modebg}}
+      className="fixed top-0 w-full z-10 Bottom-Shadow bg-white-300"
     >
       {({ open }) => (
         <>
@@ -82,7 +60,7 @@ export default function Navbar(props) {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-6 w-auto sm:h-11 sm:w-auto cursor-pointer hidden md:block"
-                    src={logo}
+                    src={AddagramLogo}
                     alt="Your Company"
                   />
                 </div>
@@ -132,7 +110,7 @@ export default function Navbar(props) {
                 >
                   <span className="sr-only">View notifications</span>
                   {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
-                  <NotificationArea mode={props.mode} />
+                  <NotificationArea />
                 </button>
 
                 {/* <button
@@ -141,8 +119,7 @@ export default function Navbar(props) {
                 > */}
                   {/* <span className="sr-only">View notifications</span>
                   <BiSolidMessage className="h-6 w-6" /> */}
-                  {/* {console.log(props.mode)} */}
-                  <Messages mode={props.mode} />
+                  <Messages />
                 {/* </button> */}
 
                 {/* Profile dropdown */}
@@ -166,18 +143,15 @@ export default function Navbar(props) {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                      style={{backgroundColor: modebg, color: modetext}}
-                    >
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <Link
                             to="/profilepage"
                             className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
+                              active ? "bg-gray-100" : "",
+                              "block px-4 text-sm text-gray-700 no-underline"
                             )}
-                            style={{color: modetext}}
                           >
                             Your Profile
                           </Link>
@@ -188,10 +162,9 @@ export default function Navbar(props) {
                           <Link
                             to="/"
                             className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
+                              active ? "bg-gray-100" : "",
+                              "block px-4 text-sm text-gray-700 no-underline"
                             )}
-                            style={{color: modetext}}
                           >
                             Settings
                           </Link>
@@ -202,10 +175,9 @@ export default function Navbar(props) {
                           <Link
                             to="/"
                             className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
+                              active ? "bg-gray-100" : "",
+                              "block px-4 text-sm text-gray-700 no-underline"
                             )}
-                            style={{color: modetext}}
                           >
                             Sign out
                           </Link>

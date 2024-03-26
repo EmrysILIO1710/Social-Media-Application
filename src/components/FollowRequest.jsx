@@ -23,7 +23,7 @@ const theme = createTheme({
 export default function FollowRequest(props) {
   return (
     <ThemeProvider theme={theme}>
-      <List sx={{ width: "100%", maxWidth: 360 }}>
+      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         <ListItem alignItems="flex-start">
           <ListItemAvatar>
             <Avatar alt="Remy Sharp" src={props.dp} />

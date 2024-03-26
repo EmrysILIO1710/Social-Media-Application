@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 const TagAndLocation = () => {
   return (
-    <div className="flex max-w-md my-3 mx-auto p-3 bg-transparent rounded-lg shadow-md border border-gray-300 items-center">
+    <div className="flex max-w-md my-3 mx-auto p-3 bg-white rounded-lg shadow-md border border-gray-300 items-center">
       <div>Add to your post</div>
 
       {/* Container for last two icons */}

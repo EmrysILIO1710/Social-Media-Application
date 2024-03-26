@@ -45,7 +45,7 @@ const EditProfpage = (props) => {
     }
 
     return(
-        <div className="EPP" style={{display: epp, color: "black"}}>  
+        <div className="EPP" style={{display: epp}}>  
             <div className="EPP-container">
                 <form onSubmit={submitForm}>
                     <h1 className="EPP-h2">Edit Profile</h1>

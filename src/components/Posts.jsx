@@ -16,7 +16,6 @@ import save2 from "../pictures/save2.png";
 // import dp from '../pictures/sampleprof.jpg';
 import deletecomm from "../pictures/deletecomm.png";
 import { Link } from "react-router-dom";
-import TotalAvatars from "./TotalAvatars";
 
 const Posts = (props) => {
   const [likeicon, setLikeicon] = useState(like2);
@@ -27,23 +26,6 @@ const Posts = (props) => {
   const [dispcomm, setDispcomm] = useState("none");
   const [commicon, setCommicon] = useState(comment);
   const [keep, setKeep] = useState(save);
-
-  const [modebg, setModebg] = React.useState("white");
-  const [modetext, setModetext] = React.useState("black");
-  // const [modeTrigger, setModeTrigger] = useState(0);
-
-  React.useEffect(() => {
-    // setModeTrigger(1);
-    if (props.mode) {
-      //dark mode
-      setModebg("rgb(15, 12, 39)");
-      setModetext("white");
-    } else {
-      //light mode
-      setModetext("black");
-      setModebg("white");
-    }
-  }, [props.mode]);
 
   const changeLike = () => {
     if (likeicon === like2) {
@@ -109,10 +91,7 @@ const Posts = (props) => {
   // }
   return (
     <>
-      <div
-        className="Post-container"
-        style={{ backgroundColor: modebg, color: modetext }}
-      >
+      <div className="Post-container">
         <div className="Post-header">
           <div className="Post-DP">
             <Link
@@ -135,9 +114,8 @@ const Posts = (props) => {
                 dataName: props.name,
                 dataDp: props.dp,
                 dataAbout: props.cc,
-                dataPic: props.picture
               }}
-              style={{ textDecoration: "none", color: modetext }}
+              style={{ textDecoration: "none", color: "black" }}
             >
               <h2 style={{ fontSize: "25px", cursor: "pointer" }}>
                 {props.name}
@@ -153,14 +131,7 @@ const Posts = (props) => {
         <div className="Post-caption">
           <p>{props.cc}</p>
         </div>
-        
         <hr className="Post-line" />
-        {
-          (props.likes > 0) ? 
-            <div className="Post-caption flex text-gray-500 text-sm">
-              <p className="cursor-pointer mt-2">Liked by...&nbsp;&nbsp;</p><TotalAvatars count={props.likes} mode={props.mode} />
-            </div> : null
-        }
         <div className="Post-btns">
           <div className="Post-share" style={{ display: dispshare }}>
             <div className="Post-share-items">
@@ -177,17 +148,14 @@ const Posts = (props) => {
               />
             </svg>
           </div>
-          <button className="Post-like-btn flex items-center place-content-center">
-            
+          <button className="Post-like-btn">
+            {" "}
             <img
               src={likeicon}
               alt=""
-              style={{ width: "40px", cursor: "pointer" }}
+              style={{ width: "40px", cursor: "pointer", margin: "0 auto" }}
               onClick={changeLike}
             />
-            {
-              (props.likes > 0) ? <span>&nbsp;&nbsp;{props.likes}</span> : null
-            }
           </button>
           <button className="Post-share-btn">
             <img

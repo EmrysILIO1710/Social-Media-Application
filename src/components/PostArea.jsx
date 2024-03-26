@@ -15,16 +15,15 @@ import {
 import PostButton from "./PostButton";
 const queryClient = new QueryClient();
 
-export default function PostArea(props) {
+export default function PostArea() {
     return (
       <QueryClientProvider client={queryClient}>
-        {/* {console.log(props.mode)} */}
-        <Users mode={props.mode} />
+        <Users />
       </QueryClientProvider>
     );
   }
 
-const Users = (props) => {
+const Users = () => {
   // const [username, setUsername] = useState("");
   // const [dp, setDp] = useState("");
   // const [caption, setCaption] = useState("");
@@ -88,7 +87,6 @@ const Users = (props) => {
 
     return(
         <>
-        {/* {console.log(props.mode)} */}
             <div className="PA-container">
               {
                 (postArr.length !== 0) && postArr.map((item, key) => (
@@ -99,11 +97,9 @@ const Users = (props) => {
                     location = {"location"}
                     picture = {item.image}
                     cc = {item.caption}
-                    mode={props.mode}
                   />
                 ))
               }
-              {console.log(data.data)}
                 {
                     data.data.map((item, key) => (
                         <Posts 
@@ -113,12 +109,10 @@ const Users = (props) => {
                             location = {"location"}
                             picture = {item.image}
                             cc = {item.text}
-                            mode={props.mode}
-                            likes={item.likes}
                         />
                     ))
                 }
-                <PostButton addPost={handleUpload} mode={props.mode} />
+                <PostButton addPost={handleUpload} />
             </div>
         </>
     );

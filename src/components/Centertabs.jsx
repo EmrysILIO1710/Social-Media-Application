@@ -15,22 +15,8 @@ const theme = createTheme({
 });
 
 export default function Centertabs(props) {
-  const [modetext, setModetext] = React.useState("black");
-  const [modebg, setModebg] = React.useState("white");
   const [value, setValue] = React.useState(0);
 
-  React.useEffect(() => {
-    // setModeTrigger(1);
-    if (props.mode) {
-      //dark mode
-      setModebg("rgb(26, 24, 48) ");
-      setModetext("white");
-    } else {
-      //light mode
-      setModetext("black");
-      setModebg("white");
-    }
-  }, [props]);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -45,7 +31,7 @@ export default function Centertabs(props) {
 
   return (
     <ThemeProvider theme={theme}>
-    <Box sx={{ width: '100%', bgcolor: modebg, color: modetext  }}>
+    <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <Tabs value={value} onChange={handleChange} centered>
         <Tab label="Followers"  onClick={tab1} />
         <Tab label="Following"  onClick={tab2} />

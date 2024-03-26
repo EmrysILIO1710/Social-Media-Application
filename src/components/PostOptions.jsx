@@ -15,7 +15,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: "100%",
   maxWidth: "400px",
-  // bgcolor: "background.paper",
+  bgcolor: "background.paper",
   boxShadow: 24,
   pt: 2,
   px: 4,
@@ -26,28 +26,11 @@ const style = {
   },
 };
 
-function PostOptions({ onClose, onUpload, mode }) {
+function PostOptions({ onClose, onUpload }) {
   const [inputValue, setInputValue] = useState("");
   const [image, setImage] = useState("");
-  const [modebg, setModebg] = useState("white");
-  const [modetext, setModetext] = useState("black");
-  // const [modeTrigger, setModeTrigger] = useState(0);
-  // const [user, setUser] = useState("Blue Lagoon");
+  const [user, /* setUser */] = useState("Blue Lagoon");
   const dp = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
-  const user = "Blue Lagoon";
-
-  React.useEffect(() => {
-    // setModeTrigger(1);
-    if (mode) {
-      //dark mode
-      setModetext("white");
-      setModebg("rgb(26, 24, 48)");
-    } else {
-      //light mode
-      setModetext("black");
-      setModebg("white");
-    }
-  }, [mode]);
 
   const handleInputValueChange = (value) => {
     setInputValue(value);
@@ -71,7 +54,7 @@ function PostOptions({ onClose, onUpload, mode }) {
       aria-labelledby="child-modal-title"
       aria-describedby="child-modal-description"
     >
-      <Box sx={{ ...style, backgroundColor: modebg, color: modetext }}>
+      <Box sx={{ ...style }}>
         <h2
           id="child-modal-title"
           className="text-center mt-1 font-middle text-xl"
@@ -93,16 +76,15 @@ function PostOptions({ onClose, onUpload, mode }) {
             // src={image}
             alt=""
           ></img>
-          <div className="flex items-center mx-3 my-0" >
+          <div className="flex items-center mx-3 my-0">
             <div className="flex flex-col">
               <Link
-                className="font-semibold  no-underline hover:text-blue-600"
-                style={{color: modetext}}
+                className="font-semibold text-black no-underline hover:text-blue-600"
                 to="/profilepage"
               >
                 {user}
               </Link>
-              <DropdownMenu mode={mode} />
+              <DropdownMenu />
             </div>
           </div>
         </div>

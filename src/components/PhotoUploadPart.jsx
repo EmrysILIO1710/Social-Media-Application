@@ -26,7 +26,7 @@ const PhotoUploadPart = ({ onImageUpload }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-transparent rounded-lg shadow-md border border-gray-300" >
+    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-gray-300">
       <label className="block text-sm font-medium text-gray-700 mb-2">
         Upload a photo
       </label>

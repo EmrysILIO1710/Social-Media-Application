@@ -20,15 +20,15 @@ import {
 } from 'react-query';
 const queryClient = new QueryClient();
 
-export default function Messages(props) {
+export default function Messages() {
   return (
     <QueryClientProvider client={queryClient}>
-      <UsersMessages mode={props.mode} />
+      <UsersMessages />
     </QueryClientProvider>
   );
 }
 
-const UsersMessages = (props) => {
+const UsersMessages = () => {
   const[disp, setDisp] = React.useState(false);
   const [name, setName] = React.useState("");
   const [state, setState] = React.useState({
@@ -37,24 +37,6 @@ const UsersMessages = (props) => {
     bottom: false,
     right: false,
   });
-  const [modebg, setModebg] = React.useState("white");
-  const [modetext, setModetext] = React.useState("black");
-  // const [modeTrigger, setModeTrigger] = React.useState(0);
-
-  React.useEffect(() => {
-    // setModeTrigger(1);
-    // console.log(props.mode);
-    if(props.mode){
-      //dark mode
-      setModebg("rgb(26, 24, 48)");
-      setModetext("white");
-    }
-    else{
-      //light mode
-      setModetext("black");
-      setModebg("white");
-    }
-  }, [props.mode]);
 
   const getData = async () => {
     const res = await fetch("https://dummyapi.io/data/v1/user?limit=10", {
@@ -78,7 +60,9 @@ const UsersMessages = (props) => {
 
     setState({ ...state, [anchor]: open });
   };
-
+//   const openChat = () => {
+//     setDisp(true);
+//   }
   const closeChat = () => {
     setDisp(false);
   }
@@ -86,8 +70,8 @@ const UsersMessages = (props) => {
   const list = (anchor) => (
     
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 350, height: "100%" }}
-      style={{backgroundColor: modebg, color: modetext}}
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 350 }}
+      
       role="presentation"
     //   onClick={toggleDrawer(anchor, false)}
     //   onKeyDown={toggleDrawer(anchor, false)}
@@ -126,7 +110,7 @@ const UsersMessages = (props) => {
             onClose={toggleDrawer('right', false)}
             sx={{zIndex: '10'}}
           >
-            <Example display={disp} handleCB={closeChat} name={name} mode={props.mode} />
+            <Example display={disp} handleCB={closeChat} name={name} />
             {list('right')}
           </Drawer>
     </div>

@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import "./NotificationArea.css";
 import { Popover, Transition } from "@headlessui/react";
 import {
@@ -10,26 +10,7 @@ import NotificationList from "./NotificationList";
 
 
 
-export default function NotificationArea (props) {
-  const [modebg, setModebg] = useState("white");
-  const [modetext, setModetext] = useState("black");
-  // const [modeTrigger, setModeTrigger] = useState(0);
-
-  useEffect(() => {
-    // setModeTrigger(1);
-    // console.log(props.mode);
-    if(props.mode){
-      //dark mode
-      setModebg("rgb(15, 12, 39)");
-      setModetext("white"); 
-    }
-    else{
-      //light mode
-      setModebg("white");
-      setModetext("black");
-    }
-  }, [props.mode]);
-
+export default function NotificationArea() {
   return (
     <Popover className="relative">
       <Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 NA-btn">
@@ -52,10 +33,8 @@ export default function NotificationArea (props) {
           md:-translate-x-3/4 
           sm:-translate-x-3/4 
         ">
-          <div className="w-auto max-w- h-[85vh] overflow-scroll flex-auto overflow-hidden rounded-3xl text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 NA-scroll"
-            style={{backgroundColor: modebg}}
-          >
-            <div className="p-2 NA-box" style={{color: modetext}}>
+          <div className="w-auto max-w- h-[85vh] overflow-scroll flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 NA-scroll">
+            <div className="p-2 NA-box">
               <div className="NA-box-div1">
                 <h4 class="mt-10 NA-span">Follow Requests</h4>
                 <br />
@@ -65,7 +44,7 @@ export default function NotificationArea (props) {
               <div className="NA-box-div2">
                 <h4 class="mt-10 hover:block NA-span">Notifications</h4>
                 <br />
-                <NotificationList mode={props.mode} />
+                <NotificationList />
               </div>
             </div>
             {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
