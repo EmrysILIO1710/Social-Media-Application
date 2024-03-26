@@ -11,7 +11,7 @@ const SildeBarProfile = ({ userData, props }) => {
     } else {
       setFollowedUsers([...followedUsers, userId]);
     }
-  };
+  };//Hiiikawdfjdad
 
   const handleRemove = (userId) => {
     alert("You want ot remove this user?");
