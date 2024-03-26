@@ -59,9 +59,3 @@
       padding-top: 15vh;
     }
   }
-  
-  @media (min-width: 1280px) {
-    .FP-story {
-      /* padding-top: 20vh; */
-    }
-  }
