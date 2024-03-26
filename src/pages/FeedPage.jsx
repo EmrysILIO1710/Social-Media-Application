@@ -1,41 +1,47 @@
-import React, { useEffect } from "react";
-import "./FeedPage.css";
-// import Navbar from "../components/Navbar";
+import React, { useEffect, useState } from "react";
+import './FeedPage.css';
+// import Navbar from "../components/Navbar"; 
 import StoryArea from "../components/StoryArea";
 import PostArea from "../components/PostArea";
-// import BackgroundButton from "../components/BackgroundButton";
+import BackgroundButton from "../components/BackgroundButton";
 import { useLocation } from "react-router-dom";
-import SideBar from "../components/SideBar";
 
 const FeedPage = (props) => {
-  // const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
+    const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
+    const [modebg, setModebg] = useState("rgb(255, 246, 234)");
 
-  const location = useLocation();
-  useEffect(() => {
-    props.handleCB(true);
-    if (!location.hash) {
-      window.scrollTo(0, 0);
+    const location = useLocation();
+    useEffect(() => {
+        if (props.mode) {
+            //dark mode
+            setModebg("rgb(26, 24, 48)");
+            // setModetext("white");
+        } else {
+            //light mode
+            // setModetext("black");
+            setModebg("rgb(255, 246, 234)");
+        }
+        props.handleCB(true);
+        if (!location.hash) {
+            window.scrollTo(0, 0);
+        }
+    }, [location, props]);
+
+    const handleDataFromBackgroundButton = (data) => {
+        setDataFromBackgroundButton(data);
     }
-  }, [location, props]);
 
-  // const handleDataFromBackgroundButton = (data) => {
-  //     setDataFromBackgroundButton(data);
-  // }
-
-  return (
-    //style={{backgroundImage: `url(${dataFromBackgroundButton})`}} Add this on the div below to change the background
-    <div className="FP-container">
-      <div className="fixed h-full">
-        <SideBar className="fixed"/>
-      </div>
-      {/* <BackgroundButton sendDataToFeedPage={handleDataFromBackgroundButton} /> */}
-      {/* <Navbar /> */}
-      <div className="FP-story">
-        <StoryArea />
-      </div>
-      <PostArea />
-    </div>
-  );
-};
+    return(
+        <div className="FP-container" style={{backgroundImage: `url(${dataFromBackgroundButton})`, backgroundColor: modebg}}>
+            <BackgroundButton sendDataToFeedPage={handleDataFromBackgroundButton} />
+            {/* <Navbar /> */}
+            <div className="FP-story">
+                <StoryArea mode={props.mode} />
+            </div>
+            {/* {console.log(props.mode)} */}
+            <PostArea mode={props.mode} />
+        </div>
+    );
+}
 
 export default FeedPage;

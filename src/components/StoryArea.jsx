@@ -10,7 +10,7 @@ import Story from "./Story";
 import { useIsOverflow } from './useIsOverflow';
 import StoryContent from "./StoryContent";
 
-const StoryArea = () => {
+const StoryArea = (props) => {
     // const [overflow, setOverflow] = useState(0);
     // const [border, setBorder] = useState("5px solid rgb(254, 163, 82)");
     // const [show, setShow] = useState("none");
@@ -91,6 +91,7 @@ const StoryArea = () => {
                                     onClick = {() => {
                                         setVal(item.id); 
                                     }}
+                                    mode={props.mode}
                                 /> 
                                 {/* <div className="SA-story"> */}
                                       

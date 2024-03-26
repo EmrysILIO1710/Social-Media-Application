@@ -11,10 +11,24 @@ export default function Example(props) {
   const [picker, setPicker] = useState(false);
   const [val, setVal] = useState("");
   const [message, setMessage] = useState([]);
+  const [modebg, setModebg] = useState("white");
+  const [modetext, setModetext] = useState("black");
+  // const [modeTrigger, setModeTrigger] = useState(0);
+
   useEffect(() => {
     setOpen(props.display);
+    // setModeTrigger(1);
+    if (props.mode) {
+      //dark mode
+      setModebg("rgb(26, 24, 48)");
+      setModetext("white");
+    } else {
+      //light mode
+      setModetext("black");
+      setModebg("white");
+    }
     // props.handleCB(open);
-  }, [props.display]);
+  }, [props.display, props.mode]);
 
   const openPicker = () => {
     if (picker === false) {
@@ -31,7 +45,8 @@ export default function Example(props) {
   const addEmoji = (e) => {
     setVal(val + e.emoji);
   };
-  const sendMessage = () => {
+  const sendMessage = (e) => {
+    e.preventDefault();
     setMessage([...message, val]);
     setVal("");
     setPicker(false);
@@ -96,25 +111,35 @@ export default function Example(props) {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="absolute right-[350px] w-full flex h-full flex-col  bg-white py-6 shadow-xl">
+                  <div
+                    className="absolute right-[350px] w-full flex h-full flex-col py-6 shadow-xl"
+                    style={{ backgroundColor: modebg }}
+                  >
                     <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-base text-xl font-semibold leading-6 text-gray-900">
+                      <Dialog.Title
+                        className="text-base text-xl font-semibold leading-6"
+                        style={{ color: modetext }}
+                      >
                         {props.name}
                       </Dialog.Title>
                     </div>
-                    
+
                     <div
                       className="relative mt-6 flex-1 px-4 sm:px-6 overflow-y-scroll overflow-x-hidden bg-slate-400"
-                      // style={{ maxHeight: "400px" }}
+                      style={{ height: "400px", overflow: "scroll" }}
                     >
                       {/* Set a fixed maximum height for the container */}
-                      <div className="absolute bottom-0 right-4 ">
+                      <div className="absolute bottom-0 right-4 grid justify-items-end">
                         {message.length !== 0 ? (
                           message.map((item, key) => (
                             <div
                               key={key}
-                              className="mb-2 rounded-l-xl rounded-tr-xl w-fit max-w-72 bg-white px-2 py-2"
-                              style={{ wordWrap: "break-word" }}
+                              className="mb-2 rounded-l-xl rounded-tr-xl w-fit max-w-72 px-2 py-2"
+                              style={{
+                                wordWrap: "break-word",
+                                backgroundColor: modebg,
+                                color: modetext,
+                              }}
                             >
                               <p>{item}</p>
                             </div>
@@ -126,43 +151,44 @@ export default function Example(props) {
                     </div>
 
                     <div className=" px-4 sm:px-6">
-                      <label class="relative block mt-4 flex">
-                        <span className="absolute bottom-[120%] right-0">
-                          <EmojiPicker
-                            height={380}
-                            width={300}
-                            open={picker}
-                            onEmojiClick={addEmoji}
+                      <form onSubmit={sendMessage}>
+                        <label class="relative block mt-4 flex">
+                          <span className="absolute bottom-[120%] right-0">
+                            <EmojiPicker
+                              height={380}
+                              width={300}
+                              open={picker}
+                              onEmojiClick={addEmoji}
+                            />
+                          </span>
+                          <input
+                            class="placeholder:italic placeholder:text-gray-500 text-wrap block bg-gray-300 w-9/12 border border-slate-300 rounded-md py-2 px-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                            placeholder="write a message..."
+                            type="text"
+                            name="search"
+                            value={val}
+                            onChange={changeVal}
                           />
-                        </span>
-                        <input
-                          class="placeholder:italic placeholder:text-gray-500 text-wrap block bg-gray-300 w-9/12 border border-slate-300 rounded-md py-2 px-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-                          placeholder="write a message..."
-                          type="text"
-                          name="search"
-                          value={val}
-                          onChange={changeVal}
-                        />
-                        <span className="mx-2 my-2 cursor-pointer">
-                          <img
-                            src={smiley}
-                            alt=""
-                            onClick={openPicker}
-                            style={{ width: "30px" }}
-                          />
-                          {/* <SendIcon onClick={openPicker}/> */}
-                          {console.log(picker)}
-                        </span>
-                        <span className="mx-2 mt-2 cursor-pointer">
-                          {/* <SendIcon  /> */}
-                          <img
-                            src={send}
-                            style={{ width: "30px" }}
-                            alt=""
-                            onClick={sendMessage}
-                          />
-                        </span>
-                      </label>
+                          <span className="mx-2 my-2 cursor-pointer">
+                            <img
+                              src={smiley}
+                              alt=""
+                              onClick={openPicker}
+                              style={{ width: "30px" }}
+                            />
+                            {/* <SendIcon onClick={openPicker}/> */}
+                          </span>
+                          <span className="mx-2 mt-2 cursor-pointer">
+                            {/* <SendIcon  /> */}
+                            <img
+                              src={send}
+                              style={{ width: "30px" }}
+                              alt=""
+                              // onClick={sendMessage}
+                            />
+                          </span>
+                        </label>
+                      </form>
                     </div>
                   </div>
                 </Dialog.Panel>
