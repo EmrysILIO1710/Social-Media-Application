@@ -21,7 +21,7 @@ const MediaSection = (props) => {
                 <CenteredTabs handleCB={changeTab} />
                 <br />
                 {
-                    (val === 1) && <MSPhotos dp={props.dp} name={props.name} about={props.about} pic={props.pic} />
+                    (val === 1) && <MSPhotos dp={props.dp} name={props.name} about={props.about} pic={props.pic} mode={props.mode} />
                 }
                 {
                     (val === 2) && <MSTagged />

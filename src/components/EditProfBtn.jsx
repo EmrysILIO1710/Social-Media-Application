@@ -29,7 +29,7 @@ const EditProfBtn = (props) => {
                     md:-bottom-16
                     lg:-bottom-16
                 ">
-                    <p className="text-lg text-bold my-auto">Edit Profile</p>
+                    <p className="text-lg text-bold my-auto text-black">Edit Profile</p>
                 </button>
             </form>
             {
