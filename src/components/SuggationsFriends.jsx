@@ -51,7 +51,7 @@ const SildeBarProfile = ({ userData, props }) => {
 
           <div className="flex">
             <button
-              className="flex items-center justify-center w-20 h-10 mr-2 bg-orange-400 rounded-full hover:bg-orange-500"
+              className="flex items-center justify-center w-fit px-3 h-10 mr-2 bg-orange-400 rounded-full hover:bg-orange-500"
               onClick={() => handleFollow(user.id)}
             >
               <div className="text-white text-lg">
