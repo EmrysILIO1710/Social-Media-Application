@@ -19,11 +19,11 @@ const Mutuals = (props) => {
   }, [props]);
   return (
     <>
-      <div style={{ backgroundColor: modebg, height: "100vh", width: "100%"}}>
+      <div style={{ backgroundColor: modebg, width: "100%", height: "auto"}}>
         <div className="fixed h-full">
           <SideBar className="fixed" mode={props.mode} />
         </div>
-        <SimpleContainer />
+        <SimpleContainer mode={props.mode} />
       </div>
     </>
   );
