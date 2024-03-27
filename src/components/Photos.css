@@ -10,7 +10,7 @@
 .Photos-box{
     width: 80%;
     height: 90%;
-    background-color: rgba(240, 255, 255, 0.532);
+    /* background-color: rgba(240, 255, 255, 0.532); */
     margin: 2.5% auto;
     display: flex;
 }
@@ -23,7 +23,7 @@
 .Photos-text{
     /* flex-basis: 40%; */
     flex: 1;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     padding: 20px 30px;
 }
 .Photos-img{

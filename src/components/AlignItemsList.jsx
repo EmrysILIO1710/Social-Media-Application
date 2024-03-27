@@ -9,8 +9,24 @@ import Avatar from '@mui/material/Avatar';
 // import Typography from '@mui/material/Typography';
 
 export default function AlignItemsList(props) {
+  const [modebg, setModebg] = React.useState("white");
+  const [modetext, setModetext] = React.useState("black");
+  React.useEffect(() => {
+    // setModeTrigger(1);
+    console.log(props.mode);
+    if (props.mode) {
+      //dark mode
+      setModebg("rgb(26, 24, 48) ");
+      setModetext("white");
+    } else {
+      //light mode
+      setModetext("black");
+      setModebg("white");
+    }
+  }, [props]);
+
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: modebg, color: modetext }}>
       <ListItem alignItems="flex">
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src={props.dp} />

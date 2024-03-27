@@ -35,7 +35,7 @@
 .LF-login{
     height: 40px;
     width: 200px;
-    margin: 30px 100px;
+    margin: 30px 100px 10px;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
@@ -49,7 +49,8 @@
     transition: 0.3s;
 }
 .LF-h3{
-    margin: 10px 40px;
+    margin: 20px 40px;
+    font-size: 30px;
 }
 .LF-signup{
     font-weight: bold;

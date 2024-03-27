@@ -7,14 +7,14 @@ import {
   useQuery,
 } from 'react-query';
 const queryClient = new QueryClient();
-export default function Trial() {
+export default function Trial(props) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Users />
+      <Users mode={props.mode} />
     </QueryClientProvider>
   );
 }
-const Users = () => {
+const Users = (props) => {
   // const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
 
   // const handleDataFromBackgroundButton = (data) => {
@@ -72,8 +72,7 @@ const Users = () => {
                         key = {key}
                         dp = {item.picture}
                         name = {item.firstName + " " + item.lastName}
-                        
-                        
+                        mode={props.mode}
                     />
                 ))
             }
