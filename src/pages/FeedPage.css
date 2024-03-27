@@ -8,7 +8,7 @@
     background-attachment: fixed;
   }
   
-  /* @media (min-width: 640px) {
+  @media (min-width: 640px) {
     .FP-container {
       height: auto;
       min-height: 100vh;
@@ -34,7 +34,7 @@
       height: auto;
       min-height: 100vh;
     }
-  } */
+  }
   
   .FP-story {
     width: fit-content;

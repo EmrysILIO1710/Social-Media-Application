@@ -22,7 +22,7 @@ const SildeBarProfile = ({ userData, props, mode }) => {
     } else {
       setFollowedUsers([...followedUsers, userId]);
     }
-  };//Hiiikawdfjdad
+  };
 
   const handleRemove = (userId) => {
     alert("You want ot remove this user?");
@@ -31,7 +31,7 @@ const SildeBarProfile = ({ userData, props, mode }) => {
   };
 
   return (
-    <div className="scrollbar-thin scrollbar-thumb-orange-400 scrollbar-track-gray-200 scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-y-auto">
+    <div>
       {userData.map((user) => (
         <div
           key={user.id}
@@ -55,7 +55,9 @@ const SildeBarProfile = ({ userData, props, mode }) => {
                 }}
                 className="no-underline"
               >
-                <p className="text-lg font-bold" style={{color: modetext}}>{`${user.firstName} ${user.lastName}`}</p>
+                <p className="text-lg font-bold" style={{ color: modetext }}>
+                  {`${user.firstName} ${user.lastName}`}
+                </p>
               </Link>
             </div>
           </div>
@@ -74,7 +76,7 @@ const SildeBarProfile = ({ userData, props, mode }) => {
               className="flex items-center justify-center w-10 h-10 bg-transparent rounded-full "
               onClick={() => handleRemove(user.id)}
             >
-              <RxCross1 style={{color: modetext}} size={20} />
+              <RxCross1 style={{ color: modetext }} size={20} />
             </button>
           </div>
         </div>

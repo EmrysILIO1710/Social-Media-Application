@@ -30,7 +30,6 @@ import FollowRequest from "./components/FollowRequest";
 import NotificationList from "./components/NotificationList";
 import NotificationArea from "./components/NotificationArea";
 // import PostButton from './components/PostButton';
-// =======
 import ProfilePage from "./pages/ProfilePage";
 import UserProfilePage from "./pages/UserProfilePage";
 import FollowUnfollowButton from "./components/FollowUnfollowButton";
