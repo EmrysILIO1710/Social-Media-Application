@@ -3,6 +3,7 @@ import SuggationsFriends from "./SuggationsFriends";
 
 function RightSideBar(props) {
   const [userData, setUserData] = useState([]);
+  const [gradient, setGradient] = useState("linear-gradient(to right, rgb(255, 246, 234) 0%, rgb(254, 163, 82) 50% ")
 
   const getData = async () => {
     try {
@@ -21,14 +22,23 @@ function RightSideBar(props) {
 
   // Fetch data on component mount
   useEffect(() => {
+    if (props.mode) {
+      //dark mode
+      setGradient("linear-gradient(to right, rgb(26, 24, 48) 0%, rgb(254, 163, 82) 50% ")
+    } else {
+      //light mode
+      setGradient("linear-gradient(to right, rgb(255, 246, 234) 0%, rgb(254, 163, 82) 50% ");
+    }
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-1/4">
       {/* First list */}
       <div className="list-group list-group-flush scrollarea">
-        <div className="text-2xl bg-orange-400 h-20 text-center text-bold text-3xl justify-center flex items-center text-white">
+        <div className="text-2xl  h-20 text-center text-bold text-3xl justify-center flex items-center text-white" //bg-orange-400
+          style={{background: gradient}}
+        >
           Suggestions
         </div>
         <SuggationsFriends userData={userData} mode={props.mode} />
