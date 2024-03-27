@@ -1,81 +1,81 @@
 .SA {
-    width: fit-content;
-    /* background-color: aqua; */
-    position: relative;
-    margin-bottom: 25px;
-    /* z-index: 1; */
+  width: fit-content;
+  /* background-color: aqua; */
+  position: relative;
+  margin-bottom: 25px;
+  /* z-index: 1; */
 }
 
 .SA-container {
-    width: 800px;
-    max-width: 100%; /* Ensures responsiveness */
-    height: auto;
-    background-color: rgba(116, 255, 209, 0);
-    /* display: flex;
+  width: 800px;
+  max-width: 100%; /* Ensures responsiveness */
+  height: auto;
+  background-color: rgba(116, 255, 209, 0);
+  /* display: flex;
     flex-wrap: nowrap;
     padding: 10px 0; */
-    overflow: scroll;
-    scroll-behavior: smooth;
+  overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 .SA-content {
-    width: fit-content;
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 20px 0 0;
-    /* background-color: rgba(238, 0, 0, 0.44); */
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 20px 0 0;
+  /* background-color: rgba(238, 0, 0, 0.44); */
 }
 
 .SA-container::-webkit-scrollbar {
-    display: none; /* Hide scroll bar */
+  display: none; /* Hide scroll bar */
 }
 
 .SA-left,
 .SA-right {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.444);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.444);
 }
 
 .SA-right {
-    right: 20px;
-    top: 60px;
+  right: 20px;
+  top: 60px;
 }
 
 .SA-left {
-    left: 20px;
-    top: 60px;
+  left: 20px;
+  top: 60px;
 }
 
 .SA-left:hover,
 .SA-right:hover {
-    cursor: pointer;
-    background-color: rgb(254, 162, 82);
+  cursor: pointer;
+  background-color: rgb(254, 162, 82);
 }
 
 .SA-story {
-    height: 100vh;
-    width: 90vw;
-    background-color: rgba(0, 0, 0, 0);
-    position: fixed;
-    top: 0;
-    margin-left: 5vw;
-    /* display: none; */
+  height: 100vh;
+  width: 90vw;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  margin-left: 5vw;
+  /* display: none; */
 }
 
 /* Media Queries for Responsiveness */
 
 @media (max-width: 1024px) {
-    .SA-container {
-        width: 100%;
-        max-width: none;
-    }
+  .SA-container {
+    width: 100%;
+    max-width: none;
+  }
 
-    .SA-story {
-        margin-left: 0;
-        width: 100%;
-    }
+  .SA-story {
+    margin-left: 0;
+    width: 100%;
+  }
 }

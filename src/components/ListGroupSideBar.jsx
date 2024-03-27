@@ -21,8 +21,8 @@ function ListGroupSideBar(props) {
   }, [ props]);
 
   return (
-    <div className="absolute mt-16 top-0 h-screen overflow-y-auto bg-transparent text-black w-80">
-      <div className="text-2xl bg-orange-400 h-20 text-center text-bold text-3xl justify-center flex items-center text-white">
+    <div className="absolute mt- top-0 h-screen overflow-y-auto bg-transparent text-black w-80">
+      <div className="Fixed bg-orange-400 h-20 text-center text-bold text-3xl justify-center flex items-center text-white">
         Quick Links
       </div>
       {/* First list */}
