@@ -103,7 +103,7 @@ const Users = (props) => {
                   />
                 ))
               }
-              {console.log(data.data)}
+              {/* {console.log(data.data)} */}
                 {
                     data.data.map((item, key) => (
                         <Posts 

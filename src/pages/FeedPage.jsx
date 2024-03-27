@@ -8,7 +8,7 @@ import SideBar from "../components/SideBar";
 import { useLocation } from "react-router-dom";
 
 const FeedPage = (props) => {
-  const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
+  // const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
   const [modebg, setModebg] = useState("rgb(255, 246, 234)");
 
   const location = useLocation();
@@ -28,20 +28,20 @@ const FeedPage = (props) => {
     }
   }, [location, props]);
 
-  const handleDataFromBackgroundButton = (data) => {
-    setDataFromBackgroundButton(data);
-  };
+  // const handleDataFromBackgroundButton = (data) => {
+  //   setDataFromBackgroundButton(data);
+  // };
 
   return (
     <div
       className="FP-container"
       style={{
-        backgroundImage: `url(${dataFromBackgroundButton})`,
+        // backgroundImage: `url(${dataFromBackgroundButton})`,
         backgroundColor: modebg,
       }}
     >
       <div className="fixed h-full">
-        <SideBar className="fixed" />
+        <SideBar className="fixed" mode={props.mode} />
       </div>
       {/* <BackgroundButton sendDataToFeedPage={handleDataFromBackgroundButton} /> */}
       {/* <Navbar /> */}

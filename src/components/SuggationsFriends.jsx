@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RxCross1 } from "react-icons/rx";
 
-const SildeBarProfile = ({ userData, props }) => {
+const SildeBarProfile = ({ userData, props, mode }) => {
   const [followedUsers, setFollowedUsers] = useState([]);
+  const [modetext, setModetext] = useState("black");
+
+  useEffect(() => {
+    if (mode) {
+      //dark mode
+      setModetext("white");
+    } else {
+      //light mode
+      setModetext("black");
+    }
+  }, [mode]);
 
   const handleFollow = (userId) => {
     if (followedUsers.includes(userId)) {
@@ -44,14 +55,14 @@ const SildeBarProfile = ({ userData, props }) => {
                 }}
                 className="no-underline"
               >
-                <p className="text-lg font-bold text-black">{`${user.firstName} ${user.lastName}`}</p>
+                <p className="text-lg font-bold" style={{color: modetext}}>{`${user.firstName} ${user.lastName}`}</p>
               </Link>
             </div>
           </div>
 
           <div className="flex">
             <button
-              className="flex items-center justify-center w-20 h-10 mr-2 bg-orange-400 rounded-full hover:bg-orange-500"
+              className="flex items-center justify-center w-fit px-3 h-10 mr-2 bg-orange-400 rounded-full hover:bg-orange-500"
               onClick={() => handleFollow(user.id)}
             >
               <div className="text-white text-lg">
@@ -63,7 +74,7 @@ const SildeBarProfile = ({ userData, props }) => {
               className="flex items-center justify-center w-10 h-10 bg-transparent rounded-full "
               onClick={() => handleRemove(user.id)}
             >
-              <RxCross1 className="text-black" size={20} />
+              <RxCross1 style={{color: modetext}} size={20} />
             </button>
           </div>
         </div>

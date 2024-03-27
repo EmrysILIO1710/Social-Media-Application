@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import SuggationsFriends from "./SuggationsFriends";
 
-function RightSideBar() {
+function RightSideBar(props) {
   const [userData, setUserData] = useState([]);
 
   const getData = async () => {
@@ -28,10 +28,10 @@ function RightSideBar() {
     <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-1/4">
       {/* First list */}
       <div className="list-group list-group-flush scrollarea">
-        <div className="text-2xl bg-orange-400 h-20 text-center justify-center flex items-center text-white">
-          Suggetions
+        <div className="text-2xl bg-orange-400 h-20 text-center text-bold text-3xl justify-center flex items-center text-white">
+          Suggestions
         </div>
-        <SuggationsFriends userData={userData} />
+        <SuggationsFriends userData={userData} mode={props.mode} />
       </div>
     </div>
   );
