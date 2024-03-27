@@ -41,7 +41,7 @@ const FeedPage = (props) => {
       }}
     >
       <div className="fixed h-full">
-        <SideBar className="fixed" />
+        <SideBar className="fixed" mode={props.mode} />
       </div>
       {/* <BackgroundButton sendDataToFeedPage={handleDataFromBackgroundButton} /> */}
       {/* <Navbar /> */}

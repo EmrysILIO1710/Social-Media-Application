@@ -2,11 +2,11 @@ import React from 'react';
 import ListGroupSideBar from './ListGroupSideBar';
 import RightSideBar from './RightSideBar';  
 
-function SideBar() {
+function SideBar(props) {
   return (
     <div className="App">
-      <ListGroupSideBar />
-      <RightSideBar/>
+      <ListGroupSideBar mode={props.mode} />
+      <RightSideBar mode={props.mode} />
     </div>
   );
 }
