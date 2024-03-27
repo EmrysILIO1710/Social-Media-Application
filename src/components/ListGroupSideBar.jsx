@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SildeBarProfile from "./SildeBarProfile";
 import { FaUserFriends } from "react-icons/fa";
 import { CiSaveDown2 } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { LuWallpaper } from "react-icons/lu";
+import { LuSettings } from "react-icons/lu";
+import { SlLogout } from "react-icons/sl";
 
-function ListGroupSideBar() {
+function ListGroupSideBar(props) {
+  const [modetext, setModetext] = useState("black");
+
+  useEffect(() => {
+    if (props.mode) {
+      //dark mode
+      setModetext("white");
+    } else {
+      //light mode
+      setModetext("black");
+    }
+  }, [ props]);
+
   return (
-    <div className="absolute mt-16 top-0 h-screen overflow-y-auto bg-transparent text-black w-96">
+    <div className="absolute mt-16 top-0 h-screen overflow-y-auto bg-transparent text-black w-80">
+      <div className="text-2xl bg-orange-400 h-20 text-center text-bold text-3xl justify-center flex items-center text-white">
+        Quick Links
+      </div>
       {/* First list */}
-      <div className="space-y-4 px-4">
-        <SildeBarProfile
-          imageUrl={
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-          }
-          name="Blue lagoon"
-        />
+      <div className="space-y-4 px-4" style={{color: modetext}}>
         <SildeBarProfile
           imageUrl={<FaUserFriends size={30} />}
           name="Friends"
+          mode={props.mode}
+          link={'/'}
         />
-        <SildeBarProfile imageUrl={<CiSaveDown2 size={30} />} name="Saved" />
+        <SildeBarProfile imageUrl={<CiSaveDown2 size={30} />} name="Saved" mode={props.mode} link={'/'} />
+        <SildeBarProfile imageUrl={<LuSettings size={30} />} name="Settings" mode={props.mode} link={'/'} />
 
         {/* Theme Changer */}
         <Link
@@ -32,10 +46,15 @@ function ListGroupSideBar() {
               <LuWallpaper size={30} />
             </div>
             <div className="ml-4">
-              <h2 className="text-lg font-bold text-black">Themes</h2>
+              <h2 className="text-lg font-bold">Themes</h2>
             </div>
           </div>
         </Link>
+        
+        <div className="self-end">
+          <hr />
+          <SildeBarProfile imageUrl={<SlLogout size={30} />} name="Logout" mode={props.mode} link={'/'} />
+        </div>
       </div>
     </div>
   );

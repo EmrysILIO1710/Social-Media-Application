@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const SildeBarProfile = (props) => {
+  const [modetext, setModetext] = useState("black");
+
+  useEffect(() => {
+    if (props.mode) {
+      //dark mode
+      setModetext("white");
+    } else {
+      //light mode
+      setModetext("black");
+    }
+  }, [ props]);
   return (
     <Link
-      to="/profilepage"
+      to={props.link}
       className="list-group-item my-1 py-3 lh-sm bg-transparent transition-transform duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-md active:shadow-none hover:cursor-pointer"
     >
       <div className="relative w-full flex items-center">
@@ -20,7 +31,7 @@ const SildeBarProfile = (props) => {
           )}
         </div>
         <div className="ml-4">
-          <h2 className="text-lg font-bold text-black">{props.name}</h2>
+          <h2 className="text-lg font-bold" style={{color: modetext}}>{props.name}</h2>
         </div>
       </div>
     </Link>
