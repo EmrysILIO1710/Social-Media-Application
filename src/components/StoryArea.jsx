@@ -13,6 +13,8 @@ import PostStoryButton from "./PostStoryButton";
 
 const StoryArea = (props) => {
   const [val, setVal] = useState(0);
+  const [c, setC] = useState(0);
+  const [show, setShow] = useState(true);
   const [scrolll, setScrolll] = useState(0);
   const ref = useRef();
   const isOverflow = useIsOverflow(ref);
@@ -31,19 +33,29 @@ const StoryArea = (props) => {
   };
 
   const Callback = () => {
+    setC(0);
     setVal(0);
   };
 
   const handleUpload = (user, dp, inputValue, image) => {
     setStory([
       {
-        user: user,
-        dp: dp,
-        caption: inputValue,
-        image: image,
-      },
-      ...story,
+        id: 1,
+        name: user,
+        pp: dp,
+        pic: image,
+        visual: "none",
+      }
     ]);
+    setShow(false);
+    // arrStory.push({
+    //   id: arrStory.length,
+    //   name: user,
+    //   pp: dp,
+    //   pic: image,
+    //   visual: "none",
+    // });
+    // console.log(arrStory)
   };
 
   const arrStory = [
@@ -78,20 +90,24 @@ const StoryArea = (props) => {
 
       <div className="SA-container" ref={ref}>
         <div className="SA-content">
-          <PostStoryButton
-            profilepic="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            user="Blue lagoon"
-            onUpload={handleUpload}
-          />
+          {
+            show && <PostStoryButton
+              profilepic="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              user="Blue lagoon"
+              mode={props.mode}
+              onUpload={handleUpload}
+            />
+          }
+          {/* {console.log(story)} */}
           {story.length !== 0 &&
             story.map((item, key) => (
               <Story
                 key={key}
-                user={item.user}
-                content={item.image}
-                profilepic={item.dp}
+                user={item.name}
+                content={item.pic}
+                profilepic={item.pp}
                 onClick={() => {
-                  setVal(key + 1);
+                  setC(item.id);
                 }}
                 mode={props.mode}
               />
@@ -111,13 +127,19 @@ const StoryArea = (props) => {
           ))}
         </div>
       </div>
-      {console.log(isOverflow)}
+      {/* {console.log(isOverflow)} */}
       {isOverflow ? (
         <button className="SA-right" onClick={next}>{`>`}</button>
       ) : null}
-      {val !== 0 ? (
+      {val > 0 ? (
         <StoryContent
           content={arrStory[val - 1].pic}
+          handleCallback={Callback}
+        />
+      ) : null}
+      {c > 0 ? (
+        <StoryContent
+          content={story[0].pic}
           handleCallback={Callback}
         />
       ) : null}

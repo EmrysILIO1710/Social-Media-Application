@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { IoAdd } from "react-icons/io5";
 import StoryUploadOption from "./StoryUploadOption";
 
 const Story = (props) => {
-  const [circle, setCircle] = useState("border-5 border-orange-400");
+  // const [circle, setCircle] = useState("border-5 border-orange-400");
   const [showChildModal, setShowChildModal] = useState(false);
-  const [modetext, setModetext] = useState("text-black");
+  // const [modetext, setModetext] = useState("text-black");
   const handleOpenChildModal = () => {
     setShowChildModal(true);
   };
-  useEffect(() => {
-    setModetext(props.mode ? "text-white" : "text-black");
-  }, [props.mode]);
+  // useEffect(() => {
+  //   setModetext(props.mode ? "text-white" : "text-black");
+  // }, [props.mode]);
 
   return (
     <>
       <div className="flex flex-col items-center relative">
         <div
-          className={`relative w-24 h-24 rounded-full overflow-hidden ${circle}`}
+          className={`relative w-24 h-24 rounded-full overflow-hidden`}
         >
           <img
             src={props.profilepic}

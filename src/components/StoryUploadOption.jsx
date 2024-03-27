@@ -44,10 +44,12 @@ function StoryUploadOption({ onClose, onUpload, mode }) {
   }, [mode]);
 
   const handleImageUpload = (file) => {
+    // console.log(file);
     setImage(file);
   };
 
   const handleUpload = () => {
+    // console.log(image);
     onUpload(user, dp, "", image); // Pass data to parent
     onClose(); // Close modal after upload
   };
