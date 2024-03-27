@@ -1,23 +1,27 @@
 import { Fragment, useEffect, useState } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 // import { IoIosSearch } from "react-icons/io";
-import { AiFillHome } from "react-icons/ai";
+// import { AiFillHome } from "react-icons/ai";
 import AddagramLogo from "../pictures/AddagramLogo.png";
-import AddagramLogo2 from '../pictures/logo2.png';
-import { BiSolidMoviePlay } from "react-icons/bi";
+import AddagramLogo2 from "../pictures/logo2.png";
+// import { BiSolidMoviePlay } from "react-icons/bi";
 // import { BiSolidMessage } from "react-icons/bi";
 // import { TbWorldUpload } from "react-icons/tb";
-import { MdGroups2 } from "react-icons/md";
+// import { MdGroups2 } from "react-icons/md";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import NotificationArea from "./NotificationArea";
 import Messages from "./Messages";
+// import SearchResults from "./SearchResults";
+// import SearchResults2 from "./SearchResults2";
+import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
 
 const navigation = [
-  { name: <AiFillHome size={32} />, href: "/feed", current: false },
-  { name: <BiSolidMoviePlay size={32} />, href: "/", current: false },
-  { name: <MdGroups2 size={32} />, href: "/", current: false },
+  // { name: <AiFillHome size={32} />, href: "/feed", current: false },
+  // { name: <BiSolidMoviePlay size={32} />, href: "/", current: false },
+  // { name: <MdGroups2 size={32} />, href: "/", current: false },
 ];
 const mobileNavHamBurgurOption = [
   { name: "Home", href: "/feed", current: false },
@@ -30,28 +34,30 @@ function classNames(...classes) {
 }
 
 export default function Navbar(props) {
-  const [dp, setDp] = useState("https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80");
+  const [dp, setDp] = useState(
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+  );
   const [modebg, setModebg] = useState("white");
-  const [modetext, setModetext] = useState("black");
+  // const [modetext, setModetext] = useState("black");
   const [logo, setLogo] = useState(AddagramLogo);
+  // const [disp, setDisp] = useState(false);
 
   // const [modeTrigger, setModeTrigger] = useState(0);
 
   useEffect(() => {
     // setModeTrigger(1);
-    if(props.mode){
+    if (props.mode) {
       //dark mode
-      setModebg("rgb(15, 12, 39)"); 
-      setModetext("white");
+      setModebg("rgb(15, 12, 39)");
+      // setModetext("white");
       setLogo(AddagramLogo2);
-    }
-    else{
+    } else {
       //light mode
       setModebg("white");
-      setModetext("black");
+      // setModetext("black");
       setLogo(AddagramLogo);
     }
-    if(props.dp !== ""){
+    if (props.dp !== "") {
       setDp(props.dp);
     }
   }, [props.dp, props.mode]);
@@ -60,7 +66,7 @@ export default function Navbar(props) {
     <Disclosure
       as="nav"
       className="fixed top-0 w-full z-10 Bottom-Shadow"
-      style={{backgroundColor: modebg}}
+      style={{ backgroundColor: modebg }}
     >
       {({ open }) => (
         <>
@@ -78,7 +84,7 @@ export default function Navbar(props) {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-none items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-6 w-auto sm:h-11 sm:w-auto cursor-pointer hidden md:block"
@@ -103,29 +109,15 @@ export default function Navbar(props) {
                         {item.name}
                       </Link>
                     ))}
-                    
                   </div>
                 </div>
               </div>
+              <div className="flex-1 grid  place-content-center">
+                <SearchResults mode={props.mode} />
+              </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                {/* Search bar */}
-                <div className="input-group mb-3 my-3 mx-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Search"
-                    aria-label="Search"
-                    aria-describedby="button-addon2"
-                  />
-                  {/* <button
-                    className="btn btn-outline-secondary Bg-primary search-icon bg-gray-600 hover:bg-orange-500"
-                    type="button"
-                    id="button-addon2"
-                  >
-                    <IoIosSearch size={20} />
-                  </button> */}
-                </div>
-
+                
+                {/* <SearchResults /> */}
                 <button
                   type="button"
                   className="relative rounded-full bg-orange-300 p-2 text-black-400  hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500 mx-2"
@@ -139,80 +131,21 @@ export default function Navbar(props) {
                   type="button"
                   className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500"
                 > */}
-                  {/* <span className="sr-only">View notifications</span>
+                {/* <span className="sr-only">View notifications</span>
                   <BiSolidMessage className="h-6 w-6" /> */}
-                  {/* {console.log(props.mode)} */}
-                  <Messages mode={props.mode} />
+                {/* {console.log(props.mode)} */}
+                <Messages mode={props.mode} />
                 {/* </button> */}
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-6">
                   <div>
-                    <Menu.Button className="relative w-24 h-12 flex flex-shrink-0 rounded-full p-2 text-sm focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-800 ">
+                    <Link to={'/profilepage'} className="relative  flex flex-shrink-0 rounded-full p-2 text-sm focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-800 ">
                       <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src={dp}
-                        alt=""
-                      />
-                    </Menu.Button>
+                      <img className="h-10 w-10 rounded-full" src={dp} alt="" />
+                    </Link>
                   </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                      style={{backgroundColor: modebg, color: modetext}}
-                    >
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/profilepage"
-                            className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
-                            )}
-                            style={{color: modetext}}
-                          >
-                            Your Profile
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/"
-                            className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
-                            )}
-                            style={{color: modetext}}
-                          >
-                            Settings
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/"
-                            className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
-                            )}
-                            style={{color: modetext}}
-                          >
-                            Sign out
-                          </Link>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
+                  
                 </Menu>
               </div>
             </div>
