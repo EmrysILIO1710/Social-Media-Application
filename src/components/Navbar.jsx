@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 // import { IoIosSearch } from "react-icons/io";
 // import { AiFillHome } from "react-icons/ai";
@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 import NotificationArea from "./NotificationArea";
 import Messages from "./Messages";
 // import SearchResults from "./SearchResults";
-import SearchResults2 from "./SearchResults2";
+// import SearchResults2 from "./SearchResults2";
+import SearchResults from "./SearchResults";
 // import SearchResults from "./SearchResults";
 
 const navigation = [
@@ -37,7 +38,7 @@ export default function Navbar(props) {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
   );
   const [modebg, setModebg] = useState("white");
-  const [modetext, setModetext] = useState("black");
+  // const [modetext, setModetext] = useState("black");
   const [logo, setLogo] = useState(AddagramLogo);
   // const [disp, setDisp] = useState(false);
 
@@ -48,12 +49,12 @@ export default function Navbar(props) {
     if (props.mode) {
       //dark mode
       setModebg("rgb(15, 12, 39)");
-      setModetext("white");
+      // setModetext("white");
       setLogo(AddagramLogo2);
     } else {
       //light mode
       setModebg("white");
-      setModetext("black");
+      // setModetext("black");
       setLogo(AddagramLogo);
     }
     if (props.dp !== "") {
@@ -112,7 +113,7 @@ export default function Navbar(props) {
                 </div>
               </div>
               <div className="flex-1 grid  place-content-center">
-                <SearchResults2 mode={props.mode} />
+                <SearchResults mode={props.mode} />
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
@@ -139,68 +140,12 @@ export default function Navbar(props) {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-6">
                   <div>
-                    <Menu.Button className="relative w-24 h-12 flex flex-shrink-0 rounded-full p-2 text-sm focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-800 ">
+                    <Link to={'/profilepage'} className="relative  flex flex-shrink-0 rounded-full p-2 text-sm focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-800 ">
                       <span className="sr-only">Open user menu</span>
-                      <img className="h-8 w-8 rounded-full" src={dp} alt="" />
-                    </Menu.Button>
+                      <img className="h-10 w-10 rounded-full" src={dp} alt="" />
+                    </Link>
                   </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items
-                      className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                      style={{ backgroundColor: modebg, color: modetext }}
-                    >
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/profilepage"
-                            className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
-                            )}
-                            style={{ color: modetext }}
-                          >
-                            Your Profile
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/"
-                            className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
-                            )}
-                            style={{ color: modetext }}
-                          >
-                            Settings
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/"
-                            className={classNames(
-                              active ? "bg-gray-100 text-black" : "",
-                              "block px-4 text-sm  no-underline"
-                            )}
-                            style={{ color: modetext }}
-                          >
-                            Sign out
-                          </Link>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
+                  
                 </Menu>
               </div>
             </div>
