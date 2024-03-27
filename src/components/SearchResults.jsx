@@ -1,37 +1,58 @@
 import * as React from "react";
-import TextField from "@mui/material/TextField";
-import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { purple } from "@mui/material/colors";
+import { useAutocomplete } from "@mui/base/useAutocomplete";
+import { styled } from "@mui/system";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { Link } from "react-router-dom";
+
 const queryClient = new QueryClient();
 
 export default function SearchResults(props) {
   return (
     <QueryClientProvider client={queryClient}>
       {/* {console.log(props.mode)} */}
-      <Search mode={props.mode} />
+      <Search3 mode={props.mode} />
     </QueryClientProvider>
   );
 }
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "rgb(254, 163, 82)  ",
-    },
-    text: {
-        secondary: purple,
-    }
-  },
+const Label = styled("label")({
+  display: "block",
 });
 
-const filter = createFilterOptions();
+const Input = styled("input")(({ theme }) => ({
+  width: 450,
+  height: 40,
+  padding: 5,
+  border: "2px solid rgb(138, 138, 138)",
+  borderRadius: "10px",
+//   backgroundColor: "white",
+  outline: "none"
+//   outline: "2px solid rgb(254, 163, 82)",
+}));
 
-const Search = () => {
-  const [value, setValue] = React.useState(null);
+const Listbox = styled("ul")(({ theme }) => ({
+  width: 450,
+  marginTop: 10,
+  padding: 5,
+  zIndex: 1,
+  position: "absolute",
+  listStyle: "none",
+//   backgroundColor: "white",
+  overflow: "auto",
+  maxHeight: 200,
+  border: "0px solid rgba(0,0,0,.25)",
+  "& li.Mui-focused": {
+    backgroundColor: "rgb(254, 163, 82) ",
+    color: "white",
+    cursor: "pointer",
+  },
+  "& li:active": {
+    backgroundColor: "rgb(254, 163, 82)",
+    color: "white",
+  },
+}));
 
+const Search3 = (props) => {
   const getData = async () => {
     const res = await fetch("https://dummyapi.io/data/v1/post?limit=50", {
       method: "GET",
@@ -46,68 +67,55 @@ const Search = () => {
   if (error) return <div>Request Failed</div>;
   if (isLoading) return <div></div>;
 
+  return <Search2 data={data.data} mode={props.mode} />;
+};
+
+const Search2 = (props) => {
+  // const [list, setList] = React.useState(null);
+  const [modebg, setModebg] = React.useState("white");
+  const [modebg2, setModebg2] = React.useState("white");
+  const [modetext, setModetext] = React.useState("black");
+
+  React.useEffect(() => {
+    // setModeTrigger(1);
+    if(props.mode){
+      //dark mode
+      setModebg("rgb(15, 12, 39)"); 
+      setModetext("white");
+      setModebg2("rgb(26, 24, 48)")
+    }
+    else{
+      //light mode
+      setModebg("white");
+      setModetext("black");
+      setModebg2("white");
+    }
+    
+  }, [props]);
+
+  const {
+    getRootProps,
+    getInputLabelProps,
+    getInputProps,
+    getListboxProps,
+    getOptionProps,
+    groupedOptions,
+  } = useAutocomplete({
+    id: "use-autocomplete-demo",
+    options: props.data,
+    getOptionLabel: (option) => option.owner.firstName,
+  });
+
   return (
-    <ThemeProvider theme={theme}>
-      {console.log(data.data)}
-      <Autocomplete
-        value={value}
-        onChange={(event, newValue) => {
-          if (typeof newValue === "string") {
-            setValue({
-              owner: {
-                firstname: newValue,
-              },
-            });
-          } else if (newValue && newValue.inputValue) {
-            // Create a new value from the user input
-            setValue({
-              owner: {
-                firstname: newValue.inputValue,
-              },
-            });
-          } else {
-            setValue(newValue);
-          }
-        }}
-        filterOptions={(options, params) => {
-          const filtered = filter(options, params);
-
-          const { inputValue } = params;
-          // Suggest the creation of a new value
-          const isExisting = options.some(
-            (option) => inputValue === option.owner.firstName
-          );
-          if (inputValue !== "" && !isExisting) {
-            filtered.push({
-              inputValue,
-              owner: {
-                firstName: `no user found by the name "${inputValue}"`,
-                lastName: "",
-              },
-            });
-          }
-
-          return filtered;
-        }}
-        selectOnFocus
-        clearOnBlur
-        handleHomeEndKeys
-        id="free-solo-with-text-demo"
-        options={data.data}
-        getOptionLabel={(option) => {
-          // Value selected with enter, right from the input
-          if (typeof option === "string") {
-            return option;
-          }
-          // Add "xxx" option created dynamically
-          if (option.inputValue) {
-            return option.inputValue;
-          }
-          // Regular option
-          return option.owner.firstName;
-        }}
-        renderOption={(props, option) => (
-          <div style={{ backgroundColor: "white" }}>
+    <div>
+      <div {...getRootProps()}>
+        <Label {...getInputLabelProps()}></Label>
+        <Input {...getInputProps()} placeholder="Search..." style={{backgroundColor: modebg2, color: modetext}} />
+      </div>
+      {groupedOptions.length > 0 ? (
+        <Listbox {...getListboxProps()} style={{backgroundColor: modebg}}>
+          {groupedOptions.map((option, index) => (
+            // <div style={{ backgroundColor: "white" }}>
             <Link
               to={"/userprofile"}
               state={{
@@ -118,11 +126,11 @@ const Search = () => {
               }}
               style={{ textDecoration: "none", color: "black" }}
             >
-              <li {...props}>
+              <li {...getOptionProps({ option, index })} className="flex items-center mb-[10px] rounded-l-full text-xl" style={{color: modetext}}>
                 <img
                   src={option.owner.picture}
                   style={{
-                    width: "40px",
+                    width: "50px",
                     borderRadius: "50%",
                     marginRight: "10px",
                   }}
@@ -131,13 +139,11 @@ const Search = () => {
                 {option.owner.firstName + " " + option.owner.lastName}
               </li>
             </Link>
-          </div>
-        )}
-        sx={{ width: 400, bgcolor: "rgb(0, 0, 0, 0)",  inline: "1px solid black"  }}
-        freeSolo
-        renderInput={(params) => <TextField {...params}  label="Search" />}
-      />
-    </ThemeProvider>
+        //   </div>
+            
+          ))}
+        </Listbox>
+      ) : null}
+    </div>
   );
 };
-
