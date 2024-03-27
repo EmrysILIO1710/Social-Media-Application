@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Settings.css";
 import { Button } from "react-bootstrap";
-import { DarkMode } from "@mui/icons-material";
+// import { DarkMode } from "@mui/icons-material";
+// import { Link } from "react-router-dom";
 
 const Settings = () => {
   const [isDarkMode, setDarkMode] = useState(false);
