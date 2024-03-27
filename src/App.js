@@ -36,7 +36,8 @@ import UserProfilePage from './pages/UserProfilePage';
 import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
 import ConfirmAcc from './components/ConfirnAcc';
-
+import Mutuals from './pages/Mutuals';
+//testing
 function App() {
   const [show, setShow] = useState(false);
   const [dp, setDp] = useState("");
@@ -90,7 +91,7 @@ function App() {
           <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} mode={modeTrigger} />} />
           <Route path='/example' element={<Example />} />
           <Route path='/confirm' element={<ConfirmAcc />} />
-
+          <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>
