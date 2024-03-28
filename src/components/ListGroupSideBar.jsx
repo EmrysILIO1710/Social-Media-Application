@@ -26,7 +26,7 @@ function ListGroupSideBar(props) {
   }, [props]);
 
   return (
-    <div className="absolute mt-16 top-0 h-screen overflow-y-auto bg-transparent text-black w-80">
+    <div className="fixed mt-16 top-0 h-screen overflow-y-auto bg-transparent text-black w-80">
       <div className="text-2xl h-20 text-center text-bold text-3xl justify-center flex items-center text-white"
         style={{background: gradient}}
       >
@@ -36,9 +36,9 @@ function ListGroupSideBar(props) {
       <div className="space-y-4 px-4" style={{ color: modetext }}>
         <SildeBarProfile
           imageUrl={<FaUserFriends size={30} />}
-          name="Friends"
+          name="Mutuals"
           mode={props.mode}
-          link={"/"}
+          link={"/mutuals"}
         />
         <SildeBarProfile
           imageUrl={<CiSaveDown2 size={30} />}
