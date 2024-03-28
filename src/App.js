@@ -29,6 +29,7 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
+
 // import PostButton from './components/PostButton';
 // =======
 import ProfilePage from './pages/ProfilePage';
@@ -37,6 +38,7 @@ import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
 import ConfirmAcc from './components/ConfirnAcc';
 import Mutuals from './pages/Mutuals';
+import Settingnew from './components/Settingnew';
 //testing
 function App() {
   const [show, setShow] = useState(false);
@@ -92,6 +94,7 @@ function App() {
           <Route path='/example' element={<Example />} />
           <Route path='/confirm' element={<ConfirmAcc />} />
           <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/setting' element={<Settingnew />} />
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>
