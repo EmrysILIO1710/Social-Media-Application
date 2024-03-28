@@ -6,6 +6,7 @@ import PostArea from "../components/PostArea";
 // import BackgroundButton from "../components/BackgroundButton";
 import SideBar from "../components/SideBar";
 import { useLocation } from "react-router-dom";
+import AlertModal from "../components/AlertModal";
 
 const FeedPage = (props) => {
   // const [dataFromBackgroundButton, setDataFromBackgroundButton] = useState("");
@@ -28,29 +29,32 @@ const FeedPage = (props) => {
     }
   }, [location, props]);
 
-  // const handleDataFromBackgroundButton = (data) => {
-  //   setDataFromBackgroundButton(data);
-  // };
-
   return (
-    <div
-      className="FP-container"
-      style={{
-        // backgroundImage: `url(${dataFromBackgroundButton})`,
-        backgroundColor: modebg,
-      }}
-    >
-      <div className="fixed h-full">
-        <SideBar className="fixed" mode={props.mode} />
+    <>
+      <div
+        className="FP-container"
+        style={{
+          // backgroundImage: `url(${dataFromBackgroundButton})`,
+          backgroundColor: modebg,
+        }}
+      >
+        <div className="fixed h-full">
+          <SideBar className="fixed" mode={props.mode} />
+        </div>
+        {/* <BackgroundButton sendDataToFeedPage={handleDataFromBackgroundButton} /> */}
+        {/* <Navbar /> */}
+        <div className="mt-16 flex justify-center">
+          <div className="w-1/3 flex justify-center">
+            <AlertModal />
+          </div>
+        </div>
+        <div className="FP-story">
+          <StoryArea mode={props.mode} />
+        </div>
+        {/* {console.log(props.mode)} */}
+        <PostArea mode={props.mode} />
       </div>
-      {/* <BackgroundButton sendDataToFeedPage={handleDataFromBackgroundButton} /> */}
-      {/* <Navbar /> */}
-      <div className="FP-story">
-        <StoryArea mode={props.mode} />
-      </div>
-      {/* {console.log(props.mode)} */}
-      <PostArea mode={props.mode} />
-    </div>
+    </>
   );
 };
 
