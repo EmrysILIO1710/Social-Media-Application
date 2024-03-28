@@ -20,7 +20,7 @@ const MSPhotos = (props) => {
     //         pic: props.pic,
     //         loction: "Location"
     //     }, ...photosArr])
-    // }, [props.name, props.dp, props.about, props.pic, photosArr])
+    // }, [props, photosArr])
 
     const photosArr = [{
         name: props.name,
@@ -33,8 +33,9 @@ const MSPhotos = (props) => {
     return(
         <>
             <div className="MSP-container">
+                {console.log(props.name)}
                 {
-                    (photosArr.length !== 0) ? photosArr.map((item, key) => (
+                    (photosArr.length !== 0 && props.name) ? photosArr.map((item, key) => (
                         <Photos 
                             key={key}
                             name={item.name}
@@ -43,6 +44,7 @@ const MSPhotos = (props) => {
                             caption={item.caption}
                             location={item.loction}
                             mode={props.mode}
+                            savedel={props.savedel}
                         />
                     )) : <p className="MSP-null">You haven't posted anything yet...</p>
                 }

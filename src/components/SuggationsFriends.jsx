@@ -31,7 +31,7 @@ const SuggationsFriends = ({ userData, mode }) => {
   };
 
   return (
-    <div>
+    <div className="scrollbar-thin scrollbar-thumb-orange-400 scrollbar-track-gray-200 scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-y-auto">
       {userData.map((user) => (
         <div
           key={user.id}

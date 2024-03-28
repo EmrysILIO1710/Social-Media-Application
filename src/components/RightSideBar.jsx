@@ -5,7 +5,7 @@ import "./RightSideBar.css";
 function RightSideBar(props) {
   const [userData, setUserData] = useState([]);
   const [gradient, setGradient] = useState(
-    "linear-gradient(to right, rgb(255, 246, 234) 0%, rgb(254, 163, 82) 50% "
+    "linear-gradient(to right, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% "
   );
 
   const getData = async () => {
@@ -28,16 +28,16 @@ function RightSideBar(props) {
     if (props.mode) {
       //dark mode
       setGradient(
-        "linear-gradient(to right, rgb(26, 24, 48) 0%, rgb(254, 163, 82) 50% "
+        "linear-gradient(to right, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% "
       );
     } else {
       //light mode
       setGradient(
-        "linear-gradient(to right, rgb(255, 246, 234) 0%, rgb(254, 163, 82) 50% "
+        "linear-gradient(to right, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% "
       );
     }
     getData();
-  }, []);
+  }, [props]);
 
   return (
     <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-1/4 scrollarea">
