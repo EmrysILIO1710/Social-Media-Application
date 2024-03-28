@@ -1,0 +1,59 @@
+.setting-box{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    position: fixed;
+    display: flex;
+  
+}
+
+#left-box{
+   background-color: rgb(254, 163,82);
+
+}
+
+
+
+.setting-box2{
+   height: 50vh;
+   width: 30vw;
+   background-color: rgba(254, 163, 82);
+   margin-left: 20%;
+   margin-top: 10%;
+}
+.checkbox{
+   padding-left: 50%;
+}
+.switch{
+   background-color: white;
+   width: 75px;
+   height: 25px;
+   border-radius: 100px;
+   margin-left: 20%;
+   cursor: pointer;
+   position: relative;
+}
+.switch::before{
+   position: absolute;
+   content: "";
+   background-color: rgba(254, 162, 82, 0.532);
+   width: 25px;
+   height: 25px;
+   border-radius: 200px;
+   /* margin-right: 10%; */
+   left: 0;
+   transition: transform 0.3s ease;
+
+}
+.switch.clicked::before{
+   transform:translateX(50px) ;
+
+}
+
+.h3{
+   margin-top: 20%;
+   padding-left: 50%;
+}
+/* input:checked + .slider:before{
+   transform: translateX(26px);
+} */
