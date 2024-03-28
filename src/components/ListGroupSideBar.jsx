@@ -68,6 +68,7 @@ function ListGroupSideBar(props) {
           </div>
         </Link>
         <hr />
+        {/* logout area */}
         <div className="self-end list-group-item my-1 py-3 lh-sm bg-transparent no-underline transition-transform duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-md active:shadow-none hover:cursor-pointer text-decoration-none"
           onClick={() => {
             setOpen(true);
