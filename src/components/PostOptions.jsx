@@ -60,8 +60,10 @@ function PostOptions({ onClose, onUpload, mode }) {
 
   const handleUpload = () => {
     // Use inputValue and image for upload
-    onUpload(user, dp, inputValue, image); // Pass data to parent
-    onClose(); // Close modal after upload
+    if(inputValue || image){
+      onUpload(user, dp, inputValue, image); // Pass data to parent
+      onClose(); // Close modal after upload
+    }
   };
 
   return (
