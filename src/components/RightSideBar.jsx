@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SuggationsFriends from "./SuggationsFriends";
+import "./RightSideBar.css";
 
 function RightSideBar(props) {
   const [userData, setUserData] = useState([]);
@@ -36,10 +37,10 @@ function RightSideBar(props) {
       );
     }
     getData();
-  }, [props]);
+  }, []);
 
   return (
-    <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-1/4">
+    <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-1/4 scrollarea">
       {/* First list */}
       <div className="list-group list-group-flush scrollarea">
         <div

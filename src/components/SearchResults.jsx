@@ -3,6 +3,7 @@ import { useAutocomplete } from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import "./RightSideBar.css";
 
 const queryClient = new QueryClient();
 
@@ -113,7 +114,7 @@ const Search2 = (props) => {
         <Input {...getInputProps()} placeholder="Search..." style={{backgroundColor: modebg2, color: modetext}} />
       </div>
       {groupedOptions.length > 0 ? (
-        <Listbox {...getListboxProps()} style={{backgroundColor: modebg}}>
+        <Listbox {...getListboxProps()} style={{backgroundColor: modebg}} className="scrollarea">
           {groupedOptions.map((option, index) => (
             // <div style={{ backgroundColor: "white" }}>
             <Link

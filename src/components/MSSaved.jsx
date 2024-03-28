@@ -7,7 +7,7 @@ import Photos from "./Photos";
 // import post2 from '../pictures/samplepost2.jpg';
 // import dp3 from '../pictures/sampleprof3.jpg';
 // import post3 from '../pictures/samplepost3.jpg';
-const MSSaved = (props) => {
+const MSSaved = () => {
     // const [arrlen, setArrlen] = useState(0);
 
     const photosArr = [
@@ -49,8 +49,6 @@ const MSSaved = (props) => {
                             pic={item.postImg}
                             caption={item.caption}
                             location={item.loc}
-                            savedel={props.savedel}
-                            mode={props.mode}
                         />
                     )) : <p className="MSS-null">You haven't saved any post yet...</p>
                 }

@@ -84,7 +84,7 @@ export default function UserProfilePage(props) {
         <About about={dataAbout} />
         {/* <Follow /> */}
         <Followerfollowing mode={props.mode} />
-        <MediaSection dp={dataDp} name={dataName} about={dataAbout} pic={dataPic} savedel={false} mode={props.mode} />
+        <MediaSection dp={dataDp} name={dataName} about={dataAbout} pic={dataPic} mode={props.mode} />
         {/* <Box sx={{  height: '100vh' }} /> */}
       </Container>
     </React.Fragment>

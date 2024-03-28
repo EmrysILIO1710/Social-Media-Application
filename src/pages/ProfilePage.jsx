@@ -81,7 +81,7 @@ export default function ProfilePage(props) {
         <About about={about} />
         {/* <Follow /> */}
         <Followerfollowing mode={props.mode} />
-        <MediaSection savedel={true} mode={props.mode} />
+        <MediaSection />
         {/* <Box sx={{  height: '100vh' }} /> */}
       </Container>
     </React.Fragment>

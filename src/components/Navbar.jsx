@@ -85,13 +85,13 @@ export default function Navbar(props) {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-none items-center justify-center sm:items-stretch sm:justify-start">
-                <Link to={'/feed'} className="flex flex-shrink-0 items-center">
+                <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-6 w-auto sm:h-11 sm:w-auto cursor-pointer hidden md:block"
                     src={logo}
-                    alt="Your Company" 
+                    alt="Your Company"
                   />
-                </Link>
+                </div>
                 <div className="hidden sm:ml-6 md:block my-auto">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (

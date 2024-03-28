@@ -17,7 +17,6 @@ import link from "../pictures/link.png";
 import insta from "../pictures/instagram.png";
 import message from "../pictures/message.png";
 import deletecomm from "../pictures/deletecomm.png";
-import SaveDeleteOption from "./SaveDeleteOption";
 
 export default function Photos(props) {
   const [disp, setDisp] = React.useState("none");
@@ -138,7 +137,6 @@ export default function Photos(props) {
                 <h2>{props.name}</h2>
                 <h4>{props.location}</h4>
               </div>
-              <SaveDeleteOption savedel={props.savedel} mode={props.mode} />
             </div>
             <div className="Photos-text-caption">
               <p>{props.caption}</p>
