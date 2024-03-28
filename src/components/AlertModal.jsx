@@ -7,7 +7,8 @@ import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 
 export default function AlertModal() {
-  const [open, setOpen] = React.useState(true);
+  //commenting due to lack of usage currently, will add back during backend.
+  // const [open, setOpen] = React.useState(true);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -21,7 +22,7 @@ export default function AlertModal() {
 
   return (
     <>
-      {open ? (
+      {true ? (
         <>
           <Stack sx={{ width: "100%" }} spacing={2}>
             <Alert severity="warning">
