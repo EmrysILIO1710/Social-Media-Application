@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { RxCross1 } from "react-icons/rx";
 
-const SildeBarProfile = ({ userData, props, mode }) => {
+const SuggationsFriends = ({ userData, mode }) => {
   const [followedUsers, setFollowedUsers] = useState([]);
   const [modetext, setModetext] = useState("black");
 
@@ -25,9 +25,9 @@ const SildeBarProfile = ({ userData, props, mode }) => {
   };
 
   const handleRemove = (userId) => {
-    alert("You want ot remove this user?");
+    alert("Do you want to remove this user?");
     console.log("Remove user with id: ", userId);
-    //Baki Backend hole likhbo
+    // Additional backend logic can be added here
   };
 
   return (
@@ -41,22 +41,23 @@ const SildeBarProfile = ({ userData, props, mode }) => {
             <div className="h-14 w-14 overflow-hidden rounded-full mr-4">
               <img
                 className="h-full w-full object-cover"
-                src={user.picture}
-                alt={`${user.firstName} ${user.lastName}`}
+                src={user.owner.picture}
+                alt={`${user.owner.firstName} ${user.owner.lastName}`}
               />
             </div>
             <div>
               <Link
                 to={"/userprofile"}
                 state={{
-                  dataName: user.firstName + " " + user.lastName,
-                  dataDp: user.picture,
-                  dataAbout: user.cc,
+                  dataName: user.owner.firstName + " " + user.owner.lastName,
+                  dataDp: user.owner.picture,
+                  dataAbout: user.text,
+                  dataPic: user.image,
                 }}
                 className="no-underline"
               >
                 <p className="text-lg font-bold" style={{ color: modetext }}>
-                  {`${user.firstName} ${user.lastName}`}
+                  {`${user.owner.firstName} ${user.owner.lastName}`}
                 </p>
               </Link>
             </div>
@@ -85,4 +86,4 @@ const SildeBarProfile = ({ userData, props, mode }) => {
   );
 };
 
-export default SildeBarProfile;
+export default SuggationsFriends;
