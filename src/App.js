@@ -37,7 +37,7 @@ import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
 import ConfirmAcc from './components/ConfirnAcc';
 import Mutuals from './pages/Mutuals';
-//testing
+//testing2
 function App() {
   const [show, setShow] = useState(false);
   const [dp, setDp] = useState("");
