@@ -56,7 +56,7 @@ function ListGroupSideBar(props) {
         {/* Theme Changer */}
         <Link
           to="/"
-          className="list-group-item my-1 py-3 lh-sm bg-transparent no-underline transition-transform duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-md active:shadow-none hover:cursor-pointer text-decoration-none" // Added text-decoration-none class
+          className="list-group-item my-1 py-3 lh-sm bg-transparent no-underline transition-transform duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-md active:shadow-none hover:cursor-pointer text-decoration-none" 
         >
           <div className="relative w-full flex items-center">
             <div className="relative flex-shrink-0">
