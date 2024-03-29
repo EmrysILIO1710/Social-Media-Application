@@ -6,7 +6,8 @@ import {
     QueryClientProvider,
     useQuery,
   } from 'react-query';
-import PostButton from "./PostButton";
+// import PostButton from "./PostButton";
+import AddPost from "./AddPost";
 const queryClient = new QueryClient();
 
 export default function PostArea(props) {
@@ -39,14 +40,15 @@ const Users = (props) => {
     if (error) return <div>Request Failed</div>;
     if (isLoading) return <div></div>;
 
-    const handleUpload = (name, dp, cc, post) => {
+    const handleUpload = (name, dp, cc, post, val) => {
       setPostArr([{
         pic: dp,
         username: name,
-        image: post,
-        caption: cc
+        post: post,
+        caption: cc,
+        val: val
       }, ...postArr]);
-      console.log(postArr[0]);
+      // console.log(postArr[0]);
     }
 
     return(
@@ -60,13 +62,16 @@ const Users = (props) => {
                     dp = {item.pic}
                     name = {item.username}
                     location = {"location"}
-                    picture = {item.image}
+                    post = {item.post}
                     cc = {item.caption}
                     mode={props.mode}
+                    likes={1}
+                    val={item.val}
+                    thumbnail={""}
                   />
                 ))
               }
-              {/* {console.log(data.data)} */}
+              {/* {console.log(value)} */}
                 {
                     data.data.map((item, key) => (
                         <Posts 
@@ -74,14 +79,16 @@ const Users = (props) => {
                             dp = {item.owner.picture}
                             name = {item.owner.firstName + " " + item.owner.lastName}
                             location = {"location"}
-                            picture = {item.image}
+                            post = {item.image}
                             cc = {item.text}
                             mode={props.mode}
                             likes={item.likes}
+                            val={"Photo"}
                         />
                     ))
                 }
-                <PostButton addPost={handleUpload} mode={props.mode} />
+                {/* <PostButton addPost={handleUpload} mode={props.mode} /> */}
+                <AddPost addPost={handleUpload} mode={props.mode} />
             </div>
         </>
     );
