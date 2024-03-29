@@ -1,0 +1,10 @@
+.custom-progress {
+    /* Your custom styles here */
+    background-color: blue; /* Change the background color */
+  }
+  
+  .custom-progress::-webkit-progress-value {
+    /* Webkit-specific styling for progress bar color */
+    background-color: red; /* Change the color of the progress bar */
+  }
+  
