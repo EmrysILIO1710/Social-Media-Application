@@ -7,6 +7,7 @@ import { LuWallpaper } from "react-icons/lu";
 import { LuSettings } from "react-icons/lu";
 import { SlLogout } from "react-icons/sl";
 import LogoutPopup from "./LogoutPopup";
+import { PiVideo } from "react-icons/pi";
 
 function ListGroupSideBar(props) {
   const [modetext, setModetext] = useState("black");
@@ -39,6 +40,12 @@ function ListGroupSideBar(props) {
           name="Mutuals"
           mode={props.mode}
           link={"/mutuals"}
+        />
+        <SildeBarProfile
+          imageUrl={<PiVideo size={30} />}
+          name="Videos"
+          mode={props.mode}
+          link={"/videos"}
         />
         <SildeBarProfile
           imageUrl={<CiSaveDown2 size={30} />}

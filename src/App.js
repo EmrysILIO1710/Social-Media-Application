@@ -40,6 +40,15 @@ import ConfirmAcc from "./components/ConfirnAcc";
 import Mutuals from "./pages/Mutuals";
 import LinearDeterminate from "./components/LinearDeterminate";
 import Settingnew from "./components/Settingnew";
+// import ProfilePage from './pages/ProfilePage';
+import UserProfilePage from './pages/UserProfilePage';
+import FollowUnfollowButton from './components/FollowUnfollowButton';
+import Example from './components/Example';
+import ConfirmAcc from './components/ConfirnAcc';
+import Mutuals from './pages/Mutuals';
+import LinearDeterminate from './components/LinearDeterminate';
+import Settingnew from './components/Settingnew';
+import VideosPage from './pages/VideosPage';
 //testing
 function App() {
   const [show, setShow] = useState(false);
@@ -107,6 +116,38 @@ function App() {
           />
           <Route path="/progress" element={<LinearDeterminate />} />
           <Route path="/setting" element={<Settingnew handleCB={CB} mode={modeTrigger}/>} />
+          <Route path='/' element={<LandingPage handleCB = {CB} />} />
+          <Route path='/signup' element={<SignupPage />} />
+          <Route path='/posts' element={<Posts />} />
+          <Route path='/story' element={<Story mode={modeTrigger} />}/>
+          <Route path='/navbar' element={<Navbar />} />
+          <Route path='/trial' element={<Trial />} />
+          <Route path='/postarea' element={<PostArea />} />
+          <Route path='/profcov' element={<Profcov />} />
+          <Route path='/username' element={<Username />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/followerfollowing' element={<Followerfollowing />}/>
+          <Route path='/followers' element={<Followers />} />
+          
+          <Route path='/fubtn' element={<FollowUnfollowButton />} />
+          <Route path='/editprofpage' element={<EditProfpage />} />
+          <Route path='/userimage' element={<Userimage />} />
+          <Route path='/storyarea' element={<StoryArea />} />
+          <Route path='/storyc' element={<StoryContent />} />
+          <Route path='/feed' element={<FeedPage handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/media' element={<MediaSection />} />
+          <Route path='/follow' element={<Follow />} />
+          <Route path='/followreq' element={<FollowRequest />} />
+          <Route path='/notifications' element={<NotificationList/>}/>
+          <Route path='/notificationarea' element={<NotificationArea />} />
+          <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} mode={modeTrigger} />} />
+          <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/example' element={<Example />} />
+          <Route path='/confirm' element={<ConfirmAcc />} />
+          <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/videos' element={<VideosPage handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/progress' element={<LinearDeterminate />} />
+          <Route path='/setting' element={<Settingnew handleCB = {CB}/>} />
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>
