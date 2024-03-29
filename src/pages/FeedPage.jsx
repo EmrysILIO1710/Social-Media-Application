@@ -45,7 +45,7 @@ const FeedPage = (props) => {
         {/* <Navbar /> */}
         <div className="mt-16 flex justify-center">
           <div className="w-1/3 flex justify-center">
-            <AlertModal />
+            <AlertModal mode={props.mode} />
           </div>
         </div>
         <div className="FP-story">
