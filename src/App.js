@@ -37,6 +37,7 @@ import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
 import ConfirmAcc from './components/ConfirnAcc';
 import Mutuals from './pages/Mutuals';
+import LinearDeterminate from './components/LinearDeterminate';
 //testing
 function App() {
   const [show, setShow] = useState(false);
@@ -92,6 +93,7 @@ function App() {
           <Route path='/example' element={<Example />} />
           <Route path='/confirm' element={<ConfirmAcc />} />
           <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/progress' element={<LinearDeterminate />} />
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>

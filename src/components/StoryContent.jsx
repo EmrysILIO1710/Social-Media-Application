@@ -8,6 +8,7 @@ import link from "../pictures/link.png";
 import insta from "../pictures/instagram.png";
 import message from "../pictures/message.png";
 import Close from '../pictures/cross.png'
+import LinearDeterminate from "./LinearDeterminate";
 // import pic from '../pictures/story.jpg';
 
 const StoryContent = (props) => {
@@ -28,6 +29,9 @@ const StoryContent = (props) => {
     };
 
     document.addEventListener("keydown", keyDownHandler);
+
+    setTimeout(hideStory, 10000);
+
 
     return () => {
       document.removeEventListener("keydown", keyDownHandler);
@@ -64,6 +68,9 @@ const StoryContent = (props) => {
       <div className="Story-content-box" style={{ display: "block" }}>
         <img src={Close} alt="" className="Story-close" onClick={hideStory} />
         <div className="Story-picture-box">
+          <div className="">
+            <LinearDeterminate />
+          </div>
           <img src={props.content} alt="" className="Story-picture" />
           <div className="Story-btns">
             <div className="Story-share-box" style={{ display: shr }}>
