@@ -29,6 +29,7 @@ import Follow from './components/Follow';
 import FollowRequest from './components/FollowRequest';
 import NotificationList from './components/NotificationList';
 import NotificationArea from './components/NotificationArea';
+
 // import PostButton from './components/PostButton';
 // =======
 import ProfilePage from './pages/ProfilePage';
@@ -38,6 +39,7 @@ import Example from './components/Example';
 import ConfirmAcc from './components/ConfirnAcc';
 import Mutuals from './pages/Mutuals';
 import LinearDeterminate from './components/LinearDeterminate';
+import Settingnew from './components/Settingnew';
 //testing
 function App() {
   const [show, setShow] = useState(false);
@@ -94,6 +96,7 @@ function App() {
           <Route path='/confirm' element={<ConfirmAcc />} />
           <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
           <Route path='/progress' element={<LinearDeterminate />} />
+          <Route path='/setting' element={<Settingnew />} />
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>
