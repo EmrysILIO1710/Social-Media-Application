@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Settingnew.css";
-import { Button } from "react-bootstrap";
-import { DarkMode } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+// import { Button } from "react-bootstrap";
+// import { DarkMode } from "@mui/icons-material";
+// import { Link } from "react-router-dom";
 
 const Settingnew = () => {
   const [isDarkMode, setDarkMode] = useState(false);
@@ -96,7 +96,7 @@ const Settingnew = () => {
             placeholder="Confirm Password"
             />
 
-            <Button> Change Password</Button>
+            <button> Change Password</button>
           </div>
         )}
 

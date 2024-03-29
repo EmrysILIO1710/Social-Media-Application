@@ -38,6 +38,7 @@ import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
 import ConfirmAcc from './components/ConfirnAcc';
 import Mutuals from './pages/Mutuals';
+import LinearDeterminate from './components/LinearDeterminate';
 import Settingnew from './components/Settingnew';
 //testing
 function App() {
@@ -47,7 +48,7 @@ function App() {
 
   useEffect(() => {
     document.title = 'addaGram';
-    setModeTrigger(1);
+    setModeTrigger(0);
   }, []);
 
   const CB = (data) => {
@@ -94,6 +95,7 @@ function App() {
           <Route path='/example' element={<Example />} />
           <Route path='/confirm' element={<ConfirmAcc />} />
           <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/progress' element={<LinearDeterminate />} />
           <Route path='/setting' element={<Settingnew />} />
         </Routes>
         {/* <PostButton/> */}
