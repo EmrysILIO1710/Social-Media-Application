@@ -40,6 +40,7 @@ import ConfirmAcc from './components/ConfirnAcc';
 import Mutuals from './pages/Mutuals';
 import LinearDeterminate from './components/LinearDeterminate';
 import Settingnew from './components/Settingnew';
+import VideosPage from './pages/VideosPage';
 //testing
 function App() {
   const [show, setShow] = useState(false);
@@ -95,6 +96,7 @@ function App() {
           <Route path='/example' element={<Example />} />
           <Route path='/confirm' element={<ConfirmAcc />} />
           <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/videos' element={<VideosPage handleCB = {CB} mode={modeTrigger} />} />
           <Route path='/progress' element={<LinearDeterminate />} />
           <Route path='/setting' element={<Settingnew />} />
         </Routes>

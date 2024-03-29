@@ -32,8 +32,7 @@ const Settingnew = () => {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <a
-              href="#"
+            <h1
               className={
                 selectOption === "Dark Mode"
                   ? "nav-link active"
@@ -42,12 +41,11 @@ const Settingnew = () => {
               onClick={() => optionClick("Dark Mode")}
             >
               Dark Mode
-            </a>
+            </h1>
           </li>
 
           <li className="nav-item">
-            <a
-              href="#"
+            <h1
               className={
                 selectOption === "Settings & privacy"
                   ? "nav-link active"
@@ -56,7 +54,7 @@ const Settingnew = () => {
               onClick={() => optionClick("Settings & privacy")}
             >
               Settings & privacy
-            </a>
+            </h1>
           </li>
         </ul>
         <hr />
