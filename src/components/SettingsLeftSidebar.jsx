@@ -5,7 +5,7 @@ import { FcLock } from "react-icons/fc";
 import { MdModeNight } from "react-icons/md";
 import { LuWallpaper } from "react-icons/lu";
 
-function ListGroupSideBar({ onSearch, onPrivacyClick }) {
+function ListGroupSideBar({ onSearch}) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event) => {
@@ -17,9 +17,6 @@ function ListGroupSideBar({ onSearch, onPrivacyClick }) {
     onSearch(searchTerm);
   };
 
-  const handlePrivacyClick = () => {
-    onPrivacyClick();
-  };
 
   return (
     <div className="fixed mt-16 top-0 h-screen overflow-y-auto bg-transparent text-black w-80">

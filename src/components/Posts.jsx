@@ -17,6 +17,7 @@ import save2 from "../pictures/save2.png";
 import deletecomm from "../pictures/deletecomm.png";
 import { Link } from "react-router-dom";
 import TotalAvatars from "./TotalAvatars";
+import ReactPlayer from "react-player";
 
 const Posts = (props) => {
   const [likeicon, setLikeicon] = useState(like2);
@@ -148,7 +149,16 @@ const Posts = (props) => {
           <img src={keep} alt="" className="Post-save" onClick={changeSave} />
         </div>
         <div className="Post-body">
-          <img src={props.picture} alt="" className="Post-img" />
+          {
+            (props.val === "Photo") ? <img src={props.post} alt="" className="Post-img" /> : 
+              (props.val === "Video") ? <ReactPlayer 
+                url={props.post} 
+                // light={<img src={props.thumbnail} style={{height: '100%', width: '100%'}} alt='' />}
+                width={"100%"} 
+                controls={true} 
+                className="Post-img"
+              /> : null
+          }
         </div>
         <div className="Post-caption">
           <p>{props.cc}</p>

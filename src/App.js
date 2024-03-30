@@ -51,8 +51,8 @@ function App() {
   const [sidebar, setSidebar] = useState(false);
 
   useEffect(() => {
-    document.title = "addaGram";
-    setModeTrigger(1);
+    document.title = 'addaGram';
+    setModeTrigger(0);
   }, []);
 
   const CB = (data) => {

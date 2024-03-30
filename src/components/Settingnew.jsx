@@ -9,7 +9,7 @@ const Settingnew = (props) => {
   });
   return (
     <>
-      <div className="bg-orange-200">
+      <div className="">
         <SettingsLeftSidebar mode={props.mode} />
       </div>
     </>
