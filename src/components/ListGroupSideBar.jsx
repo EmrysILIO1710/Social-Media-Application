@@ -28,7 +28,7 @@ function ListGroupSideBar(props) {
 
   return (
     <div className="fixed mt-16 top-0 h-screen overflow-y-auto bg-transparent text-black w-80">
-      <div className="text-2xl h-20 text-center text-bold text-3xl justify-center flex items-center text-white"
+      <div className="h-20 text-center text-bold text-3xl justify-center flex items-center text-white"
         style={{background: gradient}}
       >
         Quick Links
@@ -57,7 +57,7 @@ function ListGroupSideBar(props) {
           imageUrl={<LuSettings size={30} />}
           name="Settings"
           mode={props.mode}
-          link={"/"}
+          link={"/setting"}
         />
 
         {/* Theme Changer */}
