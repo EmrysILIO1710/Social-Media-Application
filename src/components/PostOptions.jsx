@@ -26,7 +26,7 @@ const style = {
   },
 };
 
-function PostOptions({ onClose, onUpload, mode }) {
+function PostOptions({ onClose, onUpload, mode, value }) {
   const [inputValue, setInputValue] = useState("");
   const [image, setImage] = useState("");
   const [modebg, setModebg] = useState("white");
@@ -61,8 +61,15 @@ function PostOptions({ onClose, onUpload, mode }) {
   const handleUpload = () => {
     // Use inputValue and image for upload
     if(inputValue || image){
-      onUpload(user, dp, inputValue, image); // Pass data to parent
-      onClose(); // Close modal after upload
+      console.log(value);
+      if(value === "Thought"){
+        onUpload(user, dp, inputValue); // Pass data to parent
+        onClose(); // Close modal after upload
+      }
+      else{
+        onUpload(user, dp, inputValue, image); // Pass data to parent
+        onClose(); // Close modal after upload
+      }
     }
   };
 
@@ -109,7 +116,9 @@ function PostOptions({ onClose, onUpload, mode }) {
           </div>
         </div>
         <InputBox onInputChange={handleInputValueChange} />
-        <PhotoUploadPart onImageUpload={handleImageUpload} />
+        {
+          (value !== "Thought") && <PhotoUploadPart value={value} onImageUpload={handleImageUpload} />
+        }
         <TagAndLocation />
         <div className="flex justify-center">
           <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">

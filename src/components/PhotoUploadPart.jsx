@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { HiPlusCircle, HiX } from "react-icons/hi";
 
-const PhotoUploadPart = ({ onImageUpload }) => {
+const PhotoUploadPart = ({ onImageUpload, value }) => {
   // const [image, setImage] = useState(null);
   const [img, setImg] = useState(null);
 
@@ -28,7 +28,7 @@ const PhotoUploadPart = ({ onImageUpload }) => {
   return (
     <div className="max-w-md mx-auto p-6 bg-transparent rounded-lg shadow-md border border-gray-300" >
       <label className="block text-sm font-medium text-gray-700 mb-2">
-        Upload a photo
+        Upload a {value}
       </label>
       {img ? (
         <div className="relative">
