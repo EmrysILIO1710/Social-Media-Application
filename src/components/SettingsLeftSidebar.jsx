@@ -34,7 +34,7 @@ function ListGroupSideBar({ onSearch, mode }) {
     onSearch(searchTerm);
   };
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen]  = useState(false);
 
   return (
     <div
