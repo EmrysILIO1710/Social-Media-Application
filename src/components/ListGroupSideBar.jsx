@@ -57,7 +57,7 @@ function ListGroupSideBar(props) {
           imageUrl={<LuSettings size={30} />}
           name="Settings"
           mode={props.mode}
-          link={"/"}
+          link={"/setting"}
         />
 
         {/* Theme Changer */}

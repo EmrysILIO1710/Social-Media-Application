@@ -31,16 +31,7 @@ import NotificationList from "./components/NotificationList";
 import NotificationArea from "./components/NotificationArea";
 
 // import PostButton from './components/PostButton';
-// =======
-import ProfilePage from "./pages/ProfilePage";
-import UserProfilePage from "./pages/UserProfilePage";
-import FollowUnfollowButton from "./components/FollowUnfollowButton";
-import Example from "./components/Example";
-import ConfirmAcc from "./components/ConfirnAcc";
-import Mutuals from "./pages/Mutuals";
-import LinearDeterminate from "./components/LinearDeterminate";
-import Settingnew from "./components/Settingnew";
-// import ProfilePage from './pages/ProfilePage';
+import ProfilePage from './pages/ProfilePage';
 import UserProfilePage from './pages/UserProfilePage';
 import FollowUnfollowButton from './components/FollowUnfollowButton';
 import Example from './components/Example';
@@ -49,15 +40,19 @@ import Mutuals from './pages/Mutuals';
 import LinearDeterminate from './components/LinearDeterminate';
 import Settingnew from './components/Settingnew';
 import VideosPage from './pages/VideosPage';
+import Privacy from './components/Privacy';
+import SettingsLeftSidebar from './components/SettingsLeftSidebar';
+import DarkModeSettings from './components/DarkModeSettings';
 //testing
 function App() {
   const [show, setShow] = useState(false);
   const [dp, setDp] = useState("");
   const [modeTrigger, setModeTrigger] = useState(0);
+  const [sidebar, setSidebar] = useState(false);
 
   useEffect(() => {
     document.title = "addaGram";
-    setModeTrigger(0);
+    setModeTrigger(1);
   }, []);
 
   const CB = (data) => {
@@ -67,10 +62,15 @@ function App() {
     setShow(data);
     setDp(dataDp);
   };
+
+  const SB = (data) => {
+    setSidebar(data);
+  }
   return (
     <>
       <BrowserRouter>
         {show && <Navbar dp={dp} mode={modeTrigger} />}
+        {sidebar && <SettingsLeftSidebar handleCB={CB} mode={modeTrigger} />}
         {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<LandingPage handleCB={CB} />} />
@@ -148,6 +148,9 @@ function App() {
           <Route path='/videos' element={<VideosPage handleCB = {CB} mode={modeTrigger} />} />
           <Route path='/progress' element={<LinearDeterminate />} />
           <Route path='/setting' element={<Settingnew handleCB = {CB}/>} />
+          {/*Settings Options */}
+          <Route path="/privacy" element={<Privacy handleCB={CB} handleSB ={SB} />} />
+          <Route path="/darkmode" element={<DarkModeSettings handleCB={CB} handleSB={SB}/>} />
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>

@@ -41,16 +41,5 @@
     height: auto;
     margin: 0 auto;
   }
-  
-  @media (min-width: 640px) {
-    .FP-story {
-      padding-top: 5vh;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .FP-story {
-      padding-top: 10vh;
-    }
-  }
+
 
