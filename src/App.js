@@ -31,18 +31,19 @@ import NotificationList from "./components/NotificationList";
 import NotificationArea from "./components/NotificationArea";
 
 // import PostButton from './components/PostButton';
-import ProfilePage from './pages/ProfilePage';
-import UserProfilePage from './pages/UserProfilePage';
-import FollowUnfollowButton from './components/FollowUnfollowButton';
-import Example from './components/Example';
-import ConfirmAcc from './components/ConfirnAcc';
-import Mutuals from './pages/Mutuals';
-import LinearDeterminate from './components/LinearDeterminate';
-import Settingnew from './components/Settingnew';
-import VideosPage from './pages/VideosPage';
-import Privacy from './components/Privacy';
-import SettingsLeftSidebar from './components/SettingsLeftSidebar';
-import DarkModeSettings from './components/DarkModeSettings';
+import ProfilePage from "./pages/ProfilePage";
+import UserProfilePage from "./pages/UserProfilePage";
+import FollowUnfollowButton from "./components/FollowUnfollowButton";
+import Example from "./components/Example";
+import ConfirmAcc from "./components/ConfirnAcc";
+import Mutuals from "./pages/Mutuals";
+import LinearDeterminate from "./components/LinearDeterminate";
+import SettingPage from "./pages/SettingPage";
+import VideosPage from "./pages/VideosPage";
+import Privacy from "./components/Privacy";
+import SettingsLeftSidebar from "./components/SettingsLeftSidebar";
+import DarkModeSettings from "./components/DarkModeSettings";
+import TheamsSettings from "./components/TheamsSettings";
 //testing
 function App() {
   const [show, setShow] = useState(false);
@@ -51,8 +52,8 @@ function App() {
   const [sidebar, setSidebar] = useState(false);
 
   useEffect(() => {
-    document.title = 'addaGram';
-    setModeTrigger(0);
+    document.title = "addaGram";
+    setModeTrigger(1);
   }, []);
 
   const CB = (data) => {
@@ -65,7 +66,7 @@ function App() {
 
   const SB = (data) => {
     setSidebar(data);
-  }
+  };
   return (
     <>
       <BrowserRouter>
@@ -73,6 +74,50 @@ function App() {
         {sidebar && <SettingsLeftSidebar handleCB={CB} mode={modeTrigger} />}
         {/* <Navbar /> */}
         <Routes>
+          <Route path="/" element={<LandingPage handleCB={CB} />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/story" element={<Story mode={modeTrigger} />} />
+          <Route path="/navbar" element={<Navbar />} />
+          <Route path="/trial" element={<Trial />} />
+          <Route path="/postarea" element={<PostArea />} />
+          <Route path="/profcov" element={<Profcov />} />
+          <Route path="/username" element={<Username />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/followerfollowing" element={<Followerfollowing />} />
+          <Route path="/followers" element={<Followers />} />
+
+          <Route path="/fubtn" element={<FollowUnfollowButton />} />
+          <Route path="/editprofpage" element={<EditProfpage />} />
+          <Route path="/userimage" element={<Userimage />} />
+          <Route path="/storyarea" element={<StoryArea />} />
+          <Route path="/storyc" element={<StoryContent />} />
+          <Route
+            path="/feed"
+            element={
+              <FeedPage handleCB={CB} mode={modeTrigger} handleSB={SB} />
+            }
+          />
+          <Route path="/media" element={<MediaSection />} />
+          <Route path="/follow" element={<Follow />} />
+          <Route path="/followreq" element={<FollowRequest />} />
+          <Route path="/notifications" element={<NotificationList />} />
+          <Route path="/notificationarea" element={<NotificationArea />} />
+          <Route
+            path="/profilepage"
+            element={<ProfilePage handleCB={CB2} mode={modeTrigger} />}
+          />
+          <Route
+            path="/userprofile"
+            element={<UserProfilePage handleCB={CB} mode={modeTrigger} />}
+          />
+          <Route path="/example" element={<Example />} />
+          <Route path="/confirm" element={<ConfirmAcc />} />
+          <Route
+            path="/mutuals"
+            element={<Mutuals handleCB={CB} mode={modeTrigger} />}
+          />
+          <Route path="/progress" element={<LinearDeterminate />} />
           <Route path="/" element={<LandingPage handleCB={CB} />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/posts" element={<Posts />} />
@@ -114,43 +159,36 @@ function App() {
             path="/mutuals"
             element={<Mutuals handleCB={CB} mode={modeTrigger} />}
           />
+          <Route
+            path="/videos"
+            element={<VideosPage handleCB={CB} mode={modeTrigger} />}
+          />
           <Route path="/progress" element={<LinearDeterminate />} />
-          <Route path="/setting" element={<Settingnew handleCB={CB} mode={modeTrigger}/>} />
-          <Route path='/' element={<LandingPage handleCB = {CB} />} />
-          <Route path='/signup' element={<SignupPage />} />
-          <Route path='/posts' element={<Posts />} />
-          <Route path='/story' element={<Story mode={modeTrigger} />}/>
-          <Route path='/navbar' element={<Navbar />} />
-          <Route path='/trial' element={<Trial />} />
-          <Route path='/postarea' element={<PostArea />} />
-          <Route path='/profcov' element={<Profcov />} />
-          <Route path='/username' element={<Username />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/followerfollowing' element={<Followerfollowing />}/>
-          <Route path='/followers' element={<Followers />} />
-          
-          <Route path='/fubtn' element={<FollowUnfollowButton />} />
-          <Route path='/editprofpage' element={<EditProfpage />} />
-          <Route path='/userimage' element={<Userimage />} />
-          <Route path='/storyarea' element={<StoryArea />} />
-          <Route path='/storyc' element={<StoryContent />} />
-          <Route path='/feed' element={<FeedPage handleCB = {CB} mode={modeTrigger} />} />
-          <Route path='/media' element={<MediaSection />} />
-          <Route path='/follow' element={<Follow />} />
-          <Route path='/followreq' element={<FollowRequest />} />
-          <Route path='/notifications' element={<NotificationList/>}/>
-          <Route path='/notificationarea' element={<NotificationArea />} />
-          <Route path='/profilepage' element={<ProfilePage handleCB = {CB2} mode={modeTrigger} />} />
-          <Route path='/userprofile' element={<UserProfilePage handleCB = {CB} mode={modeTrigger} />} />
-          <Route path='/example' element={<Example />} />
-          <Route path='/confirm' element={<ConfirmAcc />} />
-          <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
-          <Route path='/videos' element={<VideosPage handleCB = {CB} mode={modeTrigger} />} />
-          <Route path='/progress' element={<LinearDeterminate />} />
-          <Route path='/setting' element={<Settingnew handleCB = {CB}/>} />
+          <Route
+            path="/setting"
+            element={<SettingPage handleCB={CB} mode={modeTrigger} />}
+          />
           {/*Settings Options */}
-          <Route path="/privacy" element={<Privacy handleCB={CB} handleSB ={SB} />} />
-          <Route path="/darkmode" element={<DarkModeSettings handleCB={CB} handleSB={SB}/>} />
+          <Route
+            path="/privacy"
+            element={<Privacy handleCB={CB} handleSB={SB} mode={modeTrigger} />}
+          />
+          <Route
+            path="/darkmode"
+            element={
+              <DarkModeSettings
+                handleCB={CB}
+                handleSB={SB}
+                mode={modeTrigger}
+              />
+            }
+          />
+          <Route
+            path="/theams"
+            element={
+              <TheamsSettings handleCB={CB} handleSB={SB} mode={modeTrigger} />
+            }
+          />
         </Routes>
         {/* <PostButton/> */}
       </BrowserRouter>

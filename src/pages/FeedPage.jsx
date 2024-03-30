@@ -24,6 +24,7 @@ const FeedPage = (props) => {
       setModebg("rgb(255, 246, 234)");
     }
     props.handleCB(true);
+    props.handleSB(false);
     if (!location.hash) {
       window.scrollTo(0, 0);
     }

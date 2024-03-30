@@ -1,30 +1,19 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import React from "react";
+import {Link} from "react-router-dom";
 
 export default function MediaCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 150 }}
-        image={props.Image}
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {props.Heading}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {props.Description} 
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">{props.ButtonText}</Button>
-      </CardActions>
-    </Card>
+    <div className="card w-72">
+      <img src={props.Image} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{props.Heading}</h5>
+        <p className="card-text">
+          {props.Description}
+        </p>
+        <Link to="/" className="block bg-orange-200 hover:bg-orange-300 text-black rounded-md py-2 px-4 w-full text-center transition duration-300 ease-in-out no-underline">
+          {props.ButtonText}
+        </Link>
+      </div>
+    </div>
   );
 }

@@ -1,27 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const SettingsOptions = (props) => {
+const SettingsOptions = ({ mode, link, imageUrl, name }) => {
+  const [modebg, setModebg] = useState("rgb(255, 246, 234)");
+  const [modetext, setModetext] = useState("black");
+
+  useEffect(() => {
+    if (mode) {
+      //dark mode
+      setModebg("rgb(26, 24, 48)");
+      setModetext("white");
+    } else {
+      //light mode
+      setModetext("black");
+      setModebg("rgb(255, 246, 234)");
+    }
+  }, [mode]);
   return (
-    <div className="flex flex-col mt-1 bg-transperant rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+    <div
+      className="flex flex-col mt-1 bg-transperant rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer"
+      style={{ backgroundColor: modebg, color: modetext }}
+    >
       <Link
-        to={props.link}
+        to={link}
         className="flex items-center justify-between no-underline text-black"
       >
         <div className="flex items-center">
           <div className="mr-3">
-            {typeof props.imageUrl === "string" ? (
+            {typeof imageUrl === "string" ? (
               <img
                 className="rounded-full h-14 w-14 object-cover object-center shadow-md border-2 border-white"
-                src={props.imageUrl}
+                src={imageUrl}
                 alt="Profile"
               />
             ) : (
-              props.imageUrl
+              imageUrl
             )}
           </div>
           <div>
-            <h2 className="text-lg font-medium">{props.name}</h2>
+            <h2 className="text-lg font-medium">{name}</h2>
           </div>
         </div>
       </Link>
