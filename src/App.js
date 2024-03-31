@@ -41,6 +41,8 @@ import Mutuals from './pages/Mutuals';
 import LinearDeterminate from './components/LinearDeterminate';
 import Settingnew from './components/Settingnew';
 import VideosPage from './pages/VideosPage';
+import LabelBottomNavigation from './components/LabelBottomNavigation';
+import BottomSearch from './components/BottomSearch';
 //testing
 function App() {
   const [show, setShow] = useState(false);
@@ -102,8 +104,10 @@ function App() {
           <Route path='/videos' element={<VideosPage handleCB = {CB} mode={modeTrigger} />} />
           <Route path='/progress' element={<LinearDeterminate />} />
           <Route path='/setting' element={<Settingnew />} />
+          <Route path='/search' element={<BottomSearch handleCB = {CB} mode={modeTrigger} />} />
         </Routes>
         {/* <PostButton/> */}
+        <LabelBottomNavigation mode={modeTrigger} />
       </BrowserRouter>
       
     </>

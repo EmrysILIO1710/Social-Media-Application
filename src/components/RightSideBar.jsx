@@ -46,6 +46,7 @@ function RightSideBar(props) {
         <ListGroupSideBar
           gradient={"linear-gradient(to right, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% "}
           mode={props.mode} 
+          position={""}
         />
       </div>
       {/* First list */}

@@ -152,7 +152,7 @@ export default function SearchPopup(props) {
     <div>
       <button
         type="button"
-        className="relative block xl:hidden rounded-full bg-orange-300 p-2 text-black-400  hover:bg-orange-500 focus:outline-none hover:transition duration-500 mx-2"
+        className="relative hidden lg:block xl:hidden rounded-full bg-orange-300 p-2 text-black-400  hover:bg-orange-500 focus:outline-none hover:transition duration-500 mx-2"
         onClick={handleOpen}
       >
         <FaSearch className="h-6 w-6" aria-hidden="true" />

@@ -17,6 +17,12 @@
     }
   }
   
+  @media (min-width: 485px) {
+    .Post-container {
+      max-width: 500px; /* Adjust as needed */
+    }
+  }
+
   @media (min-width: 768px) {
     .Post-container {
       max-width: 500px; /* Adjust as needed */

@@ -117,7 +117,7 @@ const UsersMessages = (props) => {
   return (
     <div>
         {/* {console.log(data.data)} */}
-          <button onClick={toggleDrawer('right', true)} className="relative rounded-full bg-orange-300 p-2 text-black-400 hover:bg-orange-500 focus:outline-none  hover:transition duration-500">
+          <button onClick={toggleDrawer('right', true)} className="relative hidden lg:block rounded-full bg-orange-300 p-2 text-black-400 hover:bg-orange-500 focus:outline-none  hover:transition duration-500">
             <BiSolidMessage className="h-6 w-6" />
           </button>
           <Drawer

@@ -27,7 +27,7 @@ function ListGroupSideBar(props) {
   }, [props]);
 
   return (
-    <div className=" mt-1 top-0 h-fit overflow-y-auto bg-transparent text-black w-80">
+    <div className= {`top-0 h-fit overflow-y-auto bg-transparent text-black w-80 ${props.position}`}>
       <div className="h-20 text-center text-bold text-3xl justify-center flex items-center text-white"
         style={{background: props.gradient}}
       >

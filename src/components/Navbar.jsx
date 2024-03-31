@@ -66,14 +66,9 @@ export default function Navbar(props) {
                 <SearchResults mode={props.mode} />
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 static inset-auto ml-6 pr-0">
-                {/* <button
-                  type="button"
-                  className="relative block lg:hidden rounded-full bg-orange-300 p-2 text-black-400  hover:bg-orange-500 focus:outline-none hover:transition duration-500 mx-2"
-                > */}
-                  {/* <FaSearch className="h-6 w-6" aria-hidden="true" />
-                  <SearchPopup open={show} onClose={() => {setShow(false)}} mode={props.mode} /> */}
-                  <SearchPopup mode={props.mode} />
-                {/* </button> */}
+                
+                <SearchPopup mode={props.mode} />
+                
                 <button
                   type="button"
                   className="relative rounded-full bg-orange-300 p-2 text-black-400  hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:transition duration-500 mx-2"
