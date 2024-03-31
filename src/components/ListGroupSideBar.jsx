@@ -12,24 +12,24 @@ import { PiVideo } from "react-icons/pi";
 function ListGroupSideBar(props) {
   const [modetext, setModetext] = useState("black");
   const [open, setOpen] = useState(false);
-  const [gradient, setGradient] = useState("linear-gradient(to left, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% ")
+  // const [gradient, setGradient] = useState("linear-gradient(to left, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% ")
 
   useEffect(() => {
     if (props.mode) {
       //dark mode
       setModetext("white");
-      setGradient("linear-gradient(to left, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% ")
+      // setGradient("linear-gradient(to left, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% ")
     } else {
       //light mode
       setModetext("black");
-      setGradient("linear-gradient(to left, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% ");
+      // setGradient("linear-gradient(to left, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% ");
     }
   }, [props]);
 
   return (
-    <div className="fixed mt-16 top-0 h-screen overflow-y-auto bg-transparent text-black w-80 hidden sm:hidden md:hidden lg:block xl:block 2xl:block">
-      <div className="text-2xl h-20 text-center text-bold text-3xl justify-center flex items-center text-white"
-        style={{background: gradient}}
+    <div className=" mt-1 top-0 h-fit overflow-y-auto bg-transparent text-black w-80">
+      <div className="h-20 text-center text-bold text-3xl justify-center flex items-center text-white"
+        style={{background: props.gradient}}
       >
         Quick Links
       </div>

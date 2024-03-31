@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import SuggationsFriends from "./SuggationsFriends";
 import "./RightSideBar.css";
+import ListGroupSideBar from "./ListGroupSideBar";
 
 function RightSideBar(props) {
   const [userData, setUserData] = useState([]);
-  const [gradient, setGradient] = useState(
-    "linear-gradient(to right, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% "
-  );
+  // const [gradient, setGradient] = useState(
+  //   "linear-gradient(to right, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% "
+  // );
 
   const getData = async () => {
     try {
@@ -27,25 +28,31 @@ function RightSideBar(props) {
   useEffect(() => {
     if (props.mode) {
       //dark mode
-      setGradient(
-        "linear-gradient(to right, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% "
-      );
+      // setGradient(
+      //   "linear-gradient(to right, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% "
+      // );
     } else {
       //light mode
-      setGradient(
-        "linear-gradient(to right, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% "
-      );
+      // setGradient(
+      //   "linear-gradient(to right, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% "
+      // );
     }
     getData();
   }, [props]);
 
   return (
-    <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-1/4 scrollarea hidden sm:hidden md:hidden lg:block xl:block 2xl:block">
+    <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-80 xl:w-1/4 scrollarea">
+      <div className="hidden sm:block xl:hidden ">
+        <ListGroupSideBar
+          gradient={"linear-gradient(to right, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% "}
+          mode={props.mode} 
+        />
+      </div>
       {/* First list */}
       <div className="list-group list-group-flush scrollarea">
         <div
-          className=" h-20 text-center text-bold text-3xl justify-center flex items-center text-white" //bg-orange-400
-          style={{ background: gradient }}
+          className="h-20 text-center text-bold text-3xl justify-center flex items-center text-white" //bg-orange-400
+          style={{ background: "linear-gradient(to right, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% " }}
         >
           Suggestions
         </div>
