@@ -1,34 +1,34 @@
 // import logo from './logo.svg';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 // import './components/CustomScrollbar.css';
 
 // import LandingForm from './components/LandingForm';
-import LandingPage from './pages/LandingPage';
-import SignupPage from './pages/SignupPage';
-import Posts from './components/Posts';
-import Story from './components/Story';
-import Navbar from './components/Navbar';
-import Trial from './components/Trial';
-import PostArea from './components/PostArea';
-import Profcov from './components/Profcov';
-import Username from './components/Username';
-import About from './components/About';
-import Followerfollowing from './components/Followerfollowing';
-import Followers from './components/Followers';
+import LandingPage from "./pages/LandingPage";
+import SignupPage from "./pages/SignupPage";
+import Posts from "./components/Posts";
+import Story from "./components/Story";
+import Navbar from "./components/Navbar";
+import Trial from "./components/Trial";
+import PostArea from "./components/PostArea";
+import Profcov from "./components/Profcov";
+import Username from "./components/Username";
+import About from "./components/About";
+import Followerfollowing from "./components/Followerfollowing";
+import Followers from "./components/Followers";
 
 // import EditProfBtn from './components/EditProfBtn';
-import EditProfpage from './pages/EditProfPage';
-import Userimage from './components/Userimage';
-import { useEffect, useState } from 'react';
-import StoryArea from './components/StoryArea';
-import StoryContent from './components/StoryContent';
-import FeedPage from './pages/FeedPage';
-import MediaSection from './components/MediaSection';
-import Follow from './components/Follow';
-import FollowRequest from './components/FollowRequest';
-import NotificationList from './components/NotificationList';
-import NotificationArea from './components/NotificationArea';
+import EditProfpage from "./pages/EditProfPage";
+import Userimage from "./components/Userimage";
+import { useEffect, useState } from "react";
+import StoryArea from "./components/StoryArea";
+import StoryContent from "./components/StoryContent";
+import FeedPage from "./pages/FeedPage";
+import MediaSection from "./components/MediaSection";
+import Follow from "./components/Follow";
+import FollowRequest from "./components/FollowRequest";
+import NotificationList from "./components/NotificationList";
+import NotificationArea from "./components/NotificationArea";
 
 // import PostButton from './components/PostButton';
 // =======
@@ -39,8 +39,12 @@ import Example from './components/Example';
 import ConfirmAcc from './components/ConfirnAcc';
 import Mutuals from './pages/Mutuals';
 import LinearDeterminate from './components/LinearDeterminate';
-import Settingnew from './components/Settingnew';
-import VideosPage from './pages/VideosPage';
+import SettingPage from "./pages/SettingPage";
+import VideosPage from "./pages/VideosPage";
+import Privacy from "./components/Privacy";
+import SettingsLeftSidebar from "./components/SettingsLeftSidebar";
+import DarkModeSettings from "./components/DarkModeSettings";
+import TheamsSettings from "./components/TheamsSettings";
 import LabelBottomNavigation from './components/LabelBottomNavigation';
 import BottomSearch from './components/BottomSearch';
 //testing
@@ -49,10 +53,11 @@ function App() {
   const [dp, setDp] = useState("");
   const [modeTrigger, setModeTrigger] = useState(0);
   const [icon, setIcon] = useState(true); //to change between profile icon and settings icon
+  const [sidebar, setSidebar] = useState(false);
 
   useEffect(() => {
-    document.title = 'addaGram';
-    setModeTrigger(1);
+    document.title = "addaGram";
+    setModeTrigger(0);
   }, []);
 
   const CB = (data) => {
@@ -64,12 +69,16 @@ function App() {
     setDp(dataDp);
     setIcon(false);
   }
+  const SB = (data) => {
+    setSidebar(data);
+  };
   return (
     <>
       <BrowserRouter>
         {
           show && <Navbar dp={dp} mode={modeTrigger} icon={icon} />
         }
+        {sidebar && <SettingsLeftSidebar handleCB={CB} mode={modeTrigger} />}
         {/* <Navbar /> */}
         <Routes>
           <Route path='/' element={<LandingPage handleCB = {CB} />} />
@@ -90,7 +99,7 @@ function App() {
           <Route path='/userimage' element={<Userimage />} />
           <Route path='/storyarea' element={<StoryArea />} />
           <Route path='/storyc' element={<StoryContent />} />
-          <Route path='/feed' element={<FeedPage handleCB = {CB} mode={modeTrigger} />} />
+          <Route path='/feed' element={<FeedPage handleCB = {CB} mode={modeTrigger} handleSB={SB} />} />
           <Route path='/media' element={<MediaSection />} />
           <Route path='/follow' element={<Follow />} />
           <Route path='/followreq' element={<FollowRequest />} />
@@ -103,13 +112,36 @@ function App() {
           <Route path='/mutuals' element={<Mutuals handleCB = {CB} mode={modeTrigger} />} />
           <Route path='/videos' element={<VideosPage handleCB = {CB} mode={modeTrigger} />} />
           <Route path='/progress' element={<LinearDeterminate />} />
-          <Route path='/setting' element={<Settingnew />} />
+          <Route
+            path="/setting"
+            element={<SettingPage handleCB={CB} mode={modeTrigger} />}
+          />
+          {/*Settings Options */}
+          <Route
+            path="/privacy"
+            element={<Privacy handleCB={CB} handleSB={SB} mode={modeTrigger} />}
+          />
+          <Route
+            path="/darkmode"
+            element={
+              <DarkModeSettings
+                handleCB={CB}
+                handleSB={SB}
+                mode={modeTrigger}
+              />
+            }
+          />
+          <Route
+            path="/theams"
+            element={
+              <TheamsSettings handleCB={CB} handleSB={SB} mode={modeTrigger} />
+            }
+          />
           <Route path='/search' element={<BottomSearch handleCB = {CB} mode={modeTrigger} />} />
         </Routes>
         {/* <PostButton/> */}
         <LabelBottomNavigation mode={modeTrigger} />
       </BrowserRouter>
-      
     </>
   );
 }
