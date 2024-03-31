@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './PostArea.css';
 import Posts from "./Posts";
 import {
@@ -25,6 +25,20 @@ const Users = (props) => {
   // const [caption, setCaption] = useState("");
   // const [image, setImage] = useState();
   const [postArr, setPostArr] = useState([]);
+  const [modebg, setModebg] = useState("rgb(255, 246, 234)");
+
+  useEffect(() => {
+    if (props.mode) {
+      //dark mode
+      setModebg("rgb(26, 24, 48)");
+      // setModetext("white");
+    } else {
+      //light mode
+      // setModetext("black");
+      setModebg("rgb(255, 246, 234)");
+    }
+
+  }, [props]);
     
     const getData = async () => {
         const res = await fetch("https://dummyapi.io/data/v1/post?limit=10", {
@@ -54,7 +68,7 @@ const Users = (props) => {
     return(
         <>
         {/* {console.log(props.mode)} */}
-            <div className="PA-container">
+            <div className="PA-container" style={{backgroundColor: modebg}}>
               {
                 (postArr.length !== 0) && postArr.map((item, key) => (
                   <Posts 
