@@ -126,6 +126,7 @@ const Search2 = (props) => {
                 dataPic: option.image,
               }}
               style={{ textDecoration: "none", color: "black" }}
+              onClick={props.hide}
             >
               <li {...getOptionProps({ option, index })} className="flex items-center mb-[10px] rounded-l-full text-xl" style={{color: modetext}}>
                 <img

@@ -40,7 +40,7 @@ function RightSideBar(props) {
   }, [props]);
 
   return (
-    <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-1/4 scrollarea">
+    <div className="fixed top-0 right-0 mt-16 h-screen overflow-y-auto bg-transparent text-black w-1/4 scrollarea hidden sm:hidden md:hidden lg:block xl:block 2xl:block">
       {/* First list */}
       <div className="list-group list-group-flush scrollarea">
         <div

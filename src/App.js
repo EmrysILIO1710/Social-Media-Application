@@ -46,6 +46,7 @@ function App() {
   const [show, setShow] = useState(false);
   const [dp, setDp] = useState("");
   const [modeTrigger, setModeTrigger] = useState(0);
+  const [icon, setIcon] = useState(true); //to change between profile icon and settings icon
 
   useEffect(() => {
     document.title = 'addaGram';
@@ -54,16 +55,18 @@ function App() {
 
   const CB = (data) => {
     setShow(data);
+    setIcon(true);
   }
   const CB2 = (data, dataDp) => {
     setShow(data);
     setDp(dataDp);
+    setIcon(false);
   }
   return (
     <>
       <BrowserRouter>
         {
-          show && <Navbar dp={dp} mode={modeTrigger} />
+          show && <Navbar dp={dp} mode={modeTrigger} icon={icon} />
         }
         {/* <Navbar /> */}
         <Routes>

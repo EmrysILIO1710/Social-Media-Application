@@ -122,7 +122,7 @@ const Posts = (props) => {
                 dataName: props.name,
                 dataDp: props.dp,
                 dataAbout: props.cc,
-                dataPic: props.picture,
+                dataPic: props.post,
               }}
               style={{ textDecoration: "none", color: "black" }}
             >
@@ -136,7 +136,7 @@ const Posts = (props) => {
                 dataName: props.name,
                 dataDp: props.dp,
                 dataAbout: props.cc,
-                dataPic: props.picture,
+                dataPic: props.post,
               }}
               style={{ textDecoration: "none", color: modetext }}
             >
