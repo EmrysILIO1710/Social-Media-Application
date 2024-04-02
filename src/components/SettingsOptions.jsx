@@ -23,7 +23,8 @@ const SettingsOptions = ({ mode, link, imageUrl, name }) => {
     >
       <Link
         to={link}
-        className="flex items-center justify-between no-underline text-black"
+        className="flex items-center justify-between no-underline"
+        style={{ color: modetext }}
       >
         <div className="flex items-center">
           <div className="mr-3">
