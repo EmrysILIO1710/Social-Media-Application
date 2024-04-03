@@ -45,7 +45,7 @@ const FeedPage = (props) => {
         {/* <BackgroundButton sendDataToFeedPage={handleDataFromBackgroundButton} /> */}
         {/* <Navbar /> */}
         <div className="mt-16 flex justify-center">
-          <div className="w-1/3 flex justify-center">
+          <div className="w-full lg:w-1/3 flex justify-center">
             <AlertModal mode={props.mode} />
           </div>
         </div>

@@ -59,7 +59,7 @@ export default function AddPost({ addPost, mode }) {
       >
         <SpeedDial
           ariaLabel="SpeedDial controlled open example"
-          sx={{ position: "absolute", bottom: 32, left: 40 }}
+          sx={{ position: "absolute", bottom: 48, left: 40 }}
           icon={<SpeedDialIcon />}
           onClose={handleClose}
           onOpen={handleOpen}

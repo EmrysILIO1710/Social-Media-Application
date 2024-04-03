@@ -122,7 +122,7 @@ const Posts = (props) => {
                 dataName: props.name,
                 dataDp: props.dp,
                 dataAbout: props.cc,
-                dataPic: props.picture,
+                dataPic: props.post,
               }}
               style={{ textDecoration: "none", color: "black" }}
             >
@@ -136,7 +136,7 @@ const Posts = (props) => {
                 dataName: props.name,
                 dataDp: props.dp,
                 dataAbout: props.cc,
-                dataPic: props.picture,
+                dataPic: props.post,
               }}
               style={{ textDecoration: "none", color: modetext }}
             >
@@ -228,8 +228,8 @@ const Posts = (props) => {
           {comments.length !== 0 ? (
             comments.map((item, key) => (
               <div key={item.commId} className="Post-comment-section2">
-                <span>
-                  <span style={{ fontWeight: "bold" }}>YOU:</span>{" "}
+                <span className="flex">
+                  <span style={{ fontWeight: "bold" }}>YOU: {" "}</span>
                   {item.commVal} &nbsp;&nbsp;
                   <img
                     src={deletecomm}

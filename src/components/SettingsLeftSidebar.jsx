@@ -74,13 +74,13 @@ function ListGroupSideBar({ onSearch, mode }) {
       />
 
       <div
-        className="flex flex-col mt-1 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer"
+        className="flex flex-col mt-1 rounded-md p-2 hover:cursor-pointer"
         style={{ color: modetext }}
         onClick={() => {
           setOpen(true);
         }}
       >
-        <div className="flex items-center justify-between no-underline text-black">
+        <div className="flex items-center justify-between no-underline">
           <div className="flex items-center">
             <div className="mr-3">
               <RiLogoutBoxRFill color="orange" size={30} />

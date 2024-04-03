@@ -2,21 +2,36 @@
     width: 100%;
     max-width: 700px; /* Set maximum width to 700px */
     height: auto;
-    border-radius: 20px;
+    border-radius: 0px;
     overflow: hidden;
     margin: 0 auto 30px;
-    box-shadow: 2px 2px 12px black;
+    /* box-shadow: 2px 2px 12px black; */
   }
   
   @media (min-width: 640px) {
     .Post-btns {
       flex-wrap: wrap;
     }
+    .Post-container {
+      max-width: 500px; /* Adjust as needed */
+      border-radius: 20px;
+      box-shadow: 2px 2px 12px black;
+    }
   }
   
+  @media (min-width: 490px) {
+    .Post-container {
+      max-width: 500px; /* Adjust as needed */
+      border-radius: 20px;
+      box-shadow: 2px 2px 12px black;
+    }
+  }
+
   @media (min-width: 768px) {
     .Post-container {
-      max-width: 700px; /* Adjust as needed */
+      max-width: 500px; /* Adjust as needed */
+      border-radius: 20px;
+      box-shadow: 2px 2px 12px black;
     }
   
     .Post-header {
@@ -33,7 +48,19 @@
   
   @media (min-width: 1024px) {
     .Post-container {
-      max-width: 700px; /* Adjust as needed */
+      max-width: 40%; /* Adjust as needed */
+      min-width: 500px;
+      margin: 0 0 30px 10vw;
+      border-radius: 20px;
+      box-shadow: 2px 2px 12px black;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .Post-container {
+      margin: 0 auto 30px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 12px black;
     }
   }
   
@@ -182,4 +209,8 @@
   .Post-comment-section2 {
     margin: 10px 25px;
     font-size: 15px;
+  }
+  .Post-delete-comm{
+    width: 1.5vw;
+    height: 1.5vw;
   }
