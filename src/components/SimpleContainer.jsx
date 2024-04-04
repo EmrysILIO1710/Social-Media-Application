@@ -47,7 +47,9 @@ const Area = (props) => {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="false">
-        <div style={{ backgroundColor: "rgb(0, 0, 0, 0)", width: "45vw", height: "auto", margin: "0 auto", padding: "20px 0" }}>
+        <div 
+          className="xl:w-3/6 w-3/5 mx-9 h-fit xl:mx-auto py-5 "
+        >
           <h1 className="mt-16 font-bold" style={{color: modetext}} >Mutuals</h1><br />
           <div className="flex flex-wrap justify-around">
             {
