@@ -53,7 +53,7 @@ export default function AlertModal(props) {
               <Link to="/profilepage">Get Started.</Link>
             </Alert>
           </Stack>
-          {showModal && <SecondAlertModel handleClose={handleClose} />}
+          {showModal && <SecondAlertModel mode={props.mode} handleClose={handleClose} />}
         </>
       ) : null}
     </>
