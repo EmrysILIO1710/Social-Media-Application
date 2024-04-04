@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import SildeBarProfile from "./SildeBarProfile";
 import { FaUserFriends } from "react-icons/fa";
 import { CiSaveDown2 } from "react-icons/ci";
-import { Link } from "react-router-dom";
-import { LuWallpaper } from "react-icons/lu";
+// import { Link } from "react-router-dom";
+// import { LuWallpaper } from "react-icons/lu";
 import { LuSettings } from "react-icons/lu";
 import { SlLogout } from "react-icons/sl";
 import LogoutPopup from "./LogoutPopup";
@@ -57,11 +57,11 @@ function ListGroupSideBar(props) {
           imageUrl={<LuSettings size={30} />}
           name="Settings"
           mode={props.mode}
-          link={"/setting"}
+          link={"/privacy"}
         />
 
         {/* Theme Changer */}
-        <Link
+        {/* <Link
           to="/"
           className="list-group-item my-1 py-3 lh-sm bg-transparent no-underline transition-transform duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-md active:shadow-none hover:cursor-pointer text-decoration-none" 
         >
@@ -73,7 +73,7 @@ function ListGroupSideBar(props) {
               <h2 className="text-lg font-bold">Themes</h2>
             </div>
           </div>
-        </Link>
+        </Link> */}
         <hr />
         {/* logout area */}
         <div className="self-end list-group-item my-1 py-3 lh-sm bg-transparent no-underline transition-transform duration-200 ease-in-out transform hover:-translate-y-1 hover:shadow-md active:shadow-none hover:cursor-pointer text-decoration-none"

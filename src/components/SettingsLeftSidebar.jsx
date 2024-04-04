@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import SearchSettings from "./SearchSettings";
+// import SearchSettings from "./SearchSettings";
 import SettingsOptions from "./SettingsOptions";
 import { FcLock } from "react-icons/fc";
 import { MdModeNight } from "react-icons/md";
-import { LuWallpaper } from "react-icons/lu";
+// import { LuWallpaper } from "react-icons/lu";
 import LogoutPopup from "./LogoutPopup";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
@@ -23,22 +23,22 @@ function ListGroupSideBar({ onSearch, mode }) {
       setModebg("rgb(255, 246, 234)");
     }
   }, [mode]);
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setSearchTerm(event.target.value);
+  // };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSearch(searchTerm);
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   onSearch(searchTerm);
+  // };
 
   const [open, setOpen]  = useState(false);
 
   return (
     <div
-      className="fixed mt-16 top-0 h-screen bg-transparent overflow-y-auto w-80 z-20"
+      className="fixed mt-16 top-0 h-screen bg-transparent overflow-y-auto w-80 z-10"
       style={{ backgroundColor: modebg, color: modetext }}
     >
       <Link
@@ -47,12 +47,12 @@ function ListGroupSideBar({ onSearch, mode }) {
       >
         Settings & Privacy
       </Link>
-      <SearchSettings
+      {/* <SearchSettings
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         searchTerm={searchTerm}
         mode={mode}
-      />
+      /> */}
       <hr />
       <SettingsOptions
         imageUrl={<FcLock size={30} />}
@@ -66,15 +66,15 @@ function ListGroupSideBar({ onSearch, mode }) {
         link="/darkmode"
         mode={mode}
       />
-      <SettingsOptions
+      {/* <SettingsOptions
         imageUrl={<LuWallpaper size={30} color="orange" />}
         name="Themes"
         link="/theams"
         mode={mode}
-      />
+      /> */}
 
       <div
-        className="flex flex-col mt-1 rounded-md p-2 hover:cursor-pointer"
+        className="flex flex-col mt-1 bg-transparent rounded-md p-2 hover:cursor-pointer"
         style={{ color: modetext }}
         onClick={() => {
           setOpen(true);
