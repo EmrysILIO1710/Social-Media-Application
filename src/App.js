@@ -119,14 +119,13 @@ function App() {
           {/*Settings Options */}
           <Route
             path="/privacy"
-            element={<Privacy handleCB={CB} handleSB={SB} mode={modeTrigger} />}
+            element={<Privacy handleCB={CB} mode={modeTrigger} />}
           />
           <Route
             path="/darkmode"
             element={
               <DarkModeSettings
                 handleCB={CB}
-                handleSB={SB}
                 mode={modeTrigger}
               />
             }
@@ -134,7 +133,7 @@ function App() {
           <Route
             path="/theams"
             element={
-              <TheamsSettings handleCB={CB} handleSB={SB} mode={modeTrigger} />
+              <TheamsSettings handleCB={CB} mode={modeTrigger} />
             }
           />
           <Route path='/search' element={<BottomSearch handleCB = {CB} mode={modeTrigger} />} />

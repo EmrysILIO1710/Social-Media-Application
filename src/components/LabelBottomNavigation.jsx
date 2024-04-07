@@ -46,7 +46,7 @@ export default function LabelBottomNavigation(props) {
 
   return (
     <ThemeProvider theme={theme}>
-    <div className="block lg:hidden">
+    <div className="block lg:hidden z-50">
       <BottomNavigation
         sx={{ width: "100%", position: "fixed", bottom: 0, boxShadow: "2px 2px 10px black", bgcolor: modebg }}
         value={value}
