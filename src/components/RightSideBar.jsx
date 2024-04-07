@@ -52,8 +52,7 @@ function RightSideBar(props) {
       {/* First list */}
       <div className="list-group list-group-flush scrollarea">
         <div
-          className="h-20 text-center text-bold text-3xl justify-center flex items-center text-white" //bg-orange-400
-          style={{ background: "linear-gradient(to right, rgb(26, 24, 48, 0) 0%, rgb(254, 163, 82) 60% " }}
+          className="h-20 text-center text-bold text-3xl justify-center bg-orange-400 flex items-center text-white"
         >
           Suggestions
         </div>

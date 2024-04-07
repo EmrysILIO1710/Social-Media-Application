@@ -18,8 +18,8 @@ const SettingsOptions = ({ mode, link, imageUrl, name }) => {
   }, [mode]);
   return (
     <div
-      className="flex flex-col mt-1 bg-transperant rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer"
-      style={{ backgroundColor: modebg, color: modetext }}
+      className="flex flex-col mt-1 bg-transperant rounded-md p-2 hover:cursor-pointer"
+      style={{ color: modetext }}
     >
       <Link
         to={link}

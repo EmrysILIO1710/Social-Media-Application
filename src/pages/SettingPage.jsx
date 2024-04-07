@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SettingsLeftSidebar from "../components/SettingsLeftSidebar";
 // import SettingLanding from "../components/SettingLanding";
+import Privacy from "../components/Privacy";
 
 const SettingPage = (props) => {
   const [modebg, setModebg] = useState("rgb(255, 246, 234)");
@@ -16,15 +17,23 @@ const SettingPage = (props) => {
       setModetext("black");
       setModebg("rgb(255, 246, 234)");
     }
+    // props.handleSB(true);
     props.handleCB(true);
   }, [props]);
 
   return (
-    <div className="h-screen flex">
-      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
+    <>
+      <div
+        className="flex bg-black"
+      >
         <SettingsLeftSidebar mode={props.mode} />
+        <div
+          className="flex-grow hidden md:block"
+        >
+          <Privacy mode={props.mode}/>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
