@@ -10,7 +10,7 @@
     width: 700px;
     max-width: 100%; /* Ensures responsiveness */
     height: auto;
-    background-color: rgba(116, 255, 209, 0);
+    /* background-color: rgba(116, 255, 209); */
     /* display: flex;
     flex-wrap: nowrap;
     padding: 10px 0; */
@@ -26,8 +26,10 @@
     /* background-color: rgba(238, 0, 0, 0.44); */
 }
 
-.SA-container::-webkit-scrollbar {
-    display: none; /* Hide scroll bar */
+@media (min-width: 1300px) {
+    .SA-container::-webkit-scrollbar {
+        display: none;
+    }    
 }
 
 .SA-left,
@@ -68,14 +70,28 @@
 
 /* Media Queries for Responsiveness */
 
+@media (max-width: 1300px) {
+    .SA{
+        width: 550px;
+    }
+}
+
 @media (max-width: 1024px) {
     .SA-container {
         width: 100%;
         max-width: none;
     }
+    
 
     .SA-story {
         margin-left: 0;
         width: 100%;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .SA{
+        width: 100vw;
     }
 }

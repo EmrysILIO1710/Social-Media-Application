@@ -17,7 +17,7 @@ const Story = (props) => {
     <>
       <div className="flex flex-col items-center relative">
         <div
-          className={`relative w-24 h-24 rounded-full overflow-hidden`}
+          className={`relative w-24 h-24 max-[500px]:w-20 max-[500px]:h-20 rounded-full overflow-hidden`}
         >
           <img
             src={props.profilepic}
