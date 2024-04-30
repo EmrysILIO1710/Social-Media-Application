@@ -139,7 +139,10 @@ function App() {
           <Route path='/search' element={<BottomSearch handleCB = {CB} mode={modeTrigger} />} />
         </Routes>
         {/* <PostButton/> */}
-        <LabelBottomNavigation mode={modeTrigger} />
+        {
+          show && <LabelBottomNavigation mode={modeTrigger} />
+        }
+        
       </BrowserRouter>
     </>
   );
