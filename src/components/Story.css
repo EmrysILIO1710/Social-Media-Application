@@ -1,17 +1,33 @@
 .Story-box{
-    width: 110px;
+    width: 100px;
     overflow: hidden;
     cursor: pointer;
     margin: 0 10px;
+    align-items: center;
+    /* background-color: aqua; */
 }
 .Story-container{
     height: 100px;
     width: 100px;
-    background-color: aqua;
+    /* background-color: aqua; */
     border-radius: 100%;
     /* border: 5px solid rgb(254, 163, 82); */
     cursor: pointer;
     overflow: hidden;
+}
+
+@media (max-width: 500px) {
+     .Story-box{
+        width: 80px;
+     }
+     .Story-container{
+        width: 80px;
+        height: 80px;
+     }
+}
+
+.Story-dp{
+    height: 100%;
 }
 .Story-content-box{
     height: 100vh;
@@ -121,7 +137,4 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
-}
-.Story-dp{
-    height: 100%;
 }

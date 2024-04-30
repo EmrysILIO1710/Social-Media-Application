@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const SettingsOptions = ({ mode, link, imageUrl, name }) => {
-  const [modebg, setModebg] = useState("rgb(255, 246, 234)");
+  // const [modebg, setModebg] = useState("rgb(255, 246, 234)");
   const [modetext, setModetext] = useState("black");
 
   useEffect(() => {
     if (mode) {
       //dark mode
-      setModebg("rgb(26, 24, 48)");
+      // setModebg("rgb(26, 24, 48)");
       setModetext("white");
     } else {
       //light mode
       setModetext("black");
-      setModebg("rgb(255, 246, 234)");
+      // setModebg("rgb(255, 246, 234)");
     }
   }, [mode]);
   return (
