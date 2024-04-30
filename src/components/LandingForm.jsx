@@ -101,6 +101,7 @@ const LandingForm = () => {
                         console.log('Login Failed');
                     }}
                 /> */}
+                {/* Rederect to google */}
           <button
             style={{ margin: "0px 112px", fontSize: "18px" }}
             onClick={() => login()}
