@@ -39,13 +39,34 @@
     left: 0;
     margin-left: 5vw;
 }
+@media (max-width: 1126px){
+    .Story-content-box{
+        width: 100vw;
+        margin-left: 0;
+    }
+    /* .Story-picture-box{
+        height: 100%;
+        width: 35%;
+        background-color: rgba(255, 235, 205, 0);
+        margin: 1% auto;
+        overflow: hidden;
+        position: relative;
+    } */
+}
+@media (min-height: 1300px){
+    .Story-picture-box{
+        height: 96%;
+        width: 700px;
+    }
+}
 .Story-picture-box{
     height: 96%;
-    width: 35%;
+    width: 40%;
     background-color: rgba(255, 235, 205, 0);
     margin: 1% auto;
     overflow: hidden;
     position: relative;
+    min-width: 340px;
 }
 .Story-close{
     height: 4%;
@@ -53,6 +74,7 @@
     right: 20px;
     top: 20px;
     cursor: pointer;
+    z-index: 20;
 }
 .Story-picture{
     margin-top: auto;
