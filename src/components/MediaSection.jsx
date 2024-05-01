@@ -13,11 +13,7 @@ const MediaSection = (props) => {
 
     return(
         <>
-            <div className="MS-container absolute mx-16  mt-[180%] 
-                sm:mt-[125%] sm:mx-32
-                md:mt-[105%] md:mx-32
-                xl:mx-28 xl:mt-[50%]
-            ">
+            <div className="MS-container">
                 <CenteredTabs handleCB={changeTab} />
                 <br />
                 {
