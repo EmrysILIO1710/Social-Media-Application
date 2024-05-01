@@ -23,12 +23,7 @@ const EditProfBtn = (props) => {
     return (
         <>
             <form onClick={editprofile}>
-                <button className="EP-btn absolute w-screen h-56 -translate-x-1/2 left-1/2 bottom-24  
-                    xl:top-1/2 xl:left-3/4
-                    sm:-bottom-16
-                    md:-bottom-16
-                    lg:-bottom-16
-                ">
+                <button className="EP-btn w-screen h-56">
                     <p className="text-lg text-bold my-auto text-black">Edit Profile</p>
                 </button>
             </form>

@@ -8,11 +8,9 @@ const About = (props) => {
         }
     }, [props.about])
     return(
-            <div className="About-page absolute text-wrap left-1/2 -translate-x-1/2 w-3/4 -bottom-20 text-base
-                sm:-bottom-60
-                md:-bottom-60 md:text-lg
-                lg:-bottom-60 lg:text-lg
-                xl:left-64 xl:top-3/4 xl:-translate-x-0 xl:max-w-lg xl:text-xl
+            <div className="About-page text-wrap text-base
+                md:text-lg
+                xl:max-w-lg xl:text-xl
             ">
                 <p>
                     {about}
