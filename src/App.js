@@ -58,7 +58,7 @@ function App() {
 
   useEffect(() => {
     document.title = "addaGram";
-    setModeTrigger(1);
+    setModeTrigger(0);
   }, []);
 
   const CB = (data) => {

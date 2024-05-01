@@ -3,9 +3,9 @@ import "./Follow.css";
 
 const Follow = () => {
   return (
-    <div className="Main-div absolute w-60 top-96 w-52 text-center left-1/2 -translate-x-1/2
-      sm:-bottom-6 sm:top-auto sm:w-60
-      xl:right-60 xl:translate-x-1/2 xl:top-2/3 xl:w-72
+    <div className="Main-div w-60 w-52 text-center
+      sm:w-60
+      xl:w-72
     ">
       <div className="Follower-button">
         <h2 className="text-bold text-4xl
