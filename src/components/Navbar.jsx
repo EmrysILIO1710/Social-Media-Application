@@ -45,7 +45,7 @@ export default function Navbar(props) {
   return (
     <Disclosure
       as="nav"
-      className="fixed top-0 w-full z-20 Bottom-Shadow"
+      className="fixed top-0 w-full z-10 Bottom-Shadow"
       style={{ backgroundColor: modebg }}
     >
       {({ open }) => (

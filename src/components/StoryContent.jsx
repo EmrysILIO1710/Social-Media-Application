@@ -93,10 +93,10 @@ const StoryContent = (props) => {
                 type="text"
                 value={comm}
                 className="Story-comment"
-                placeholder="add your thoughts..."
+                placeholder="press enter to send..."
                 onChange={changeComm}
               />
-              <button className="Story-comment-done-btn">Done</button>
+              {/* <button className="Story-comment-done-btn">Done</button> */}
             </form>
             <img
               src={like}
