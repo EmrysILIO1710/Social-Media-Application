@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
+import SearchResults2 from "./SearchResults2";
 
 const BottomSearch = (props) => {
   const [modebg, setModebg] = useState("rgb(255, 246, 234)");
@@ -25,7 +26,7 @@ const BottomSearch = (props) => {
       <div className="w-full h-fit pt-24 grid justify-items-center">
         <h3>Search User...</h3>
         <br />
-        <SearchResults mode={props.mode} />
+        <SearchResults2 mode={props.mode} />
       </div>
     </div>
   );
