@@ -87,7 +87,7 @@ const UsersMessages = (props) => {
     
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 350, height: "100%" }}
-      style={{backgroundColor: modebg, color: modetext}}
+      style={{backgroundColor: modebg, color: modetext, zIndex: 30}}
       role="presentation"
     //   onClick={toggleDrawer(anchor, false)}
     //   onKeyDown={toggleDrawer(anchor, false)}
@@ -117,14 +117,14 @@ const UsersMessages = (props) => {
   return (
     <div>
         {/* {console.log(data.data)} */}
-          <button onClick={toggleDrawer('right', true)} className="relative hidden lg:block rounded-full bg-orange-300 p-2 text-black-400 hover:bg-orange-500 focus:outline-none  hover:transition duration-500">
+          <button onClick={toggleDrawer('right', true)} className="relative hidden lg:block rounded-full bg-orange-300 p-2 text-black-400 hover:bg-orange-500 focus:outline-none z-30 hover:transition duration-500">
             <BiSolidMessage className="h-6 w-6" />
           </button>
           <Drawer
             anchor={'right'}
             open={state['right']}
             onClose={toggleDrawer('right', false)}
-            sx={{zIndex: '10'}}
+            sx={{zIndex: '30'}}
           >
             <Example display={disp} handleCB={closeChat} name={name} mode={props.mode} />
             {list('right')}
