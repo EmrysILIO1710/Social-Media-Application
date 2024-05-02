@@ -15,7 +15,7 @@ const ChatSection = () => {
     setMessages((prevMessages) => [inputValue, ...prevMessages]);
     setInputValue("");
   };
-
+//chat section
   return (
     <>
       <div className="w-full bg-white shadow-md top-0 mt-16 h-12">
