@@ -61,7 +61,7 @@ function App() {
     document.title = "addaGram";
     setModeTrigger(0);
   }, []);
-
+//Commited
   const CB = (data) => {
     setShow(data);
     setIcon(true);
