@@ -37,6 +37,7 @@ export default function LogoutPopup(props) {
         className="rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:max-w-lg w-full mx-4"
         style={{ backgroundColor: modebg }}
       >
+        {/* LoGout Popup */}
         <div className="px-4 py-5 sm:p-6">
           <div className="text-center sm:text-left" style={{ color: modetext }}>
             <h3 className="text-lg font-medium ">Logout from this account</h3>
