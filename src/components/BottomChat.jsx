@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ChatProfiles from "./ChatProfiles";
 
 const BottomSearch = (props) => {
   const [modebg, setModebg] = useState("rgb(255, 246, 234)");
@@ -20,11 +21,8 @@ const BottomSearch = (props) => {
     // }
   }, [props]);
   return <>
-    <div style={{color: modetext, backgroundColor: modebg, height: '100vh', width: '100vw'}}>
-      <div className="bg-black mt-16">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, minus perspiciatis reprehenderit dolores soluta exercitationem placeat! Laborum veritatis magni, optio vitae iure debitis repellat inventore iste enim nihil, eligendi beatae?
-
-      </div>
+    <div style={{color: modetext, backgroundColor: modebg, height: '100vh', width: '100vw'}} className="float-left">
+        <ChatProfiles/>
     </div>
   </>
 };

@@ -48,6 +48,7 @@ import TheamsSettings from "./components/TheamsSettings";
 import LabelBottomNavigation from "./components/LabelBottomNavigation";
 import BottomSearch from "./components/BottomSearch";
 import BottomChat from "./components/BottomChat";
+import ChatSection from "./components/ChatSection";
 //testing
 function App() {
   const [show, setShow] = useState(false);
@@ -150,8 +151,13 @@ function App() {
             element={<BottomSearch handleCB={CB} mode={modeTrigger} />}
           />
           <Route
-          path="/chat"
-          element={<BottomChat handleCB={CB} mode={modeTrigger} />}/>
+            path="/chat"
+            element={<BottomChat handleCB={CB} mode={modeTrigger} />}
+          />
+          <Route
+            path="/chatsection"
+            element={<ChatSection handleCB={CB} mode={modeTrigger} />}
+          />
         </Routes>
         {/* <PostButton/> */}
         <LabelBottomNavigation mode={modeTrigger} />
