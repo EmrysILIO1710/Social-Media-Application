@@ -1,73 +1,76 @@
-.EPP{
+/* Desktop Styles */
+.EPP {
     width: 100%;
     height: auto;
     background-color: rgba(0, 0, 0, 0.622);
     padding: 2% 0;
     position: absolute;
-    z-index: 12;
+    z-index: 30;
     left: 0;
     top: 0;
-    /* overflow: scroll; */
-}
-.EPP-container{
+    opacity: 1;
+  }
+  
+  .EPP-container {
     width: 60vw;
     height: auto;
     background-color: rgb(254, 163, 82);
     margin: 0 auto;
     border-radius: 20px;
     padding: 10px;
-}
-.EPP-h2{
+  }
+  
+  .EPP-h2 {
     text-align: center;
-
-}
-.EPP-DP-box{
+  }
+  
+  .EPP-DP-box {
     position: relative;
     width: 250px;
     height: 250px;
     border-radius: 100%;
-    /* background-color: aqua; */
     margin: 20px auto;
     overflow: hidden;
-    /* margin-top: 100px; */
-    /* margin-left: 10px; */
-}
-.EPP-img{
+  }
+  
+  .EPP-img {
     width: 100%;
     position: absolute;
     z-index: 1;
-}
-.EPP-shadow{
+  }
+  
+  .EPP-shadow {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.816);
     z-index: 2;
-}
-.EPP-DP-btn{
-    /* position: absolute; */
+  }
+  
+  .EPP-DP-btn {
     margin: 47% 25%;
     width: 120px;
     height: 40px;
     font-size: 20px;
     font-weight: bold;
-    /* z-index: -1; */
-}
-.EPP-cover-box{
+  }
+  
+  .EPP-cover-box {
     width: 80%;
     height: 250px;
-    /* background-color: aqua; */
     position: relative;
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
-}
-.EPP-cover-btn{
+  }
+  
+  .EPP-cover-btn {
     margin: 16% 27%;
     font-size: 20px;
     font-weight: bold;
-}
-.EPP-input{
+  }
+  
+  .EPP-input {
     margin: 20px 14%;
     width: 70%;
     height: 40px;
@@ -78,12 +81,14 @@
     border-radius: 10px;
     background-color: white;
     font-weight: bold;
-}
-.EPP-input:focus{
+  }
+  
+  .EPP-input:focus {
     outline: none;
     border: none;
-}
-.EPP-input-bio{
+  }
+  
+  .EPP-input-bio {
     margin: 20px 14%;
     width: 70%;
     height: 200px;
@@ -93,12 +98,14 @@
     border-radius: 10px;
     background-color: white;
     font-weight: bold;
-}
-.EPP-input-bio:focus{
+  }
+  
+  .EPP-input-bio:focus {
     outline: none;
     border: none;
-}
-.EPP-submit{
+  }
+  
+  .EPP-submit {
     margin: 5% 40% 2%;
     height: 40px;
     width: 200px;
@@ -108,4 +115,33 @@
     cursor: pointer;
     font-weight: bold;
     font-size: 15px;
-}
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .EPP-container {
+      width: 90%;
+    }
+  
+    .EPP-DP-box,
+    .EPP-cover-box {
+      width: 80%;
+    }
+  
+    .EPP-DP-btn,
+    .EPP-cover-btn,
+    .EPP-submit {
+      width: 100%;
+      margin: 10px auto;
+    }
+  
+    .EPP-input,
+    .EPP-input-bio {
+      width: 100%;
+      margin: 10px auto;
+    }
+  
+    .EPP-submit {
+      margin: 20px auto;
+    }
+  }
