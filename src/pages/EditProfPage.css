@@ -117,7 +117,7 @@
     font-size: 15px;
   }
   
-  /* Mobile Styles */
+  /* Mobile Style */
   @media (max-width: 768px) {
     .EPP-container {
       width: 90%;
