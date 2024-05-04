@@ -8,8 +8,8 @@ import { IoIosSend } from "react-icons/io";
 export default function Example(props) {
   const [open, setOpen] = useState(false);
   const [picker, setPicker] = useState(false);
-  const [val, setVal] = useState("");
-  const [message, setMessage] = useState([]);
+  // const [val, setVal] = useState("");
+  // const [message, setMessage] = useState([]);
   const [modebg, setModebg] = useState("white");
   const [modetext, setModetext] = useState("black");
   const [messages, setMessages] = useState([]);
