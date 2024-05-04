@@ -46,11 +46,8 @@ export default function NotificationArea (props) {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 translate-y-1"
       >
-        <Popover.Panel className="absolute left-1/2 z-20 mt-4 flex w-screen max-w-max -translate-x-1/2 px-4 
-          xl:-translate-x-2/3 
-          lg:-translate-x-2/3 
-          md:-translate-x-3/4 
-          sm:-translate-x-3/4 
+        <Popover.Panel className="fixed  z-20 mt-4 flex w-screen max-w-max -translate-x-1/2 left-1/2 md:left-2/3  
+          
         ">
           <div className="w-auto max-w- h-[85vh] overflow-scroll flex-auto overflow-hidden rounded-3xl text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 NA-scroll"
             style={{backgroundColor: modebg}}
