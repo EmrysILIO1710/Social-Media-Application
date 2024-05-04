@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { IoIosSend } from "react-icons/io";
 import EmojiPicker from "emoji-picker-react";
 import smiley from "../pictures/smiley.png";
 
-const ChatSection = () => {
+const ChatSection = (props) => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [picker, setPicker] = useState(false);
+  const [modebg, setModebg] = useState("rgb(255, 246, 234)");
+  const [modetext, setModetext] = useState("black");
+
+  useEffect(() => {
+    if (props.mode) {
+      //dark mode
+      setModebg("rgb(26, 24, 48)");
+      setModetext("white");
+    } else {
+      //light mode
+      setModetext("black");
+      setModebg("rgb(255, 246, 234)");
+    }
+  }, [props.mode]);
 
   const openPicker = () => {
     setPicker(!picker);
@@ -29,7 +43,7 @@ const ChatSection = () => {
   //chat section
   return (
     <>
-      <div className="w-full bg-white shadow-md top-0 mt-16 h-12"></div>
+      <div style={{color: modetext, backgroundColor: modebg}} className="w-full bg-white shadow-md top-0 mt-16 h-12"></div>
       <div className="lg:hidden fixed bottom-0 mb-16 w-full bg-white p-2">
         <div className="flex flex-col-reverse h-full overflow-y-auto">
           {messages.map((message, index) => (

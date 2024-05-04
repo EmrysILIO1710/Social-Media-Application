@@ -3,19 +3,22 @@ import { Link } from "react-router-dom";
 
 const SuggationsFriends = ({ userData, mode }) => {
   const [modetext, setModetext] = useState("black");
+  const [modebg, setModebg] = useState("rgb(255, 246, 234)");
 
   useEffect(() => {
     if (mode) {
       //dark mode
+      setModebg("rgb(26, 24, 48)");
       setModetext("white");
     } else {
       //light mode
       setModetext("black");
+      setModebg("rgb(255, 246, 234)");
     }
   }, [mode]);
 
   return (
-    <div className="scrollbar-thin scrollbar-thumb-orange-400 scrollbar-track-gray-200 scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-y-auto">
+    <div style={{color: modetext, backgroundColor: modebg}} className="scrollbar-thin scrollbar-thumb-orange-400 scrollbar-track-gray-200 scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-y-auto">
       {userData.map((user) => (
         <div
           key={user.id}
