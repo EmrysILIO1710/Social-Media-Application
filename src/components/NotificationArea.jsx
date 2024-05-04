@@ -49,7 +49,7 @@ export default function NotificationArea (props) {
         <Popover.Panel className="fixed  z-20 mt-4 flex w-screen max-w-max -translate-x-1/2 left-1/2 md:left-2/3  
           
         ">
-          <div className="w-auto max-w- h-[85vh] overflow-scroll flex-auto overflow-hidden rounded-3xl text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 NA-scroll"
+          <div className="w-auto max-w- h-fit max-h-[85vh] overflow-scroll flex-auto overflow-hidden rounded-3xl text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 NA-scroll"
             style={{backgroundColor: modebg}}
           >
             <div className="p-2 NA-box" style={{color: modetext}}>
