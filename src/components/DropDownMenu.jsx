@@ -25,7 +25,7 @@ export default function Example(props) {
   const [selectedOption, setSelectedOption] = useState("Friends");
   const [modebg, setModebg] = useState("white");
   const [modetext, setModetext] = useState("black");
-  
+
   useEffect(() => {
     if (props.mode) {
       //dark mode
@@ -37,6 +37,7 @@ export default function Example(props) {
       setModebg("white");
     }
   }, [props.mode]);
+
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
   };
@@ -47,12 +48,13 @@ export default function Example(props) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-          style={{backgroundColor: modebg, color: modetext}}
+        <Menu.Button
+          className="inline-flex justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          style={{ backgroundColor: modebg, color: modetext }}
         >
           {optionsData.find(({ option }) => option === selectedOption)?.icon({ className: 'mr-2 my-1' })}
           {selectedOption}
-          <ChevronDownIcon className="-mr-1 h-5 w-5 " style={{color: modetext}} aria-hidden="true" />
+          <ChevronDownIcon className="-mr-1 h-5 w-5 " style={{ color: modetext }} aria-hidden="true" />
         </Menu.Button>
       </div>
 
@@ -60,14 +62,14 @@ export default function Example(props) {
         as={Fragment}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
+        enterTo="transform opacity-100 scale-180"
         leave="transition ease-in duration-75"
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items 
-          style={{ width: `${optionWidth}rem`, backgroundColor: modebg, color: modetext }} 
-          className="absolute right-0 z-10 mt-2 origin-top-right rounded-md  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        <Menu.Items
+          style={{ width: `${optionWidth}rem`, right: `calc(100% - ${optionWidth}rem)`, backgroundColor: modebg, color: modetext }}
+          className="absolute z-10 mt-2 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         >
           {optionsData.map(({ option, icon: Icon }) => (
             <Menu.Item key={option}>
@@ -75,7 +77,7 @@ export default function Example(props) {
                 <button
                   onClick={() => handleOptionSelect(option)}
                   className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : '',
+                    active ? 'right-0 bg-gray-100 text-gray-900' : '',
                     'w-full px-4 py-2 text-sm no-underline flex'
                   )}
                 >
