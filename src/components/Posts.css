@@ -185,6 +185,12 @@
     padding-right: 10px;
     font-size: 15px;
   }
+
+  @media (max-width: 493px){
+    .Post-comment {
+      width: 60%;
+    }
+  }
   
   .Post-comment:focus {
     border: none;
@@ -213,4 +219,6 @@
   .Post-delete-comm{
     width: 1.5vw;
     height: 1.5vw;
+    min-width: 20px;
+    min-height: 20px;
   }

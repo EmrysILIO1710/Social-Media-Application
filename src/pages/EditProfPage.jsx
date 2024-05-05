@@ -14,7 +14,7 @@ const EditProfpage = (props) => {
   const [about, setAbout] = useState(
     "An engineer. A full stack developer. From London. Wish me on 23 March. Troublemaker, go-getter. Ain't no thang like a chick'n wing mamacita... #foodlover #backend #fullstack"
   );
-  const [epp, setEpp] = useState("block");
+  // const [epp, setEpp] = useState("block");
 
   const showDp = () => {
     setDpshadow("block");
@@ -43,7 +43,7 @@ const EditProfpage = (props) => {
   const submitForm = (e) => {
     e.preventDefault();
     // SDTProfilePageFEPP(dp, cover, user, about);
-    setEpp("none");
+    // setEpp("none");
 
     props.handleCB(dp, cover, user, about);
   };
