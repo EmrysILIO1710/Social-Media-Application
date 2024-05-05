@@ -39,7 +39,7 @@ const MSTagged = (props) => {
 
     return(
         <>
-            <div className="MST-container">
+            <div className="MSP-container">
                 {
                     (photosArr.length !== 0) ? photosArr.map((item) => (
                         <Photos 

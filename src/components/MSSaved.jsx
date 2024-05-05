@@ -39,7 +39,7 @@ const MSSaved = (props) => {
 
     return(
         <>
-            <div className="MSS-container">
+            <div className="MSP-container">
                 {
                     (photosArr.length !== 0) ? photosArr.map((item) => (
                         <Photos 

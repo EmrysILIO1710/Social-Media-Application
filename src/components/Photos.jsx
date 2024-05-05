@@ -97,7 +97,7 @@ export default function Photos(props) {
 
   return (
     <>
-      <Card sx={{ maxWidth: "19.8vw", marginBottom: "1vh", backgroundColor: modebg, color: modetext }}>
+      <Card sx={{ minWidth: "200px", width: "19.8vw", marginBottom: "1vh", backgroundColor: modebg, color: modetext }}>
         <CardActionArea onClick={showAll}>
           <CardMedia
             component="img"
