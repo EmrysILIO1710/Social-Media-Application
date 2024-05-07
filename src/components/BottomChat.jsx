@@ -22,7 +22,7 @@ const BottomSearch = (props) => {
   }, [props]);
   return <>
     <div style={{color: modetext, backgroundColor: modebg, height: '100vh', width: '100vw'}} className="float-left">
-        <ChatProfiles/>
+        <ChatProfiles mode={props.mode}/>
     </div>
   </>
 };

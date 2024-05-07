@@ -7,6 +7,21 @@ function ChatProfiles(props) {
   // const [gradient, setGradient] = useState(
   //   "linear-gradient(to right, rgb(255, 246, 234, 0) 0%, rgb(254, 163, 82) 50% "
   // );
+  const [modetext, setModetext] = useState("black");
+  const [modebg, setModebg] = useState("rgb(255, 246, 234)");
+
+  useEffect(() => {
+    if (props.mode) {
+      //dark mode
+      setModebg("rgb(26, 24, 48)");
+      setModetext("white");
+    } else {
+      //light mode
+      setModetext("black");
+      setModebg("rgb(255, 246, 234)");
+    }
+  }, [props]);
+
 
   const getData = async () => {
     try {
@@ -40,7 +55,7 @@ function ChatProfiles(props) {
   }, [props]);
 
   return (
-    <div className="fixed top-0 right-0 mt-16 h-screen w-full overflow-y-auto bg-transparent float-left text-black scrollarea">
+    <div className="fixed top-0 right-0 mt-16 h-screen w-full overflow-y-auto bg-transparent float-left text-black scrollarea" style={{color: modetext, backgroundColor: modebg}}>
       {/* First list */}
       <div className="">
         <ChatFriends userData={userData} mode={props.mode} />
