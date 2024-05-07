@@ -5,3 +5,8 @@
     /* background-color: rgba(126, 252, 0, 0.282); */
     /* margin: 10px auto; */
 }
+@media (max-width: 800px){
+    .MS-container{
+        width: 100vw;
+    }
+}
