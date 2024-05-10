@@ -14,12 +14,22 @@
     /* background-color: rgba(240, 255, 255, 0.532); */
     margin: 5.5% auto;
     display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
 }
+.Photos-box::-webkit-scrollbar {
+    display: none;
+  }
 .Photos-pic{
     flex-basis: 60%;
     background-color: rgb(0, 0, 0);
     /* padding: auto 0; */
     overflow: hidden;
+}
+@media (max-width: 1100px){
+    .Photos-pic{
+        flex-basis: 100%;
+    }
 }
 .Photos-text{
     /* flex-basis: 40%; */

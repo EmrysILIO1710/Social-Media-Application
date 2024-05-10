@@ -4,7 +4,7 @@
     /* background-color: rgba(0, 255, 255, 0.671); */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .MSP-null{
     width: 100%;

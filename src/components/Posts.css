@@ -135,7 +135,27 @@
     height: 70px;
     background-color: rgba(0, 0, 0, 0);
     bottom: 70px;
-    left: 40%;
+    left: 30%;
+  }
+  @media (max-width: 400px) and (min-width: 0px){
+    .Post-share {
+      left: 0;
+      bottom: 50px;
+    }
+    .Post-svg {
+      margin-left: 50%;
+      display: none;
+    } 
+  }
+  @media (max-width: 490px) and (min-width: 400px) {
+    .Post-share {
+      left: 10%;
+      bottom: 50px;
+    }
+    .Post-svg {
+      margin-left: 10%;
+      display: none;
+    }
   }
   
   .Post-share-items {
@@ -144,12 +164,27 @@
     background-color: rgb(254, 163, 82);
     border-radius: 10px;
     display: flex;
+    overflow: scroll;
   }
+  .Post-share-items::-webkit-scrollbar {
+    display: none;
+  }
+  
   
   .Post-svg {
     background-color: rgba(128, 128, 128, 0);
-    margin-left: 17%;
+    margin-left: 30%;
   }
+
+  @media (max-width: 1450px) and (min-width: 490px) {
+    .Post-share {
+      left: 10%;
+    }
+    .Post-svg {
+      margin-left: 47%;
+    }
+  }
+  
   
   .Post-share-img {
     margin: 15px 20px;
@@ -185,6 +220,12 @@
     padding-right: 10px;
     font-size: 15px;
   }
+
+  @media (max-width: 493px){
+    .Post-comment {
+      width: 60%;
+    }
+  }
   
   .Post-comment:focus {
     border: none;
@@ -213,4 +254,6 @@
   .Post-delete-comm{
     width: 1.5vw;
     height: 1.5vw;
+    min-width: 20px;
+    min-height: 20px;
   }

@@ -2,7 +2,7 @@ import * as React from "react";
 import "./ProfilePage.css";
 import CssBaseline from "@mui/material/CssBaseline";
 // import Box from '@mui/material/Box';
-import Container from "@mui/material/Container";
+// import Container from "@mui/material/Container";
 import Profcov from "../components/Profcov";
 import Userimage from "../components/Userimage";
 import Username from "../components/Username";
@@ -68,22 +68,40 @@ export default function ProfilePage(props) {
         lg:visible
         md:visible
         sm:visible
-      " style={{backgroundColor: modebg}}
+        
+      "
+        style={{ backgroundColor: modebg, zIndex: "-1" }}
       >
         <circle cx="0%" cy="0%" r="60%" fill={modebg2} />
         <circle cx="100%" cy="100%" r="40%" fill={modebg2} />
       </svg>
-      <Container maxWidth="lg" sx={{ marginTop: "1rem", color: modetext }}>
-        <Profcov cover={cover} />
-        <Userimage dp={dp} />
-        <Username user={user} name={""} />
-        <EditProfBtn handleCB2={changeDets} />
-        <About about={about} />
-        {/* <Follow /> */}
-        <Followerfollowing mode={props.mode} />
-        <MediaSection savedel={true} mode={props.mode} />
+      <div style={{ marginTop: "1rem", color: modetext }}>
+        <div className=" w-screen h-1/3 mx-auto lg:w-2/3 md:w-3/4">
+          <Profcov cover={cover} />
+        </div>
+        <div className="md:flex lg:w-2/3 w-fit md:w-3/4 mx-auto md:justify-around mt-8">
+          <div className="-mt-24">
+            <Userimage dp={dp} />
+          </div>
+
+          <Username user={user} name={""} />
+
+          <EditProfBtn handleCB2={changeDets} />
+        </div>
+        <div className="md:flex lg:w-2/3 w-fit md:w-3/4 mx-auto md:justify-around mt-8">
+          <div className=" w-3/4 mx-auto">
+            <About about={about} />
+          </div>
+          <div className="w-fit mx-auto"> 
+            <Followerfollowing mode={props.mode} />
+          </div>
+          {/* <Follow /> */}
+        </div>
+        <div className="md:flex lg:w-2/3 w-fit md:w-3/4 mx-auto md:justify-around mt-8 mb-24">
+          <MediaSection savedel={true} mode={props.mode} />
+        </div>
         {/* <Box sx={{  height: '100vh' }} /> */}
-      </Container>
+      </div>
     </React.Fragment>
   );
 }

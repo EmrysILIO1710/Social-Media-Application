@@ -21,32 +21,44 @@ const theme = createTheme({
 });
 
 export default function FollowRequest(props) {
+  const follows = [];
+
   return (
     <ThemeProvider theme={theme}>
       <List sx={{ width: "100%", maxWidth: 360 }}>
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src={props.dp} />
-          </ListItemAvatar>
-          <ListItemText
-            primary= {props.name}
-            secondary={
-              <React.Fragment>
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  <Stack spacing={2} direction="rowu" sx={{marginTop: '8px'}}>
-                    <Button variant="contained">Accept</Button>
-                    <Button variant="text">Decline</Button>
-                  </Stack>
-                </Typography>
-              </React.Fragment>
-            }
-          />
-        </ListItem>
+        {follows.length !== 0
+          ? follows.map((item, key) => (
+              <ListItem alignItems="flex-start">
+                <ListItemAvatar>
+                  <Avatar alt="Remy Sharp" src={props.dp} />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={props.name}
+                  secondary={
+                    <React.Fragment>
+                      <Typography
+                        sx={{ display: "inline" }}
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      >
+                        <Stack
+                          spacing={2}
+                          direction="rowu"
+                          sx={{ marginTop: "8px" }}
+                        >
+                          <Button variant="contained">Accept</Button>
+                          <Button variant="text">Decline</Button>
+                        </Stack>
+                      </Typography>
+                    </React.Fragment>
+                  }
+                />
+              </ListItem>
+            ))
+          : <p className="italic text-center text-slate-500">no follow requests...</p>
+          }
+
         <Divider variant="inset" component="li" />
       </List>
     </ThemeProvider>

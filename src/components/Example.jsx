@@ -1,62 +1,55 @@
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-// import SendIcon from '@mui/icons-material/Send';
 import EmojiPicker from "emoji-picker-react";
-import send from "../pictures/send.png";
 import smiley from "../pictures/smiley.png";
+import { IoIosSend } from "react-icons/io";
 
 export default function Example(props) {
   const [open, setOpen] = useState(false);
   const [picker, setPicker] = useState(false);
-  const [val, setVal] = useState("");
-  const [message, setMessage] = useState([]);
+  // const [val, setVal] = useState("");
+  // const [message, setMessage] = useState([]);
   const [modebg, setModebg] = useState("white");
   const [modetext, setModetext] = useState("black");
-  // const [modeTrigger, setModeTrigger] = useState(0);
+  const [messages, setMessages] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     setOpen(props.display);
-    // setModeTrigger(1);
     if (props.mode) {
-      //dark mode
       setModebg("rgb(26, 24, 48)");
       setModetext("white");
     } else {
-      //light mode
       setModetext("black");
       setModebg("white");
     }
-    // props.handleCB(open);
   }, [props.display, props.mode]);
 
   const openPicker = () => {
-    if (picker === false) {
-      setPicker(true);
-    } else {
-      setPicker(false);
-    }
-    // setPicker(true);
+    setPicker(!picker);
   };
-  const changeVal = (e) => {
-    setVal(e.target.value);
-    setPicker(false);
-  };
+
   const addEmoji = (e) => {
-    setVal(val + e.emoji);
+    setInputValue(inputValue + e.emoji);
   };
-  const sendMessage = (e) => {
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setMessage([...message, val]);
-    setVal("");
-    setPicker(false);
+    if (!inputValue.trim()) return;
+    setMessages((prevMessages) => [inputValue, ...prevMessages]);
+    setInputValue("");
   };
 
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-10"
+        className="relative z-30"
         onClose={() => {
           setOpen(false);
           props.handleCB();
@@ -128,31 +121,20 @@ export default function Example(props) {
                       className="relative mt-6 flex-1 px-4 sm:px-6 overflow-y-scroll overflow-x-hidden bg-slate-400"
                       style={{ height: "400px", overflow: "scroll" }}
                     >
-                      {/* Set a fixed maximum height for the container */}
-                      <div className="absolute bottom-0 right-4 grid justify-items-end">
-                        {message.length !== 0 ? (
-                          message.map((item, key) => (
-                            <div
-                              key={key}
-                              className="mb-2 rounded-l-xl rounded-tr-xl w-fit max-w-72 px-2 py-2"
-                              style={{
-                                wordWrap: "break-word",
-                                backgroundColor: modebg,
-                                color: modetext,
-                              }}
-                            >
-                              <p>{item}</p>
+                      <div className="flex flex-col-reverse float-right h-full overflow-y-auto">
+                        {messages.map((message, index) => (
+                          <div key={index} className="mb-2">
+                            <div className="bg-orange-300 text-white rounded-lg p-2 max-w-xs">
+                              {message}
                             </div>
-                          ))
-                        ) : (
-                          <span></span>
-                        )}
+                          </div>
+                        ))}
                       </div>
                     </div>
 
                     <div className=" px-4 sm:px-6">
-                      <form onSubmit={sendMessage}>
-                        <label class="relative block mt-4 flex">
+                      <form onSubmit={handleSubmit}>
+                        <label className="relative block mt-4 flex">
                           <span className="absolute bottom-[120%] right-0">
                             <EmojiPicker
                               height={380}
@@ -162,12 +144,12 @@ export default function Example(props) {
                             />
                           </span>
                           <input
-                            class="placeholder:italic placeholder:text-gray-500 text-wrap block bg-gray-300 w-9/12 border border-slate-300 rounded-md py-2 px-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                            className="placeholder:italic placeholder:text-gray-500 text-wrap block bg-gray-300 w-9/12 border border-slate-300 rounded-md py-2 px-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
                             placeholder="write a message..."
                             type="text"
                             name="search"
-                            value={val}
-                            onChange={changeVal}
+                            value={inputValue}
+                            onChange={handleInputChange}
                           />
                           <span className="mx-2 my-2 cursor-pointer">
                             <img
@@ -176,16 +158,14 @@ export default function Example(props) {
                               onClick={openPicker}
                               style={{ width: "30px" }}
                             />
-                            {/* <SendIcon onClick={openPicker}/> */}
                           </span>
                           <span className="mx-2 mt-2 cursor-pointer">
-                            {/* <SendIcon  /> */}
-                            <img
-                              src={send}
-                              style={{ width: "30px" }}
-                              alt=""
-                              // onClick={sendMessage}
-                            />
+                            <button
+                              type="submit"
+                              className="bg-orange-400 text-white rounded-full px-3 py-2 ml-2"
+                            >
+                              <IoIosSend size={20} />
+                            </button>
                           </span>
                         </label>
                       </form>

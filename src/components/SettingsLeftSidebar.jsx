@@ -1,41 +1,24 @@
 import React, { useState, useEffect } from "react";
-// import SearchSettings from "./SearchSettings";
 import SettingsOptions from "./SettingsOptions";
 import { FcLock } from "react-icons/fc";
 import { MdModeNight } from "react-icons/md";
-// import { LuWallpaper } from "react-icons/lu";
 import LogoutPopup from "./LogoutPopup";
 import { RiLogoutBoxRFill } from "react-icons/ri";
-
-// import { Link } from "react-router-dom";
 
 function ListGroupSideBar({ mode }) {
   const [modebg, setModebg] = useState("rgb(255, 246, 234)");
   const [modetext, setModetext] = useState("black");
+  const [openLogoutModal, setOpenLogoutModal] = useState(false);
 
   useEffect(() => {
     if (mode) {
-      //dark mode
       setModebg("rgb(26, 24, 48)");
       setModetext("white");
     } else {
-      //light mode
       setModetext("black");
       setModebg("rgb(255, 246, 234)");
     }
   }, [mode]);
-  // const [searchTerm, setSearchTerm] = useState("");
-
-  // const handleChange = (event) => {
-  //   setSearchTerm(event.target.value);
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   onSearch(searchTerm);
-  // };
-
-  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -46,12 +29,6 @@ function ListGroupSideBar({ mode }) {
         <div className="h-20 text-center text-bold text-3xl justify-center no-underline flex items-center text-white bg-orange-400">
           Settings & Privacy
         </div>
-        {/* <SearchSettings
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        searchTerm={searchTerm}
-        mode={mode}
-      /> */}
         <hr />
         <SettingsOptions
           imageUrl={<FcLock size={30} />}
@@ -65,18 +42,11 @@ function ListGroupSideBar({ mode }) {
           link="/darkmode"
           mode={mode}
         />
-        {/* <SettingsOptions
-        imageUrl={<LuWallpaper size={30} color="orange" />}
-        name="Themes"
-        link="/theams"
-        mode={mode}
-      /> */}
-
         <div
           className="flex flex-col mt-1 bg-transparent rounded-md p-2 hover:cursor-pointer"
           style={{ color: modetext }}
           onClick={() => {
-            setOpen(true);
+            setOpenLogoutModal(true);
           }}
         >
           <div className="flex items-center justify-between no-underline">
@@ -90,12 +60,11 @@ function ListGroupSideBar({ mode }) {
             </div>
           </div>
         </div>
-
         <LogoutPopup
           mode={mode}
-          open={open}
+          open={openLogoutModal}
           onClose={() => {
-            setOpen(false);
+            setOpenLogoutModal(false);
           }}
         />
       </div>

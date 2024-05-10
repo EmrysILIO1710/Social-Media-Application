@@ -50,8 +50,8 @@ export default function Navbar(props) {
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-screen-xl px-1 md:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between ">
+          <div className="mx-auto max-w-screen-xl px-1 md:px-6 lg:px-8 z-10">
+            <div className="relative flex h-16 items-center justify-between">
               <div className="flex flex-none items-center justify-center sm:items-stretch sm:justify-start">
                 <Link to={"/feed"} className="flex flex-shrink-0 items-center">
                   <img

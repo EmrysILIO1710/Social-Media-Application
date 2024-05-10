@@ -97,7 +97,7 @@ export default function Photos(props) {
 
   return (
     <>
-      <Card sx={{ maxWidth: "19.8vw", marginBottom: "1vh", backgroundColor: modebg, color: modetext }}>
+      <Card sx={{ minWidth: "200px", width: "19.8vw", marginBottom: "1vh", backgroundColor: modebg, color: modetext }}>
         <CardActionArea onClick={showAll}>
           <CardMedia
             component="img"
@@ -188,13 +188,13 @@ export default function Photos(props) {
               {comments.length !== 0 ? (
                 comments.map((item, key) => (
                   <div key={item.commId} className="Photos-comment-section2">
-                    <span>
+                    <span style={{display: "flex"}}>
                       <span style={{ fontWeight: "bold" }}>YOU:</span>{" "}
                       {item.commVal} &nbsp;&nbsp;
                       <img
                         src={deletecomm}
                         alt=""
-                        className="Photos-delete-comm"
+                        className="Post-delete-comm"
                         onClick={() => {
                           commDelete(item.commId);
                         }}

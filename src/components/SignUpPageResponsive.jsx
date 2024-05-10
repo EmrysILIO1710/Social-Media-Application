@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import "./SignupPage.css";
-import cross from "../pictures/close.png";
-import friend from "../pictures/friends.jpg";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import ConfirmAcc from "../components/ConfirnAcc";
 import RegistrationDetails from "../components/RegistrationDetails";
+import { ImCross } from "react-icons/im";
 
 const SignupPage = (props) => {
   const [user, setUser] = useState("");
@@ -28,9 +26,7 @@ const SignupPage = (props) => {
             },
           }
         );
-        // props.onClose();
         setAcc(res.data.name);
-        console.log(res);
         setOpen(true);
       } catch (err) {
         console.log(err);
@@ -92,72 +88,67 @@ const SignupPage = (props) => {
 
   return (
     <>
-      <div className="SP-container" onClick={props.onClose}>
-        <div className="SP-box" onClick={(e) => e.stopPropagation()}>
-          <div className="SP-box-col1">
-            <img src={friend} alt="" className="SP-img" />
-          </div>
-          <div className="SP-box-col2">
-            <br />
-            <h1 className="SP-box-h1">
-              Join <span style={{ color: "rgb(254, 163, 82)" }}>adda</span>Gram
-            </h1>
-            <h2 className="SP-box-h1">in few quick steps...</h2>
-            <form onSubmit={submitForm2}>
-              <img
-                src={cross}
-                alt=""
-                className="SP-close"
-                onClick={props.onClose}
-              />
+      <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+        <div className="w-full max-w-lg relative">
+          <div className="bg-white rounded-lg mx-6 overflow-hidden shadow-lg p-8">
+            <div className="text-center">
+              <h1 className="text-2xl font-semibold text-gray-800">
+                Join <span className="text-orange-500">adda</span>Gram
+              </h1>
+              <h2 className="text-lg text-gray-600">in few quick steps...</h2>
+            </div>
+            <div className="absolute top-10 right-4 w-10 h-10 cursor-pointer">
+              <ImCross onClick={props.onClose} />
+            </div>
+            <div className="mt-8 space-y-4">
               <input
                 type="text"
                 placeholder="username"
-                className="SP-input"
+                className="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500"
                 value={user}
                 onChange={changeUser}
               />
-              <br />
               <input
                 type="text"
                 placeholder="full name"
-                className="SP-input"
+                className="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500"
                 value={fullname}
                 onChange={changeName}
               />
-              <br />
               <input
                 type="email"
                 placeholder="email id"
-                className="SP-input"
+                className="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500"
                 value={email}
                 onChange={changeEmail}
               />
-              <br />
               <input
                 type="password"
                 placeholder="create password"
-                className="SP-input"
+                className="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500"
                 value={pass1}
                 onChange={changePass1}
               />
-              <br />
               <input
                 type="password"
                 placeholder="confirm password"
-                className="SP-input"
+                className="block w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500"
                 value={pass2}
                 onChange={changePass2}
               />
-              <br />
-              <button className="SP-modal-btn">Register</button>
+              <button
+                className="block w-full bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 transition duration-200"
+                onClick={submitForm2}
+              >
+                Register
+              </button>
               <h5
-                style={{ textAlign: "center", cursor: "pointer" }}
+                className="text-center text-gray-500 cursor-pointer"
                 onClick={login}
               >
                 Register with Google
               </h5>
-            </form>
+            </div>
           </div>
         </div>
       </div>
