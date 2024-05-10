@@ -4,23 +4,27 @@ import EmojiPicker from "emoji-picker-react";
 import smiley from "../pictures/smiley.png";
 import backgroundImage from "../pictures/ChatBackground.jpg";
 import TopBarChatSection from "./TopBarChatSection";
+import { useLocation } from "react-router-dom";
+import backgroundImageDark from "../pictures/ChatBackground_Dark.jpg"
 
 const ChatSection = (props) => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [picker, setPicker] = useState(false);
-  const [modebg, setModebg] = useState("rgb(255, 246, 234)");
+  const [modebg, setModebg] = useState(`url(${backgroundImage})`);
   const [modetext, setModetext] = useState("black");
+  const location = useLocation();
+  const {dataName, dataDp, dataAbout, dataPic} = location.state;
 
   useEffect(() => {
     if (props.mode) {
       //dark mode
-      setModebg("rgb(26, 24, 48)");
+      setModebg(`url(${backgroundImageDark})`);
       setModetext("white");
     } else {
       //light mode
       setModetext("black");
-      setModebg("rgb(255, 246, 234)");
+      setModebg(`url(${backgroundImage})`);
     }
   }, [props.mode]);
 
@@ -42,15 +46,16 @@ const ChatSection = (props) => {
     setMessages((prevMessages) => [inputValue, ...prevMessages]);
     setInputValue("");
   };
+  
   //chat section
   return (
     <>
       <div
         className="bg-transparent h-full w-full fixed top-0 mt-16"
-        style={{ color: modetext, backgroundImage: `url(${backgroundImage})` }}
+        style={{ color: modetext, backgroundImage: modebg }}
       >
         <div className="w-full top-0 h-12 z-30">
-          <TopBarChatSection mode={props.mode}/>
+          <TopBarChatSection dataName={dataName} dataAbout={dataAbout} dataDp={dataDp} dataPic={dataPic} mode={props.mode}/>
         </div>
 
         <div className="lg:hidden bg-transparent fixed bottom-0 mb-16 w-full p-2 z-10">

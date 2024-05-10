@@ -15,18 +15,17 @@ import FollowUnfollowButton from "../components/FollowUnfollowButton";
 import Followerfollowing from "../components/Followerfollowing";
 
 export default function UserProfilePage(props) {
-  
-//   const [dp, setDp] = React.useState("");
-//   const [cover, setCover] = React.useState("");
-//   const [user, setUser] = React.useState("");
-//   const [about, setAbout] = React.useState("");
+  //   const [dp, setDp] = React.useState("");
+  //   const [cover, setCover] = React.useState("");
+  //   const [user, setUser] = React.useState("");
+  //   const [about, setAbout] = React.useState("");
   const [modebg, setModebg] = React.useState("white");
   const [modebg2, setModebg2] = React.useState("rgb(252, 237, 218)");
   const [modetext, setModetext] = React.useState("black");
   // const [modeTrigger, setModeTrigger] = React.useState(0);
 
   const location = useLocation();
-  const {dataName, dataDp, dataAbout, dataPic} = location.state;
+  const { dataName, dataDp, dataAbout, dataPic } = location.state;
   React.useEffect(() => {
     props.handleCB(true);
     // setModeTrigger(1);
@@ -45,20 +44,20 @@ export default function UserProfilePage(props) {
       window.scrollTo(0, 0);
     }
   }, [location, props]);
-//   const changeDets = (dataDp, dataCover, dataUser, dataAbout) => {
-//     if (dataDp !== "") {
-//       setDp(dataDp);
-//     }
-//     if (dataCover !== "") {
-//       setCover(dataCover);
-//     }
-//     if (dataUser !== "") {
-//       setUser(dataUser);
-//     }
-//     if (dataAbout !== "") {
-//       setAbout(dataAbout);
-//     }
-//   };
+  //   const changeDets = (dataDp, dataCover, dataUser, dataAbout) => {
+  //     if (dataDp !== "") {
+  //       setDp(dataDp);
+  //     }
+  //     if (dataCover !== "") {
+  //       setCover(dataCover);
+  //     }
+  //     if (dataUser !== "") {
+  //       setUser(dataUser);
+  //     }
+  //     if (dataAbout !== "") {
+  //       setAbout(dataAbout);
+  //     }
+  //   };
 
   return (
     <React.Fragment>
@@ -71,7 +70,8 @@ export default function UserProfilePage(props) {
         lg:visible
         md:visible
         sm:visible
-      " style={{backgroundColor: modebg, zIndex: "-1"}}
+      "
+        style={{ backgroundColor: modebg, zIndex: "-1" }}
       >
         <circle cx="0%" cy="0%" r="60%" fill={modebg2} />
         <circle cx="100%" cy="100%" r="40%" fill={modebg2} />
@@ -93,17 +93,23 @@ export default function UserProfilePage(props) {
           <div className=" w-3/4 mx-auto">
             <About about={dataAbout} />
           </div>
-          <div className="w-fit mx-auto"> 
+          <div className="w-fit mx-auto">
             <Followerfollowing mode={props.mode} />
           </div>
           {/* <Follow /> */}
         </div>
         <div className="md:flex lg:w-2/3 w-fit md:w-3/4 mx-auto md:justify-around mt-8 mb-24">
-          <MediaSection dp={dataDp} name={dataName} about={dataAbout} pic={dataPic} savedel={false} mode={props.mode} />
+          <MediaSection
+            dp={dataDp}
+            name={dataName}
+            about={dataAbout}
+            pic={dataPic}
+            savedel={false}
+            mode={props.mode}
+          />
         </div>
         {/* <Box sx={{  height: '100vh' }} /> */}
       </div>
-      
     </React.Fragment>
   );
 }
