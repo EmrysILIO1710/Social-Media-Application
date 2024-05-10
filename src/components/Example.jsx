@@ -4,6 +4,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import EmojiPicker from "emoji-picker-react";
 import smiley from "../pictures/smiley.png";
 import { IoIosSend } from "react-icons/io";
+import chatBG from "../pictures/ChatBackground.jpg";
 
 export default function Example(props) {
   const [open, setOpen] = useState(false);
@@ -110,7 +111,7 @@ export default function Example(props) {
                   >
                     <div className="px-4 sm:px-6">
                       <Dialog.Title
-                        className="text-base text-xl font-semibold leading-6"
+                        className="text-base font-semibold leading-6"
                         style={{ color: modetext }}
                       >
                         {props.name}
@@ -118,8 +119,12 @@ export default function Example(props) {
                     </div>
 
                     <div
-                      className="relative mt-6 flex-1 px-4 sm:px-6 overflow-y-scroll overflow-x-hidden bg-slate-400"
-                      style={{ height: "400px", overflow: "scroll" }}
+                      className="relative mt-6 flex-1 px-4 sm:px-6 bg-transparent overflow-y-scroll overflow-x-hidden"
+                      style={{
+                        height: "400px",
+                        overflow: "scroll",
+                        backgroundImage: `url(${chatBG})`,
+                      }}
                     >
                       <div className="flex flex-col-reverse float-right h-full overflow-y-auto">
                         {messages.map((message, index) => (
@@ -134,7 +139,7 @@ export default function Example(props) {
 
                     <div className=" px-4 sm:px-6">
                       <form onSubmit={handleSubmit}>
-                        <label className="relative block mt-4 flex">
+                        <label className="relative mt-4 flex">
                           <span className="absolute bottom-[120%] right-0">
                             <EmojiPicker
                               height={380}
