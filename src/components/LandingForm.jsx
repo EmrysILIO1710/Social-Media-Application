@@ -66,6 +66,10 @@ const LandingForm = () => {
 
   return (
     <>
+      <h1 className="italic text-center mt-16 LF-H1">
+        Welcome To <span style={{ color: "rgb(254, 163, 82)" }}>adda</span>Gram
+      </h1>
+
       <div className="LF-container">
         <form onSubmit={submitForm}>
           <input
@@ -101,7 +105,7 @@ const LandingForm = () => {
                         console.log('Login Failed');
                     }}
                 /> */}
-                {/* Rederect to google */}
+          {/* Rederect to google */}
           <button
             style={{ margin: "0px 112px", fontSize: "18px" }}
             onClick={() => login()}

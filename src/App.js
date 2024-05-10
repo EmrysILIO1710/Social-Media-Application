@@ -160,7 +160,10 @@ function App() {
           />
         </Routes>
         {/* <PostButton/> */}
-        <LabelBottomNavigation mode={modeTrigger} />
+        {
+          show && <LabelBottomNavigation mode={modeTrigger} />
+        }
+        
       </BrowserRouter>
     </>
   );
