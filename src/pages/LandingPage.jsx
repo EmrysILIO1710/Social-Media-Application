@@ -14,9 +14,9 @@ const LandingPage = (props) => {
                 <div className="LP-content">
                     <h1 className="LP-box-h1">Welcome To <span style={{color: "rgb(254, 163, 82)"}}>adda</span>Gram</h1>
                     <br />
-                    <h2 style={{fontSize: "35px"}}>The new way to connect</h2>
-                    <h2 style={{fontSize: "35px"}}>Discover new people</h2>
-                    <h2 style={{fontSize: "35px"}}>Share memories</h2>
+                    <h2 >The new way to connect</h2>
+                    <h2 >Discover new people</h2>
+                    <h2 >Share memories</h2>
                 </div>
             </div>
         </>

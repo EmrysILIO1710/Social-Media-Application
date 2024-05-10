@@ -4,11 +4,50 @@
     top: 160px;
     height: 400px;
     width: 400px;
-    background-color: rgba(255, 255, 255, 0.481);
+    background-color: rgba(255, 255, 255, 0.825);
     /* background-color: rgb(254, 163, 82); */
     /* border: 5px solid rgb(254, 163, 82); */
     border-radius: 25px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.756);
+    box-shadow: 1px 1px 40px 1px rgba(0, 0, 0, 0.358);
+}
+.LF-H1{
+    display: none;
+}
+@media (max-width: 1032px){
+    .LF-container{
+        right: 50px;
+    }
+}
+@media (max-width: 950px){
+    .LF-H1{
+        display: block;
+    }
+    .LF-container{
+        right: 50%;
+        transform: translateX(50%);
+        height: fit-content;
+    }
+}
+@media (max-width: 450px){
+    .LF-container{
+        width: 100%;
+        border-radius: 0px;
+        height: fit-content;
+        top: 100px;
+        box-shadow: none;
+    }
+    .LF-login{
+        margin: 40px 10px 10px;
+        
+    }
+    .LF-show-hide-btn{
+        right: 10px;
+    }
+    .LF-input{
+        margin: 40px auto 0 ;
+        width: 400px;
+        background-color: red;
+    }
 }
 .LF-show-hide-btn{
     width: 30px;

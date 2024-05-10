@@ -59,7 +59,7 @@ function App() {
 
   useEffect(() => {
     document.title = "addaGram";
-    setModeTrigger(1);
+    setModeTrigger(0);
   }, []);
 //Commited
   const CB = (data) => {
@@ -160,7 +160,10 @@ function App() {
           />
         </Routes>
         {/* <PostButton/> */}
-        <LabelBottomNavigation mode={modeTrigger} />
+        {
+          show && <LabelBottomNavigation mode={modeTrigger} />
+        }
+        
       </BrowserRouter>
     </>
   );

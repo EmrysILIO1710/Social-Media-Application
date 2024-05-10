@@ -52,14 +52,14 @@ const NotificationList = (props) => (
           /> */}
           <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-orange-100">
             <Link
-              to="/"
+              // to=""
               class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300 ease-in-out transform hover:-translate-y-1 no-underline"
             >
               <IoIosArrowDown />
               View all
             </Link>
             <Link
-              to="/"
+              // to=""
               class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300 ease-in-out transform hover:-translate-y-1 no-underline"
             >
               <IoVolumeMuteOutline />
