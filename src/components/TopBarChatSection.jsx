@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import image from "../pictures/friends.jpg";
+// import { IoCall } from "react-icons/io5";
+// import { IoVideocam } from "react-icons/io5";
 import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const TopBarChatSection = (props) => {
   const [modetext, setModetext] = useState("black");
@@ -36,18 +38,29 @@ const TopBarChatSection = (props) => {
           <div className="h-12 w-12 my-2 overflow-hidden rounded-full ml-4">
             <img
               className="h-full w-full object-cover"
-              src={image}
+              src={props.dataDp}
               alt="User Avatar"
             />
           </div>
           <div>
-            <p className="text-lg my-2 font-bold ml-2" style={{ color: modetext }}>
-              Sabbir
-            </p>
-            {/* <p className="text-sm text-gray-600" style={{ color: modetext }}>
-              Active now
-            </p> */}
+            <Link
+              to={"/userprofile"}
+              className="text-lg my-2 font-bold ml-2 no-underline"
+              style={{ color: modetext }}
+              state={{
+                dataName: props.dataName,
+                dataDp: props.dataDp,
+                dataAbout: props.dataAbout,
+                dataPic: props.dataPic,
+              }}
+            >
+              {props.dataName}
+            </Link>
           </div>
+          {/* <div>
+          <IoCall size={22}/>
+          <IoVideocam size={22}/>
+          </div> */}
         </div>
       </div>
     </div>
