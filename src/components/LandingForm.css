@@ -8,7 +8,10 @@
     /* background-color: rgb(254, 163, 82); */
     /* border: 5px solid rgb(254, 163, 82); */
     border-radius: 25px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.756);
+    box-shadow: 1px 1px 40px 1px rgba(0, 0, 0, 0.358);
+}
+.LF-H1{
+    display: none;
 }
 @media (max-width: 1032px){
     .LF-container{
@@ -16,18 +19,22 @@
     }
 }
 @media (max-width: 950px){
-    
+    .LF-H1{
+        display: block;
+    }
     .LF-container{
         right: 50%;
         transform: translateX(50%);
+        height: fit-content;
     }
 }
-@media (max-width: 400px){
+@media (max-width: 450px){
     .LF-container{
         width: 100%;
         border-radius: 0px;
         height: fit-content;
         top: 100px;
+        box-shadow: none;
     }
     .LF-login{
         margin: 40px 10px 10px;

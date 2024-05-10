@@ -6,7 +6,7 @@
 .LP-cover{
     width: 100vw;
     height: 100vh;
-    background: url("../pictures/background.jpg");
+    /* background: url("../pictures/background.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     /* background-color: black; */
