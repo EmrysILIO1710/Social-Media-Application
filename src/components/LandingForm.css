@@ -16,6 +16,7 @@
 @media (max-width: 1032px){
     .LF-container{
         right: 50px;
+        /* top: 200px; */
     }
 }
 @media (max-width: 950px){

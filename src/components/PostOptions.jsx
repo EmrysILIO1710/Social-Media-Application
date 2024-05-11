@@ -7,6 +7,7 @@ import DropdownMenu from "./DropDownMenu";
 import TagAndLocation from "./TagAndLocation";
 import InputBox from "./InputBox";
 import PhotoUploadPart from "./PhotoUploadPart";
+import './PostOptions.css';
 
 const style = {
   position: "absolute",
@@ -80,7 +81,7 @@ function PostOptions({ onClose, onUpload, mode, value }) {
       aria-labelledby="child-modal-title"
       aria-describedby="child-modal-description"
     >
-      <Box sx={{ ...style, backgroundColor: modebg, color: modetext }}>
+      <Box className="PO-Box" sx={{ ...style, backgroundColor: modebg, color: modetext, maxHeight: '90%', overflow: 'scroll' }} >
         <h2
           id="child-modal-title"
           className="text-center mt-1 font-middle text-xl"
