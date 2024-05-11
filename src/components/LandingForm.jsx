@@ -66,7 +66,7 @@ const LandingForm = () => {
 
   return (
     <>
-      <h1 className="italic text-center mt-16 LF-H1">
+      <h1 className="italic text-center mt-14 LF-H1">
         Welcome To <span style={{ color: "rgb(254, 163, 82)" }}>adda</span>Gram
       </h1>
 
