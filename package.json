@@ -2,7 +2,7 @@
   "name": "social-media-application",
   "homepage": "https://emrysilio1710.github.io/Social-Media-Application/",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",

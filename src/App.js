@@ -76,7 +76,7 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}> 
         {show && <Navbar dp={dp} mode={modeTrigger} icon={icon} />}
         {sidebar && <SettingsLeftSidebar handleCB={CB} mode={modeTrigger} />}
         {/* <Navbar /> */}
